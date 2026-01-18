@@ -20,7 +20,7 @@ const HeroContent = () => (
         </div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8 leading-[0.9] text-white uppercase tracking-tight">
-            Sports <br /> <span className="text-secondary font-medium">Texoma</span>
+            Texoma <br /> <span className="text-secondary font-medium">Cricket League</span>
         </h1>
 
         <p className="font-body text-base sm:text-lg md:text-xl text-text-light/85 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
