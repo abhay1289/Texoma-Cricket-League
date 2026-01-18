@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Facebook, Instagram, Twitter } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Logo: React.FC = () => (
     <Link href="/" className="flex items-center space-x-3 group">
@@ -17,12 +16,12 @@ const Logo: React.FC = () => (
     </Link>
 );
 
-interface NavLink {
+interface NavLinkItem {
     name: string;
     href: string;
 }
 
-const navLinks: NavLink[] = [
+const navLinks: NavLinkItem[] = [
     { name: 'Home', href: '/' },
     { name: 'Tournaments', href: '/tournaments' },
     { name: 'About Us', href: '/about' },
@@ -70,76 +69,26 @@ const SocialLinks: React.FC = () => (
     </div>
 );
 
-const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+const Navbar: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+
+    const openMenu = useCallback(() => {
+        setIsMenuOpen(true);
+    }, []);
+
+    const closeMenu = useCallback(() => {
+        setIsMenuOpen(false);
+    }, []);
 
     // Close menu on route change
     useEffect(() => {
-        onClose();
-    }, [pathname, onClose]);
-
-    return (
-        <AnimatePresence>
-            {isOpen && (
-                <>
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/20 z-[199] lg:hidden"
-                        onClick={onClose}
-                    />
-                    {/* Menu Panel */}
-                    <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        transition={{ type: 'tween', duration: 0.3 }}
-                        className="fixed inset-y-0 right-0 w-full max-w-sm bg-bg-cream z-[200] flex flex-col p-8 lg:hidden shadow-2xl"
-                    >
-                        <div className="flex justify-between items-center mb-12">
-                            <span className="font-heading font-black text-primary uppercase text-xl">TEXOMA CRICKET</span>
-                            <button
-                                onClick={onClose}
-                                className="p-2 -mr-2 text-primary hover:bg-primary/5 rounded-full transition-colors"
-                                aria-label="Close menu"
-                            >
-                                <X size={28} />
-                            </button>
-                        </div>
-                        <nav className="flex flex-col space-y-6 flex-1">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={onClose}
-                                    className="font-heading text-3xl text-text-dark font-black hover:text-primary active:text-primary transition-all uppercase text-left border-b border-primary/5 pb-4"
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                        </nav>
-                        <Link
-                            href="/contact"
-                            onClick={onClose}
-                            className="bg-primary text-white py-5 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl text-center mt-auto"
-                        >
-                            Book Your Court
-                        </Link>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence>
-    );
-};
-
-const Navbar: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+        closeMenu();
+    }, [pathname, closeMenu]);
 
     // Lock body scroll when menu is open
     useEffect(() => {
-        if (isOpen) {
+        if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
@@ -147,7 +96,7 @@ const Navbar: React.FC = () => {
         return () => {
             document.body.style.overflow = '';
         };
-    }, [isOpen]);
+    }, [isMenuOpen]);
 
     return (
         <>
@@ -157,19 +106,66 @@ const Navbar: React.FC = () => {
                     <NavLinks className="hidden lg:flex items-center space-x-4" />
                     <SocialLinks />
                     <button
-                        className="lg:hidden p-2.5 text-primary active:bg-primary/10 rounded-full transition-colors touch-manipulation"
-                        onClick={() => setIsOpen(true)}
+                        type="button"
+                        className="lg:hidden p-3 text-primary hover:bg-primary/5 active:bg-primary/10 rounded-full transition-colors"
+                        onClick={openMenu}
                         aria-label="Open menu"
-                        aria-expanded={isOpen}
+                        aria-expanded={isMenuOpen}
+                        style={{ touchAction: 'manipulation' }}
                     >
-                        <Menu size={24} />
+                        <Menu size={24} strokeWidth={2.5} />
                     </button>
                 </div>
             </nav>
-            <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+
+            {/* Mobile Menu Overlay */}
+            {isMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-black/30 z-[198] lg:hidden"
+                    onClick={closeMenu}
+                    aria-hidden="true"
+                />
+            )}
+
+            {/* Mobile Menu Panel */}
+            <div
+                className={`fixed inset-y-0 right-0 w-full max-w-sm bg-bg-cream z-[199] flex flex-col p-8 lg:hidden shadow-2xl transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                    }`}
+            >
+                <div className="flex justify-between items-center mb-12">
+                    <span className="font-heading font-black text-primary uppercase text-xl">TEXOMA CRICKET</span>
+                    <button
+                        type="button"
+                        onClick={closeMenu}
+                        className="p-2 -mr-2 text-primary hover:bg-primary/5 active:bg-primary/10 rounded-full transition-colors"
+                        aria-label="Close menu"
+                        style={{ touchAction: 'manipulation' }}
+                    >
+                        <X size={28} strokeWidth={2.5} />
+                    </button>
+                </div>
+                <nav className="flex flex-col space-y-6 flex-1">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={closeMenu}
+                            className="font-heading text-3xl text-text-dark font-black hover:text-primary active:text-primary transition-all uppercase text-left border-b border-primary/5 pb-4"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </nav>
+                <Link
+                    href="/contact"
+                    onClick={closeMenu}
+                    className="bg-primary text-white py-5 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl text-center mt-auto"
+                >
+                    Book Your Court
+                </Link>
+            </div>
         </>
     );
 };
 
 export default Navbar;
-
