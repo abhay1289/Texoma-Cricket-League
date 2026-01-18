@@ -15,7 +15,7 @@ const HeroContent = () => (
     >
         <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
-            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Established 2024</span>
+            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Newly Launched</span>
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
         </div>
 

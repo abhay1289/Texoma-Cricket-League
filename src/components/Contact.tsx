@@ -27,7 +27,7 @@ const ContactDetails = () => (
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-8 sm:mb-10 leading-tight tracking-tight">Get In <span className="text-secondary font-medium">Touch</span></h2>
         <div className="space-y-6 sm:space-y-8">
             <ContactInfoItem icon={<Globe size={16} className="sm:w-[18px] sm:h-[18px]" />} title="Location" detail="123 Heritage Way, Pottsboro, TX 75076" sub="Lake Texoma Region" />
-            <ContactInfoItem icon={<Clock size={16} className="sm:w-[18px] sm:h-[18px]" />} title="Hours" detail="08:00 — 22:00" sub="Open 7 Days a Week" />
+            <ContactInfoItem icon={<Clock size={16} className="sm:w-[18px] sm:h-[18px]" />} title="Hours" detail="08:00 to 22:00" sub="Open 7 Days a Week" />
             <ContactInfoItem icon={<Phone size={16} className="sm:w-[18px] sm:h-[18px]" />} title="Phone" detail="+1 (903) 555-0194" sub="Call or Text" />
         </div>
         <div className="mt-8 sm:mt-12 h-40 sm:h-48 w-full relative group overflow-hidden opacity-60 hover:opacity-100 transition-all duration-500 shadow-card rounded-xl">

@@ -107,7 +107,7 @@ const FeaturedTournament: React.FC = () => (
                     <h2 className="text-white font-heading text-2xl sm:text-4xl md:text-6xl uppercase font-black mb-2 sm:mb-4 leading-tight">
                         TCL Spring <br className="hidden sm:block" />Championship 2025
                     </h2>
-                    <p className="text-text-light/70 font-body text-sm sm:text-lg italic mb-4 sm:mb-8">The biggest youth cricket event of the year.</p>
+                    <p className="text-text-light/70 font-body text-sm sm:text-lg italic mb-4 sm:mb-8">Our flagship youth cricket tournament where young athletes showcase their skills and compete at the highest level.</p>
 
                     <div className="grid grid-cols-2 gap-y-3 sm:gap-y-6 gap-x-6 sm:gap-x-12 mb-6 sm:mb-10">
                         <div className="flex items-center gap-2 sm:gap-3 text-white">
@@ -128,7 +128,7 @@ const FeaturedTournament: React.FC = () => (
 
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                         <button className="px-6 sm:px-10 py-3 sm:py-5 bg-secondary text-text-dark font-subheading font-bold tracking-[0.15em] sm:tracking-[0.2em] rounded-lg sm:rounded-xl hover:bg-white transition-all shadow-xl uppercase text-[10px] sm:text-xs">
-                            Register — $175
+                            Register | $175
                         </button>
                         <button className="px-6 sm:px-10 py-3 sm:py-5 border-2 border-white/30 text-white font-subheading font-bold tracking-[0.15em] sm:tracking-[0.2em] rounded-lg sm:rounded-xl hover:bg-white/10 transition-all uppercase text-[10px] sm:text-xs">
                             View Details
@@ -260,10 +260,10 @@ const TournamentCard: React.FC<{ t: Tournament }> = ({ t }) => {
 // --- Formats Section ---
 const FormatsSection: React.FC = () => {
     const formats = [
-        { icon: <Zap />, name: 'T20', full: 'Twenty20', desc: 'Fast-paced 20 overs per side. Exciting matches lasting 2-3 hours.', for: 'All ages, most popular' },
-        { icon: <Clock />, name: 'ODI', full: 'One Day International', desc: 'Traditional 50 overs format. Tests endurance and strategy.', for: 'U-14+, elite development' },
-        { icon: <Users />, name: 'Pairs', full: 'Pairs Cricket', desc: 'Modified rules for younger players. Everyone bowls and bats in pairs.', for: 'U-6, U-8 beginners' },
-        { icon: <Flame />, name: 'Sixes', full: 'Six-a-Side', desc: 'Quick 6-player teams. High scoring, festival atmosphere.', for: 'All ages, quick play' },
+        { icon: <Zap />, name: 'T20', full: 'Twenty20', desc: 'A fast-paced format with 20 overs per side. Games finish in 2-3 hours, making it easy to watch and play.', for: 'All ages, most popular' },
+        { icon: <Clock />, name: 'ODI', full: 'One Day International', desc: 'The classic 50-over format that tests both patience and skill. Players learn to build an innings over time.', for: 'U-14+, advanced players' },
+        { icon: <Users />, name: 'Pairs', full: 'Pairs Cricket', desc: 'A beginner-friendly format where players bat and bowl in pairs. Perfect for learning the basics of the game.', for: 'U-6, U-8 beginners' },
+        { icon: <Flame />, name: 'Sixes', full: 'Six-a-Side', desc: 'Teams of six players compete in quick, action-packed matches. Great for tournaments and team bonding.', for: 'All ages, quick play' },
     ];
 
     return (
@@ -298,11 +298,11 @@ const FormatsSection: React.FC = () => {
 const AgeDivisions: React.FC = () => {
     const divisions = [
         { age: 'U-6', name: 'Mini Cricket', born: '2019+', focus: 'Fun & Basic Skills', color: '#4CAF50' },
-        { age: 'U-8', name: 'Starter Cubs', born: '2017-18', focus: 'Fundamentals', color: '#2196F3' },
-        { age: 'U-10', name: 'Junior League', born: '2015-16', focus: 'Competitive Intro', color: '#9C27B0' },
-        { age: 'U-12', name: 'Development', born: '2013-14', focus: 'Full Rules Mastery', color: '#FF9800' },
-        { age: 'U-14', name: 'Academy Elite', born: '2011-12', focus: 'High Performance', color: '#F44336' },
-        { age: 'U-16+', name: 'Elite Premier', born: '2007-10', focus: 'Excellence', color: '#D4A84B' },
+        { age: 'U-8', name: 'Starter Cubs', born: '2017-18', focus: 'Building Fundamentals', color: '#2196F3' },
+        { age: 'U-10', name: 'Junior League', born: '2015-16', focus: 'Introduction to Competition', color: '#9C27B0' },
+        { age: 'U-12', name: 'Development', born: '2013-14', focus: 'Learning Full Rules', color: '#FF9800' },
+        { age: 'U-14', name: 'Academy Elite', born: '2011-12', focus: 'Advanced Training', color: '#F44336' },
+        { age: 'U-16+', name: 'Elite Premier', born: '2007-10', focus: 'Championship Level', color: '#D4A84B' },
     ];
 
     return (
@@ -339,10 +339,10 @@ const AgeDivisions: React.FC = () => {
 const FAQSection: React.FC = () => {
     const [active, setActive] = useState<number | null>(0);
     const faqs = [
-        { q: "How do I register my team?", a: "Visit our registration portal, select your age division, and fill in team details. Secure your spot with an entry fee payment." },
-        { q: "What if it rains on match day?", a: "We monitor conditions closely. Light rain doesn't stop play. Rescheduling or DLS method applies for heavy rain." },
-        { q: "Are individual registrations possible?", a: "Yes! Individual players can sign up for our 'Free Agent' pool, and we'll match you with a team." },
-        { q: "Is protective gear provided?", a: "Helmets are mandatory for all batters. While players should have their own kit, TCL can provide basic gear for beginners." }
+        { q: "How do I register my team?", a: "Go to our registration page, choose your age group, and enter your team information. Once you pay the entry fee, your spot is confirmed." },
+        { q: "What happens if it rains on game day?", a: "We keep a close eye on the weather. Light rain won't stop the game, but if it rains heavily, we'll reschedule or use the DLS method to decide the result." },
+        { q: "Can I sign up as an individual player?", a: "Absolutely. You can join our Free Agent pool, and we'll place you on a team that needs players." },
+        { q: "Do I need to bring my own gear?", a: "Helmets are required for all batters. We recommend bringing your own equipment, but we can provide basic gear for players who are just starting out." }
     ];
 
     return (
@@ -407,7 +407,7 @@ export default function TournamentsPage() {
         >
             <PageHero
                 title="Tournaments"
-                description="Compete. Excel. Celebrate. Find your next cricket challenge in the heart of Texoma."
+                description="Join our professionally organized cricket tournaments. We offer competitive events for all skill levels, from beginners to advanced players."
                 image="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=95&w=2600"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
@@ -492,7 +492,7 @@ export default function TournamentsPage() {
                         <span className="font-subheading text-secondary font-bold text-[10px] tracking-[0.5em] uppercase mb-6 block">Regulations</span>
                         <h2 className="font-heading text-5xl md:text-7xl uppercase font-black mb-12 leading-tight">Spirit of the <br />Game</h2>
                         <div className="space-y-8 font-body text-lg italic opacity-80 mb-12 border-l-2 border-secondary pl-12">
-                            <p>&quot;Cricket is a game that owes much of its unique appeal to the fact that it should be played not only within its Laws but also within the Spirit of the Game.&quot;</p>
+                            <p>&quot;Cricket is more than just following the rules. It's about playing with respect, honesty, and good sportsmanship. That's what makes our game special.&quot;</p>
                         </div>
                         <button className="flex items-center gap-6 px-10 py-5 bg-white text-accent font-subheading font-bold tracking-[0.2em] rounded-xl hover:bg-secondary transition-all uppercase text-xs group">
                             Download Rulebook <Download size={18} className="group-hover:translate-y-1 transition-transform" />
@@ -502,10 +502,10 @@ export default function TournamentsPage() {
                         <div className="aspect-square bg-white/5 rounded-full absolute -top-1/2 -right-1/2 w-[150%] animate-pulse" />
                         <div className="grid grid-cols-2 gap-6 relative z-10">
                             {[
-                                { t: 'Fair Play', d: 'Zero tolerance for sledging or unsportsmanlike behavior.' },
-                                { t: 'Elite Gear', d: 'Helmets and safety gear mandatory for all divisions.' },
-                                { t: 'Safety First', d: 'Professional on-site medical and safety protocols.' },
-                                { t: 'Authenticity', d: 'Official regional umpires and digital scoring.' }
+                                { t: 'Fair Play', d: 'We expect all players to treat each other with respect. No trash-talking or unsportsmanlike behavior allowed.' },
+                                { t: 'Proper Equipment', d: 'All players must wear helmets and safety gear during matches to stay protected.' },
+                                { t: 'Safety First', d: 'Trained staff and first aid are always available at every game and practice.' },
+                                { t: 'Professional Standards', d: 'Certified umpires and digital scorekeeping ensure fair and accurate results.' }
                             ].map((item, idx) => (
                                 <div key={idx} className="p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/20 transition-all">
                                     <CheckCircle2 className="text-secondary mb-4" size={24} />
@@ -525,11 +525,11 @@ export default function TournamentsPage() {
                 <div className="container mx-auto px-8 text-center max-w-4xl">
                     <div className="inline-flex items-center gap-3 p-3 px-6 bg-secondary/20 rounded-full border border-secondary/30 mb-12">
                         <AlertCircle className="text-secondary" size={18} />
-                        <span className="font-subheading font-bold text-[10px] tracking-widest text-primary uppercase">Spring Championship - 12 Spots Left</span>
+                        <span className="font-subheading font-bold text-[10px] tracking-widest text-primary uppercase">Spring Championship: 12 Spots Left</span>
                     </div>
                     <h2 className="font-heading text-6xl md:text-8xl text-primary font-black uppercase mb-8 leading-tight">Ready to <br />Compete?</h2>
                     <p className="font-body text-xl text-text-dark/60 mb-16 max-w-2xl mx-auto italic leading-relaxed">
-                        Register your team today and experience the thrill of competitive sports. Limited spots available for the 2025 season.
+                        Sign up your team today and join our growing cricket community. Spots fill up quickly, so don't wait to secure your place in the 2025 season.
                     </p>
                     <div className="flex flex-wrap justify-center gap-6">
                         <button className="px-12 py-6 bg-primary text-white font-subheading font-bold tracking-[0.3em] rounded-xl hover:bg-accent transition-all shadow-2xl uppercase text-xs">

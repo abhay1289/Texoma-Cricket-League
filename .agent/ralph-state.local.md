@@ -1,9 +1,14 @@
 ---
 active: true
-iteration: 1
+iteration: 3
 max_iterations: 0
-completion_promise: ALL PAGES AND COMPONENTS OPTIMIZED FOR MOBILE
-started_at: "2026-01-18T00:29:12Z"
+completion_promise: null
+started_at: "2026-01-18T14:11:02Z"
 ---
 
-Complete mobile responsiveness audit - each component and section should be optimized for mobile at enterprise grade polish. Work on all sections of all pages until fully optimized for mobile.
+Fix all content issues across the Texoma Cricket League website:
+1. Remove any claims that the league is old or established since 2020 - it is a NEW organization (3-4 months old)
+2. Ensure content clearly communicates this is a new, emerging cricket league
+3. Maintain mature, enterprise-grade content style
+4. Ensure content is readable by an 8th grader
+5. Remove all hyphens (- or --) and AI sloppy content patterns

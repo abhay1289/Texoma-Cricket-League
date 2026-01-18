@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: "Texoma Cricket League | Premier Youth Cricket in Texas & Oklahoma",
     template: "%s | Texoma Cricket League"
   },
-  description: "Join 1,200+ youth cricketers in Texoma's fastest-growing cricket league. Register for tournaments, coaching programs, and seasonal leagues for ages 6-18.",
+  description: "Join the newest youth cricket league in the Texoma region. Register for tournaments, coaching programs, and seasonal leagues for ages 6 to 18.",
   keywords: ["texoma cricket", "youth cricket texas", "cricket league oklahoma", "junior cricket programs", "cricket tournaments texas", "kids cricket league", "cricket coaching", "TCL"],
   authors: [{ name: "Texoma Cricket League" }],
   creator: "Texoma Cricket League",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     url: 'https://texomacricket.com',
     siteName: 'Texoma Cricket League',
     title: "Texoma Cricket League | Premier Youth Cricket in Texas & Oklahoma",
-    description: "Join 1,200+ youth cricketers in Texoma's fastest-growing cricket league. Register for tournaments, coaching programs, and seasonal leagues for ages 6-18.",
+    description: "Join the newest youth cricket league in the Texoma region. Register for tournaments, coaching programs, and seasonal leagues for ages 6 to 18.",
     images: [
       {
         url: '/og-image.png',
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Texoma Cricket League | Premier Youth Cricket",
-    description: "Join 1,200+ youth cricketers in Texoma's fastest-growing cricket league.",
+    description: "Join the newest youth cricket league in the Texoma region.",
     images: ['/og-image.png'],
   },
 };

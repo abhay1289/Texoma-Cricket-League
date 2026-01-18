@@ -13,10 +13,10 @@ const AboutHeader: React.FC = () => (
         </h2>
         <div className="space-y-3 sm:space-y-4 font-body text-text-dark/70 text-sm sm:text-base md:text-lg leading-relaxed">
             <p>
-                The Texoma Cricket League is dedicated to providing world-class infrastructure and a competitive platform for cricket enthusiasts across the region.
+                The Texoma Cricket League is the newest youth cricket organization in the region, dedicated to building quality infrastructure and creating a competitive platform for cricket enthusiasts.
             </p>
             <p>
-                From youth development programs to professional-grade T20 tournaments, we are building a legacy that celebrates the spirit of cricket while embracing modern standards.
+                From youth development programs to exciting T20 tournaments, we are just getting started on a journey that celebrates the spirit of cricket while embracing modern standards.
             </p>
         </div>
     </div>
@@ -62,7 +62,7 @@ const About: React.FC = () => {
                         <AboutHeader />
                         <div className="grid grid-cols-2 gap-3 sm:gap-6 mt-8 sm:mt-10">
                             <AboutStatItem value="4" label="Cricket Pitches" />
-                            <AboutStatItem value="500+" label="Active Players" />
+                            <AboutStatItem value="Growing" label="Community" />
                         </div>
                     </motion.div>
 

@@ -13,7 +13,7 @@ const FooterIdentity: React.FC = () => (
             <span className="font-heading text-2xl font-bold tracking-wider uppercase">SPORTS <span className="text-secondary">TEXOMA</span></span>
         </div>
         <p className="font-body opacity-60 leading-relaxed mb-8">
-            Governing the highest standards of cricket in the Southern Region. Dedicated to the growth, integrity, and passion of the game.
+            A new cricket community for the Texoma region. Dedicated to the growth, integrity, and passion of the game.
         </p>
         <div className="flex space-x-4">
             {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (

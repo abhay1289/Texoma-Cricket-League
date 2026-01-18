@@ -158,9 +158,9 @@ export const PRICING_TIERS: PricingTier[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-    { id: '1', name: 'Kabir Singh', role: 'Premier League All-Rounder', text: 'The pitch preparation at Texoma is easily the best in the state. Consistent bounce and true carry—exactly what a serious cricketer needs.', rating: 5, avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
-    { id: '2', name: 'Sarah Mitchell', role: 'Junior Academy Parent', text: 'TCL provides more than just cricket; it is a community. My children have developed discipline and sportsmanship that goes beyond the pitch.', rating: 5, avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
-    { id: '3', name: 'David Thompson', role: 'Weekend Warriors Captain', text: 'The heritage atmosphere combined with professional management makes every weekend match a highlight for our team.', rating: 5, avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
+    { id: '1', name: 'Kabir Singh', role: 'Premier League All-Rounder', text: 'The pitch preparation at Texoma is easily the best in the state. Consistent bounce and true carry, exactly what a serious cricketer needs.', rating: 5, avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
+    { id: '2', name: 'Sarah Mitchell', role: 'Junior Academy Parent', text: 'TCL is more than just cricket. It is a growing community where my children are developing discipline and sportsmanship that goes beyond the pitch.', rating: 5, avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
+    { id: '3', name: 'David Thompson', role: 'Weekend Warriors Captain', text: 'The professional management and welcoming atmosphere makes every weekend match a highlight for our team.', rating: 5, avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' },
 ];
 
 export const GALLERY_IMAGES = [

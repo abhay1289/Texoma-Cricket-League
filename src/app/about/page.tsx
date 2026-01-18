@@ -72,7 +72,7 @@ const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
 
 export default function AboutPage() {
     const leadership: LeadershipMember[] = [
-        { name: "Rajesh Sharma", role: "Founder & President", bio: "Former state-level cricketer with 20 years of coaching experience. Rajesh founded TCL to give his own children a place to play.", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=400&h=400&q=80" },
+        { name: "Rajesh Sharma", role: "Founder & President", bio: "Former state level cricketer and passionate coach. Rajesh founded TCL in late 2024 to give children in the Texoma region a place to play and learn cricket.", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=400&h=400&q=80" },
         { name: "Sarah Mitchell", role: "Director of Operations", bio: "With a background in sports management, Sarah ensures every tournament runs smoothly and every family feels welcome.", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2&w=400&h=400&q=80" },
         { name: "Michael Thompson", role: "Head of Coaching", bio: "Michael leads our coaching staff with a player-first philosophy, helping hundreds of beginners fall in love with cricket.", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=400&h=400&q=80" }
     ];
@@ -88,8 +88,8 @@ export default function AboutPage() {
         <div className="w-full bg-bg-light">
             {/* Hero Header */}
             <PageHero
-                title="Our Legacy"
-                description="More Than Cricket. A Community."
+                title="Our Story"
+                description="More Than Cricket. A Growing Community."
                 image="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2000"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
@@ -103,20 +103,20 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 max-w-7xl">
                     <div className="flex flex-col lg:flex-row gap-24 items-center">
                         <div className="lg:w-1/2 space-y-12">
-                            <SectionHeader label="How it Started" title="From a Dream to a League" alignment="left" />
+                            <SectionHeader label="Just Getting Started" title="A New Chapter Begins" alignment="left" />
                             <div className="space-y-6 font-body text-primary/60 text-lg leading-relaxed">
-                                <p>Texoma Cricket League began in 2024 with a simple observation: thousands of cricket-loving families in the region had no place for their children to play.</p>
-                                <p>Today, TCL serves over 1,200 players across 48 teams. Our mission remains: make cricket accessible, enjoyable, and developmental for every child.</p>
+                                <p>Texoma Cricket League launched in late 2024 with a simple observation: thousands of cricket loving families in the region had no place for their children to play.</p>
+                                <p>Now, TCL is growing every week as more families discover what we are building together. Our mission is clear: make cricket accessible, enjoyable, and developmental for every child.</p>
                             </div>
                             <div className="space-y-12 mt-12">
-                                <TimelineItem year="2024" title="TCL Founded" desc="First informal matches organized" />
-                                <TimelineItem year="2024" title="First Tournament" desc="8 teams, 96 players" />
-                                <TimelineItem year="2025" title="1,200+ Players" desc="Fastest-growing youth league in region" />
+                                <TimelineItem year="2024" title="TCL Launched" desc="First community matches organized" />
+                                <TimelineItem year="2024" title="Growing Community" desc="New teams joining each month" />
+                                <TimelineItem year="2025" title="Building Together" desc="Registration now open for spring season" />
                             </div>
                         </div>
                         <div className="lg:w-1/2 relative">
                             <div className="aspect-[4/5] bg-gray-100 rounded-super overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="History" />
+                                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Our Story" />
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-primary text-white text-center">
                 <div className="container mx-auto px-6 max-w-4xl">
                     <h2 className="font-heading text-4xl md:text-6xl font-black uppercase mb-8">Ready to Join the TCL Family?</h2>
-                    <p className="font-body text-xl opacity-80 mb-12 italic">Whether you&apos;re a player, parent, or coach — there&apos;s a place for you here.</p>
+                    <p className="font-body text-xl opacity-80 mb-12 italic">Whether you&apos;re a player, parent, or coach, there&apos;s a place for you here.</p>
                     <Link href="/contact" className="inline-block px-12 py-5 bg-white text-primary font-heading font-bold text-xs tracking-widest uppercase rounded-full shadow-xl hover:bg-secondary hover:text-white transition-all">
                         REGISTER NOW
                     </Link>
