@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Facebook, Instagram, Twitter } from 'lucide-react';
@@ -70,59 +70,106 @@ const SocialLinks: React.FC = () => (
     </div>
 );
 
-const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => (
-    <AnimatePresence>
-        {isOpen && (
-            <motion.div
-                initial={{ opacity: 0, x: '100%' }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: '100%' }}
-                className="fixed inset-0 bg-bg-cream z-[200] flex flex-col p-12 lg:hidden"
-            >
-                <div className="flex justify-between items-center mb-12">
-                    <span className="font-heading font-black text-primary uppercase text-xl">SPORTS TEXOMA</span>
-                    <X size={32} className="text-primary cursor-pointer" onClick={onClose} />
-                </div>
-                <div className="flex flex-col space-y-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            onClick={onClose}
-                            className="font-heading text-4xl text-text-dark font-black hover:text-primary transition-all uppercase text-left border-b border-primary/5 pb-4"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                    <Link
-                        href="/contact"
+const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+    const pathname = usePathname();
+
+    // Close menu on route change
+    useEffect(() => {
+        onClose();
+    }, [pathname, onClose]);
+
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    {/* Backdrop */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/20 z-[199] lg:hidden"
                         onClick={onClose}
-                        className="bg-primary text-white py-6 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl mt-8 text-center"
+                    />
+                    {/* Menu Panel */}
+                    <motion.div
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: 'tween', duration: 0.3 }}
+                        className="fixed inset-y-0 right-0 w-full max-w-sm bg-bg-cream z-[200] flex flex-col p-8 lg:hidden shadow-2xl"
                     >
-                        Book Your Court
-                    </Link>
-                </div>
-            </motion.div>
-        )}
-    </AnimatePresence>
-);
+                        <div className="flex justify-between items-center mb-12">
+                            <span className="font-heading font-black text-primary uppercase text-xl">TEXOMA CRICKET</span>
+                            <button
+                                onClick={onClose}
+                                className="p-2 -mr-2 text-primary hover:bg-primary/5 rounded-full transition-colors"
+                                aria-label="Close menu"
+                            >
+                                <X size={28} />
+                            </button>
+                        </div>
+                        <nav className="flex flex-col space-y-6 flex-1">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={onClose}
+                                    className="font-heading text-3xl text-text-dark font-black hover:text-primary active:text-primary transition-all uppercase text-left border-b border-primary/5 pb-4"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </nav>
+                        <Link
+                            href="/contact"
+                            onClick={onClose}
+                            className="bg-primary text-white py-5 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl text-center mt-auto"
+                        >
+                            Book Your Court
+                        </Link>
+                    </motion.div>
+                </>
+            )}
+        </AnimatePresence>
+    );
+};
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
     return (
-        <nav className="sticky top-0 z-[100] pt-2 sm:pt-4 pb-2 flex justify-center w-full pointer-events-none">
-            <div className="pointer-events-auto flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 md:px-12 py-2.5 sm:py-3 rounded-full transition-all duration-500 glass-nav shadow-super mx-2 sm:mx-4">
-                <Logo />
-                <NavLinks className="hidden lg:flex items-center space-x-4" />
-                <SocialLinks />
-                <button className="lg:hidden p-2.5 text-primary active:bg-primary/5 rounded-full transition-colors" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X size={22} /> : <Menu size={22} />}
-                </button>
-            </div>
+        <>
+            <nav className="sticky top-0 z-[100] pt-2 sm:pt-4 pb-2 flex justify-center w-full pointer-events-none">
+                <div className="pointer-events-auto flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 md:px-12 py-2.5 sm:py-3 rounded-full transition-all duration-500 glass-nav shadow-super mx-2 sm:mx-4">
+                    <Logo />
+                    <NavLinks className="hidden lg:flex items-center space-x-4" />
+                    <SocialLinks />
+                    <button
+                        className="lg:hidden p-2.5 text-primary active:bg-primary/10 rounded-full transition-colors touch-manipulation"
+                        onClick={() => setIsOpen(true)}
+                        aria-label="Open menu"
+                        aria-expanded={isOpen}
+                    >
+                        <Menu size={24} />
+                    </button>
+                </div>
+            </nav>
             <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
-        </nav>
+        </>
     );
 };
 
 export default Navbar;
+
