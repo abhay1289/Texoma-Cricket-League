@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LiveTicker from "@/components/LiveTicker";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const poppins = Poppins({
   variable: "--font-heading",
@@ -52,6 +53,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </body>
     </html>
