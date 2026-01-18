@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Theme Colors - Refined for Trust & Maturity */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary Palette - Deeper, more authoritative */
+  --color-primary: #7A1B38;
+  --color-secondary: #C9973F;
+  --color-accent: #1A3350;
+
+  /* Background - Warmer, more professional */
+  --color-bg-cream: #FAF7F2;
+  --color-bg-light: #FEFCF9;
+
+  /* Text - Higher contrast for readability */
+  --color-text-dark: #1F1714;
+  --color-text-light: #F2E8DC;
+
+  /* Font Families */
+  --font-heading: 'Poppins', sans-serif;
+  --font-subheading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Border Radius - Slightly tighter for professionalism */
+  --radius-super: 16px;
+  --radius-button: 8px;
+
+  /* Shadows - Subtle, professional depth */
+  --shadow-soft: 0 2px 8px rgba(31, 23, 20, 0.06);
+  --shadow-card: 0 4px 20px rgba(31, 23, 20, 0.08);
+  --shadow-elevated: 0 8px 32px rgba(31, 23, 20, 0.12);
+  --shadow-super: 0 20px 48px rgba(31, 23, 20, 0.16);
+
+  /* Standardized Section Spacing */
+  --section-py: 5rem;
+  /* 80px - consistent vertical padding */
+  --section-py-lg: 7rem;
+  /* 112px - for desktop */
+  --section-gap: 4rem;
+  /* 64px - gap between major elements */
+  --section-gap-sm: 2rem;
+  /* 32px - smaller internal gaps */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base Styles */
+body {
+  overflow-x: hidden;
+  background-color: #FAF7F2;
+  color: #1F1714;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Refinements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+p {
+  letter-spacing: -0.01em;
+  line-height: 1.7;
+}
+
+/* Button Base Styles */
+button,
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Scrollbar Styles - Refined */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7A1B38;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A1428;
+}
+
+/* Geometric Pattern Background - Subtler */
+.geometric-pattern {
+  background-color: #FAF7F2;
+  background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
+  opacity: 1;
+}
+
+/* Glass Navigation - More Solid */
+.glass-nav {
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(122, 27, 56, 0.08);
+  box-shadow: 0 1px 3px rgba(31, 23, 20, 0.04);
+}
+
+/* Marquee Animation - Slower, more dignified */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-marquee {
+  display: flex;
+  animation: marquee 60s linear infinite;
+}
+
+/* Pulse Animation - Subtler */
+@keyframes pulse-red {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Colors */
+::selection {
+  background-color: #7A1B38;
+  color: white;
+}
+
+/* Focus States - Professional */
+:focus-visible {
+  outline: 2px solid #C9973F;
+  outline-offset: 2px;
+}
+
+/* Link Transitions */
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Card Hover States - Subtle */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(31, 23, 20, 0.1);
+}
+
+/* Input Focus States */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #C9973F;
+  box-shadow: 0 0 0 3px rgba(201, 151, 63, 0.15);
+}
+
+/* Table Styles for Tournament Data */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Badge/Status Indicator Refinements */
+.status-badge {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
 }
