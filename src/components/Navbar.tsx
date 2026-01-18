@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                     }`}
             >
                 <div className="flex justify-between items-center mb-12">
-                    <span className="font-heading font-black text-primary uppercase text-xl">TEXOMA CRICKET</span>
+                    <span className="font-heading font-black text-primary uppercase text-lg">TEXOMA CRICKET LEAGUE</span>
                     <button
                         type="button"
                         onClick={closeMenu}
