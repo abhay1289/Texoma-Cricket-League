@@ -85,7 +85,7 @@ const FeaturedTournament: React.FC = () => (
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative min-h-[350px] sm:min-h-[400px] md:h-[450px] rounded-xl sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border-2 sm:border-4 border-secondary/20 group"
+                className="relative min-h-[420px] sm:min-h-[480px] md:min-h-[520px] rounded-xl sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border-2 sm:border-4 border-secondary/20 group"
             >
                 <img
                     src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2600"
@@ -94,7 +94,7 @@ const FeaturedTournament: React.FC = () => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent sm:from-black/80 sm:via-black/50" />
 
-                <div className="absolute inset-0 p-6 sm:p-12 md:p-20 flex flex-col justify-center max-w-2xl">
+                <div className="absolute inset-0 px-6 py-10 sm:px-12 sm:py-16 md:px-20 md:py-20 flex flex-col justify-center max-w-2xl">
                     <div className="flex flex-wrap gap-2 sm:gap-4 mb-4 sm:mb-6">
                         <span className="px-3 sm:px-4 py-1 sm:py-1.5 bg-secondary text-text-dark font-subheading text-[9px] sm:text-[10px] font-bold tracking-widest uppercase rounded-md shadow-sm">
                             🔥 Featured
