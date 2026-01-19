@@ -165,6 +165,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="max-w-7xl mx-auto">
+                    <h3 className="font-heading text-2xl text-primary font-bold uppercase mb-8 text-center">Visit Our Facilities</h3>
                     <MapSection />
                 </div>
             </section>
