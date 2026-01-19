@@ -85,7 +85,7 @@ const FeaturedTournament: React.FC = () => (
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative min-h-[420px] sm:min-h-[480px] md:min-h-[520px] rounded-xl sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border-2 sm:border-4 border-secondary/20 group"
+                className="relative min-h-[500px] sm:min-h-[560px] md:min-h-[600px] rounded-xl sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border-2 sm:border-4 border-secondary/20 group"
             >
                 <img
                     src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2600"
