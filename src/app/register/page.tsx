@@ -353,9 +353,27 @@ export default function RegisterPage() {
             </section>
 
             {/* How Partnership Works */}
-            <section className="py-20 lg:py-28 bg-white">
-                <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-                    <SectionHeader label="Process" title="How the Partnership Works" />
+            <section className="py-24 lg:py-32 relative overflow-hidden">
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000)' }}
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-primary/90" />
+                {/* Pattern overlay */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+                <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="inline-flex items-center gap-2 font-heading text-secondary font-semibold uppercase tracking-[0.25em] text-[10px] mb-6 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10">Process</span>
+                        <h2 className="font-heading text-4xl sm:text-5xl text-white font-bold leading-[1.05] tracking-[-0.02em]">How the Partnership Works</h2>
+                    </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
                         {howItWorksSteps.map((step, i) => (
                             <motion.div
