@@ -15,7 +15,7 @@ const HeroContent = () => (
     >
         <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
-            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Youth Cricket Excellence</span>
+            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Big Dreams! Young Bats</span>
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
         </div>
 
@@ -24,13 +24,13 @@ const HeroContent = () => (
         </h1>
 
         <p className="font-body text-base sm:text-lg md:text-xl text-text-light/85 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
-            Youth cricket tournaments hosted at Sports Texoma. Building champions through quality coaching, competitive play, and a passion for the game.
+            A premier national youth cricket tournament platform built on global standards, delivering a world-class youth cricket experience in the United States.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} className="w-full sm:w-auto">
                 <Link
-                    href="/contact"
+                    href="/register"
                     className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-secondary text-text-dark font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase shadow-lg hover:shadow-xl transition-all"
                 >
                     Register Now
