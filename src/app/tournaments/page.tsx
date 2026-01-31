@@ -199,8 +199,8 @@ export default function TournamentsPage() {
                                                     <div
                                                         key={idx}
                                                         className={`text-sm leading-relaxed ${s.featured && idx === 0
-                                                                ? 'font-semibold text-[#1A3350]'
-                                                                : 'text-[#1A3350]/75'
+                                                            ? 'font-semibold text-[#1A3350]'
+                                                            : 'text-[#1A3350]/75'
                                                             } ${e.includes('*') ? 'italic' : ''}`}
                                                     >
                                                         {e}
@@ -295,6 +295,124 @@ export default function TournamentsPage() {
                                 </li>
                             ))}
                         </ul>
+                    </motion.div>
+
+                    {/* Tournament Rules & Eligibility */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="mt-16 bg-white rounded-2xl p-8 md:p-10 border border-[#1A3350]/10"
+                    >
+                        <h2 className="text-[#1A3350] text-xl md:text-2xl font-semibold mb-6">
+                            Tournament Rules & Eligibility
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="text-[#1A3350] font-semibold mb-3">General Rules</h3>
+                                <ul className="space-y-2 text-[#1A3350]/70 text-sm">
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        All matches follow ICC Youth Cricket regulations
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Teams must have minimum 8, maximum 15 registered players
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        All equipment must meet safety standards
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Players must wear appropriate cricket attire
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-[#1A3350] font-semibold mb-3">Eligibility Requirements</h3>
+                                <ul className="space-y-2 text-[#1A3350]/70 text-sm">
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Players must fall within designated age group as of January 1st
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Valid ID/birth certificate required for verification
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Signed parental consent form for all minors
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9973F] mt-2 flex-shrink-0" />
+                                        Registration must be completed 7 days before tournament
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Venue Information */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.35 }}
+                        className="mt-10 bg-gradient-to-br from-[#1A3350] to-[#0f1f30] rounded-2xl p-8 md:p-10 text-white"
+                    >
+                        <h2 className="text-xl md:text-2xl font-semibold mb-6">
+                            Venue: Sports Texoma
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <h3 className="text-[#C9973F] font-semibold mb-2 text-sm uppercase tracking-wider">Location</h3>
+                                <p className="text-white/80">1234 Heritage Way</p>
+                                <p className="text-white/80">Pottsboro, TX 75076</p>
+                            </div>
+                            <div>
+                                <h3 className="text-[#C9973F] font-semibold mb-2 text-sm uppercase tracking-wider">Facilities</h3>
+                                <ul className="text-white/80 space-y-1 text-sm">
+                                    <li>• 4 Professional Cricket Pitches</li>
+                                    <li>• Indoor Practice Nets</li>
+                                    <li>• Spectator Seating</li>
+                                    <li>• Modern Clubhouse</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-[#C9973F] font-semibold mb-2 text-sm uppercase tracking-wider">Amenities</h3>
+                                <ul className="text-white/80 space-y-1 text-sm">
+                                    <li>• Free Parking</li>
+                                    <li>• Concession Stand</li>
+                                    <li>• Restrooms</li>
+                                    <li>• First Aid Station</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Past Tournament Results */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="mt-10 bg-[#FAFAFA] rounded-2xl p-8 md:p-10 border border-[#1A3350]/5"
+                    >
+                        <h2 className="text-[#1A3350] text-xl md:text-2xl font-semibold mb-6">
+                            Past Tournament Results
+                        </h2>
+                        <div className="text-center py-12">
+                            <div className="w-16 h-16 bg-[#1A3350]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Calendar className="text-[#1A3350]/40" size={28} />
+                            </div>
+                            <p className="text-[#1A3350]/60 text-lg font-medium mb-2">Coming Soon</p>
+                            <p className="text-[#1A3350]/40 text-sm max-w-md mx-auto">
+                                Results and photos from our tournaments will be posted here after each event.
+                                Stay tuned for highlights from our upcoming 2025 season!
+                            </p>
+                        </div>
                     </motion.div>
 
                 </div>

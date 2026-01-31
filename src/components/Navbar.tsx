@@ -24,6 +24,7 @@ interface NavLinkItem {
 const navLinks: NavLinkItem[] = [
     { name: 'Home', href: '/' },
     { name: 'Tournaments', href: '/tournaments' },
+    { name: 'Register', href: '/register' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
 ];
@@ -61,7 +62,7 @@ const SocialLinks: React.FC = () => (
         <Twitter size={16} className="text-primary hover:text-secondary cursor-pointer transition-colors" />
         <div className="w-px h-6 bg-primary/10 ml-2 mr-2" />
         <Link
-            href="/contact"
+            href="/register"
             className="bg-primary text-white px-6 py-2.5 rounded-full font-subheading text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-accent transition-all shadow-md"
         >
             Register Now
@@ -157,7 +158,7 @@ const Navbar: React.FC = () => {
                     ))}
                 </nav>
                 <Link
-                    href="/contact"
+                    href="/register"
                     onClick={closeMenu}
                     className="bg-primary text-white py-5 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl text-center mt-auto"
                 >
