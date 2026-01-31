@@ -53,8 +53,8 @@ const Membership: React.FC = () => {
                         <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-secondary" />
                         <span className="font-heading tracking-[0.2em] sm:tracking-[0.3em] text-primary text-[9px] sm:text-[10px] font-semibold uppercase">Membership</span>
                     </motion.div>
-                    <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6 leading-tight tracking-tight">Choose Your <span className="text-secondary font-medium">Plan</span></h2>
-                    <p className="text-text-dark/70 text-sm sm:text-lg max-w-xl mx-auto">Select the membership that fits your needs and start your sports journey today.</p>
+                    <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6 leading-tight tracking-tight">Registration <span className="text-secondary font-medium">Options</span></h2>
+                    <p className="text-text-dark/70 text-sm sm:text-lg max-w-xl mx-auto">Choose your registration type and join our youth cricket tournaments today.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto items-stretch">
                     {PRICING_TIERS.map((tier, index) => (

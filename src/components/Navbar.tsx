@@ -64,7 +64,7 @@ const SocialLinks: React.FC = () => (
             href="/contact"
             className="bg-primary text-white px-6 py-2.5 rounded-full font-subheading text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-accent transition-all shadow-md"
         >
-            Book Now
+            Register Now
         </Link>
     </div>
 );
@@ -161,7 +161,7 @@ const Navbar: React.FC = () => {
                     onClick={closeMenu}
                     className="bg-primary text-white py-5 rounded-xl font-subheading text-lg font-bold tracking-[0.2em] uppercase shadow-xl text-center mt-auto"
                 >
-                    Book Your Court
+                    Register Now
                 </Link>
             </div>
         </>

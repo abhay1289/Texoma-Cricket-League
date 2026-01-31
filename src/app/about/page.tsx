@@ -89,7 +89,7 @@ export default function AboutPage() {
             {/* Hero Header */}
             <PageHero
                 title="Our Story"
-                description="More Than Cricket. A Growing Community."
+                description="Youth Cricket Tournaments Hosted at Sports Texoma"
                 image="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2000"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
@@ -105,8 +105,8 @@ export default function AboutPage() {
                         <div className="lg:w-1/2 space-y-12">
                             <SectionHeader label="Just Getting Started" title="A New Chapter Begins" alignment="left" />
                             <div className="space-y-6 font-body text-primary/60 text-lg leading-relaxed">
-                                <p>Texoma Cricket League launched in late 2024 with a simple observation: thousands of cricket loving families in the region had no place for their children to play.</p>
-                                <p>Now, TCL is growing every week as more families discover what we are building together. Our mission is clear: make cricket accessible, enjoyable, and developmental for every child.</p>
+                                <p>Texoma Cricket League (TCL) is a league operator that runs youth cricket tournaments hosted at Sports Texoma. Our mission is to provide quality coaching, competitive play, and youth cricket development.</p>
+                                <p>From beginner development programs to competitive tournament formats, we focus on building the future of cricket in the Texoma region—one young cricketer at a time.</p>
                             </div>
                             <div className="space-y-12 mt-12">
                                 <TimelineItem year="2024" title="TCL Launched" desc="First community matches organized" />

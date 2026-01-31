@@ -15,7 +15,7 @@ const HeroContent = () => (
     >
         <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
-            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Newly Launched</span>
+            <span className="font-subheading tracking-[0.2em] sm:tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase">Youth Cricket Excellence</span>
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
         </div>
 
@@ -24,7 +24,7 @@ const HeroContent = () => (
         </h1>
 
         <p className="font-body text-base sm:text-lg md:text-xl text-text-light/85 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
-            One Destination, Endless Passion. Experience the pinnacle of regional sports in our world-class facility.
+            Youth cricket tournaments hosted at Sports Texoma. Building champions through quality coaching, competitive play, and a passion for the game.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -33,7 +33,7 @@ const HeroContent = () => (
                     href="/contact"
                     className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-secondary text-text-dark font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase shadow-lg hover:shadow-xl transition-all"
                 >
-                    Book Your Court
+                    Register Now
                     <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                 </Link>
             </motion.div>

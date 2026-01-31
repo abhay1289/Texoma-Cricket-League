@@ -21,11 +21,11 @@ const PartnerBrand: React.FC<{ name: string; logo: string }> = ({ name, logo }) 
 
 const Partners: React.FC = () => {
     const partners = [
+        { name: 'Sports Texoma', logo: 'https://cdn-icons-png.flaticon.com/512/8750/8750696.png' },
         { name: 'Texoma Cricket League', logo: 'https://cdn-icons-png.flaticon.com/512/3306/3306613.png' },
         { name: 'Local Bank', logo: 'https://cdn-icons-png.flaticon.com/512/2830/2830284.png' },
         { name: 'Health Texoma', logo: 'https://cdn-icons-png.flaticon.com/512/2966/2966327.png' },
         { name: 'Sports Gear Co', logo: 'https://cdn-icons-png.flaticon.com/512/1041/1041846.png' },
-        { name: 'Regional Energy', logo: 'https://cdn-icons-png.flaticon.com/512/2737/2737151.png' },
     ];
 
     return (

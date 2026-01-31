@@ -85,7 +85,7 @@ const Tournaments: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6 md:px-8">
                 <div className="text-center mb-10 sm:mb-16">
                     <span className="font-heading tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase mb-3 sm:mb-4 block">Events</span>
-                    <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8 tracking-tight">The Championship <span className="text-secondary font-medium">Series</span></h2>
+                    <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8 tracking-tight">Youth <span className="text-secondary font-medium">Tournaments</span></h2>
                     <div className="flex justify-center overflow-x-auto pb-2">
                         <FilterBar categories={categories} currentFilter={filter} onFilterChange={setFilter} />
                     </div>

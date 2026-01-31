@@ -13,10 +13,10 @@ const AboutHeader: React.FC = () => (
         </h2>
         <div className="space-y-3 sm:space-y-4 font-body text-text-dark/70 text-sm sm:text-base md:text-lg leading-relaxed">
             <p>
-                The Texoma Cricket League is the newest youth cricket organization in the region, dedicated to building quality infrastructure and creating a competitive platform for cricket enthusiasts.
+                Texoma Cricket League (TCL) is a league operator that runs youth cricket tournaments hosted at Sports Texoma. Our mission is to develop young cricketers through quality coaching, competitive tournaments, and a supportive community.
             </p>
             <p>
-                From youth development programs to exciting T20 tournaments, we are just getting started on a journey that celebrates the spirit of cricket while embracing modern standards.
+                From youth development programs to exciting tournament formats, we focus on building skills, sportsmanship, and a love for the game in every young player.
             </p>
         </div>
     </div>
