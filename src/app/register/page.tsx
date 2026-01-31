@@ -34,6 +34,27 @@ const partnerComparison: Array<{
         { feature: 'Long-term participation & upgrade pathway', partner: 'Yes', nonPartner: '—', partnerCheck: true, nonPartnerCheck: false },
     ];
 
+// Partner Tier Overview - detailed benefits by tier
+const partnerTierOverview = [
+    { benefit: 'Priority tournament registration', founding: 'Highest priority', national: 'Priority', regional: 'Standard priority', development: '—' },
+    { benefit: 'Eligibility for Regional Qualifiers', founding: true, national: true, regional: true, development: false },
+    { benefit: 'Eligibility for National Championships', founding: true, national: true, regional: 'Qualify', development: false },
+    { benefit: 'TCL Academy Partner recognition', founding: 'Featured', national: 'Listed', regional: 'Listed', development: 'Listed' },
+    { benefit: 'Match Recordings / Analytics', founding: true, national: true, regional: 'Add-On', development: 'Add-On' },
+    { benefit: 'Advisory input on formats & calendar', founding: true, national: false, regional: false, development: false },
+    { benefit: 'National rankings & recognition', founding: true, national: true, regional: 'Limited', development: false },
+    { benefit: 'Annual Gala Event', founding: true, national: true, regional: 'Limited', development: false },
+    { benefit: 'Special Group accommodation rates', founding: true, national: true, regional: 'Limited', development: false },
+];
+
+// Facilities & High-Performance Camps Access
+const facilitiesAccess = [
+    { benefit: 'Preferred access to All Turf grounds & facilities (TCL events, training blocks, championships)', founding: 'Priority access', national: 'Subject to availability', regional: 'Limited', development: false },
+    { benefit: 'Priority consideration for high-performance camps, combines & showcases', founding: 'First priority', national: 'Priority', regional: 'Limited', development: false },
+    { benefit: 'Elite training experiences with visiting coaches & staff', founding: true, national: true, regional: 'By invitation', development: false },
+    { benefit: 'Access to centralized, All Turf-quality playing surfaces', founding: true, national: true, regional: '(event-based)', development: 'Limited' },
+];
+
 // Membership Tiers
 const membershipTiers = [
     {
@@ -378,6 +399,124 @@ export default function RegisterPage() {
                     <p className="text-center font-body text-primary/50 text-sm mt-8 italic">
                         Tournament entry fees are charged separately per event.
                     </p>
+                </div>
+            </section>
+
+            {/* Partner Tier Overview */}
+            <section className="py-20 lg:py-28 bg-white">
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+                    <SectionHeader
+                        label="Tier Benefits"
+                        title="Partner Tier Overview"
+                        description="Compare benefits across all partner tiers"
+                    />
+                    <div className="overflow-x-auto bg-[#FAFAF8] rounded-2xl border border-primary/[0.06] shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b-2 border-primary/10">
+                                    <th className="text-left py-4 px-4 font-heading text-primary font-bold text-sm">Benefit / Access</th>
+                                    <th className="text-center py-4 px-4 font-heading text-secondary font-bold text-sm bg-secondary/5">Founding Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary font-bold text-sm">National Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary font-bold text-sm">Regional Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary/60 font-bold text-sm">Development Partner</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {partnerTierOverview.map((row, i) => (
+                                    <tr key={i} className="border-b border-primary/5 hover:bg-white/50 transition-colors">
+                                        <td className="py-4 px-4 font-body text-primary/80 text-sm">{row.benefit}</td>
+                                        <td className="text-center py-4 px-4 bg-secondary/5">
+                                            {typeof row.founding === 'boolean' ? (
+                                                row.founding ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.founding}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.national === 'boolean' ? (
+                                                row.national ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.national}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.regional === 'boolean' ? (
+                                                row.regional ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.regional}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.development === 'boolean' ? (
+                                                row.development ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/50 text-sm">{row.development}</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* Facilities & High-Performance Camps Access */}
+            <section className="py-20 lg:py-28 bg-[#FAFAF8]">
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+                    <SectionHeader
+                        label="Facilities"
+                        title="Facilities & High-Performance Camps Access"
+                        description="Access to training facilities, camps, combines, and showcases"
+                    />
+                    <div className="overflow-x-auto bg-white rounded-2xl border border-primary/[0.06] shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b-2 border-primary/10">
+                                    <th className="text-left py-4 px-4 font-heading text-primary font-bold text-sm">Benefit / Access</th>
+                                    <th className="text-center py-4 px-4 font-heading text-secondary font-bold text-sm bg-secondary/5">Founding Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary font-bold text-sm">National Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary font-bold text-sm">Regional Partner</th>
+                                    <th className="text-center py-4 px-4 font-heading text-primary/60 font-bold text-sm">Development Partner</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {facilitiesAccess.map((row, i) => (
+                                    <tr key={i} className="border-b border-primary/5 hover:bg-bg-cream/50 transition-colors">
+                                        <td className="py-4 px-4 font-body text-primary/80 text-sm">{row.benefit}</td>
+                                        <td className="text-center py-4 px-4 bg-secondary/5">
+                                            {typeof row.founding === 'boolean' ? (
+                                                row.founding ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.founding}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.national === 'boolean' ? (
+                                                row.national ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.national}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.regional === 'boolean' ? (
+                                                row.regional ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/70 text-sm">{row.regional}</span>
+                                            )}
+                                        </td>
+                                        <td className="text-center py-4 px-4">
+                                            {typeof row.development === 'boolean' ? (
+                                                row.development ? <Check className="text-green-500 mx-auto" size={16} /> : <X className="text-red-300 mx-auto" size={16} />
+                                            ) : (
+                                                <span className="font-body text-primary/50 text-sm">{row.development}</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
