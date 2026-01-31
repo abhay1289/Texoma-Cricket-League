@@ -160,11 +160,17 @@ const gainAccessTo = [
 ];
 
 const SectionHeader: React.FC<{ label: string; title: string; description?: string; alignment?: 'center' | 'left' }> = ({ label, title, description, alignment = 'center' }) => (
-    <div className={`mb-16 ${alignment === 'center' ? 'text-center' : 'text-left'}`}>
-        <span className="inline-block font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] mb-4 px-4 py-1.5 bg-secondary/10 rounded-full">{label}</span>
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-[1.1] tracking-tight">{title}</h2>
-        {description && <p className="font-body text-primary/55 text-lg mt-5 max-w-3xl mx-auto leading-relaxed">{description}</p>}
-    </div>
+    <motion.div
+        className={`mb-20 ${alignment === 'center' ? 'text-center' : 'text-left'}`}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+    >
+        <span className="inline-flex items-center gap-2 font-heading text-secondary font-semibold uppercase tracking-[0.25em] text-[10px] mb-5 px-5 py-2 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 rounded-full border border-secondary/10">{label}</span>
+        <h2 className="font-heading text-4xl sm:text-5xl md:text-[3.5rem] text-primary font-bold leading-[1.05] tracking-[-0.02em]">{title}</h2>
+        {description && <p className="font-body text-primary/50 text-lg lg:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">{description}</p>}
+    </motion.div>
 );
 
 const CheckIcon: React.FC<{ status: boolean | 'limited' }> = ({ status }) => {
@@ -191,56 +197,100 @@ export default function RegisterPage() {
             />
 
             {/* Intro Section */}
-            <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--color-primary) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-                <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
+            <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+                {/* Premium dot pattern */}
+                <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--color-primary) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+                {/* Decorative gradient orbs */}
+                <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-secondary/[0.03] rounded-full blur-[100px]" />
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[80px]" />
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="lg:pr-8"
                         >
-                            <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-4">TCL Academy Partner Program</span>
-                            <h2 className="font-heading text-3xl sm:text-4xl text-primary font-bold mb-6">Partner with Youth Cricket Academies Nationwide</h2>
+                            <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-full mb-8 border border-secondary/10">
+                                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                                <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[10px]">TCL Academy Partner Program</span>
+                            </div>
+                            <h2 className="font-heading text-4xl lg:text-[3.25rem] xl:text-[3.5rem] text-primary font-bold leading-[1.08] tracking-[-0.02em] mb-8">
+                                Partner with Youth Cricket Academies <span className="text-secondary">Nationwide</span>
+                            </h2>
                             <div className="space-y-4 font-body text-primary/70 text-lg leading-relaxed">
                                 <p>Texoma Cricket League (TCL) partners with youth cricket academies that are committed to raising standards, developing players, and competing beyond local leagues on a national stage.</p>
                                 <p>Our Academy Partner program connects academies across the United States to a nationally respected competition platform—designed to help youth cricket grow into a mainstream sport in America.</p>
                             </div>
                         </motion.div>
                         <motion.div
-                            initial={{ opacity: 0, y: 24 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="p-8 lg:p-10 bg-white rounded-2xl border border-primary/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative"
+                            transition={{ duration: 0.7, delay: 0.15 }}
+                            className="relative"
                         >
-                            <h3 className="font-heading text-primary text-xl font-bold mb-6">Who This Program Is For</h3>
-                            <p className="font-body text-primary/70 mb-4">This program is ideal for academies that:</p>
-                            <ul className="space-y-3">
-                                {idealFor.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 font-body text-primary/80">
-                                        <Check className="text-secondary mt-1 flex-shrink-0" size={18} />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <p className="font-body text-primary/60 text-sm mt-6 italic">TCL Academy Partners are not just participants—they are collaborators in shaping the future of youth cricket in the U.S.</p>
+                            {/* Premium card glow */}
+                            <div className="absolute -inset-1 bg-gradient-to-br from-secondary/20 via-secondary/5 to-transparent rounded-[1.75rem] blur-xl opacity-50" />
+                            <div className="relative p-8 lg:p-10 bg-white rounded-3xl border border-primary/[0.06] shadow-[0_20px_50px_rgb(0,0,0,0.06)]">
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-secondary/15 to-secondary/5 rounded-xl flex items-center justify-center">
+                                        <Users className="text-secondary w-6 h-6" />
+                                    </div>
+                                    <h3 className="font-heading text-primary text-xl font-bold">Who This Program Is For</h3>
+                                </div>
+                                <p className="font-body text-primary/60 mb-6 text-[15px]">This program is ideal for academies that:</p>
+                                <ul className="space-y-4">
+                                    {idealFor.map((item, i) => (
+                                        <motion.li
+                                            key={i}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.3 + i * 0.08 }}
+                                            className="flex items-start gap-3.5 font-body text-primary/75 text-[15px]"
+                                        >
+                                            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mt-0.5">
+                                                <Check className="text-secondary w-3 h-3" />
+                                            </span>
+                                            {item}
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                                <div className="mt-8 pt-6 border-t border-primary/[0.05]">
+                                    <p className="font-body text-primary/50 text-sm leading-relaxed">TCL Academy Partners are not just participants—they are collaborators in shaping the future of youth cricket in the U.S.</p>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* What it Means to Be a Partner */}
-            <section className="py-20 lg:py-28 bg-primary text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+            <section className="py-24 lg:py-32 bg-primary text-white relative overflow-hidden">
+                {/* Premium texture */}
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+                {/* Decorative orbs */}
+                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-secondary/[0.08] rounded-full blur-[150px]" />
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/[0.03] rounded-full blur-[100px]" />
                 <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
-                    <div className="text-center mb-12">
-                        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-3">Partnerships</span>
-                        <h2 className="font-heading text-3xl sm:text-4xl font-bold">What It Means to Be a TCL Academy Partner</h2>
-                        <p className="font-body text-white/70 text-lg mt-4 max-w-3xl mx-auto">
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="inline-flex items-center gap-2 font-heading text-secondary font-semibold uppercase tracking-[0.25em] text-[10px] mb-6 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/10">
+                            <Trophy className="w-3.5 h-3.5" />
+                            Partnerships
+                        </span>
+                        <h2 className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.05]">What It Means to Be a <span className="text-secondary">TCL Partner</span></h2>
+                        <p className="font-body text-white/60 text-lg lg:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">
                             As a TCL Academy Partner, your academy becomes part of a national ecosystem built around competition, credibility, and progression.
                         </p>
-                    </div>
+                    </motion.div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                         {gainAccessTo.map((item, i) => (
                             <motion.div
@@ -338,61 +388,69 @@ export default function RegisterPage() {
             </section>
 
             {/* Membership Tiers */}
-            <section className="py-20 lg:py-28 bg-[#FAFAF8]">
-                <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+            <section className="py-24 lg:py-32 bg-[#FAFAF8] relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-secondary/[0.04] to-transparent rounded-full blur-[80px]" />
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <SectionHeader
                         label="Pricing"
                         title="Academy Partner Membership Tiers"
                         description="Choose the tier that best fits your academy's stage and goals"
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
                         {membershipTiers.map((tier, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: i * 0.08 }}
-                                className={`relative p-8 lg:p-10 rounded-2xl transition-all duration-300 ${tier.badge === 'Most Popular'
-                                    ? 'bg-primary text-white border-0 shadow-2xl shadow-primary/20 lg:scale-[1.02]'
-                                    : 'bg-white border border-primary/[0.08] hover:border-primary/[0.16] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]'
-                                    }`}
+                                transition={{ duration: 0.6, delay: i * 0.1 }}
+                                className="relative group"
                             >
-                                {tier.badge && (
-                                    <div className={`absolute -top-3 left-8 px-3 py-1 rounded-full text-[10px] font-heading font-bold uppercase tracking-wider ${tier.badge === 'Most Popular' ? 'bg-secondary text-white shadow-lg shadow-secondary/30' : 'bg-primary/[0.06] text-primary/60'
-                                        }`}>
-                                        {tier.badge}
-                                    </div>
+                                {/* Premium glow for featured tier */}
+                                {tier.badge === 'Most Popular' && (
+                                    <div className="absolute -inset-[2px] bg-gradient-to-br from-secondary via-secondary/50 to-primary rounded-[1.75rem] opacity-90" />
                                 )}
-                                <h3 className={`font-heading text-xl font-bold mt-2 mb-2 ${tier.badge === 'Most Popular' ? 'text-white' : 'text-primary'}`}>{tier.name}</h3>
-                                <div className="mb-4">
-                                    <span className={`font-heading text-4xl font-bold tracking-tight ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-primary'}`}>{tier.price}</span>
-                                    <span className={`font-body text-sm ${tier.badge === 'Most Popular' ? 'text-white/50' : 'text-primary/40'}`}>{tier.period}</span>
+                                <div className={`relative h-full p-8 lg:p-9 rounded-3xl transition-all duration-500 ${tier.badge === 'Most Popular'
+                                    ? 'bg-primary text-white lg:scale-[1.03]'
+                                    : 'bg-white border border-primary/[0.06] hover:border-primary/[0.12] hover:shadow-[0_25px_60px_rgb(0,0,0,0.08)]'
+                                    }`}
+                                >
+                                    {tier.badge && (
+                                        <div className={`absolute -top-3.5 left-8 px-4 py-1.5 rounded-full text-[9px] font-heading font-bold uppercase tracking-[0.15em] ${tier.badge === 'Most Popular' ? 'bg-secondary text-white shadow-lg shadow-secondary/40' : 'bg-gradient-to-r from-primary/[0.08] to-primary/[0.04] text-primary/60'}`}>
+                                            {tier.badge}
+                                        </div>
+                                    )}
+                                    <h3 className={`font-heading text-xl font-bold mt-3 mb-3 ${tier.badge === 'Most Popular' ? 'text-white' : 'text-primary'}`}>{tier.name}</h3>
+                                    <div className="mb-5">
+                                        <span className={`font-heading text-[2.75rem] font-bold tracking-[-0.02em] ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-primary'}`}>{tier.price}</span>
+                                        <span className={`font-body text-sm ml-1 ${tier.badge === 'Most Popular' ? 'text-white/40' : 'text-primary/35'}`}>{tier.period}</span>
+                                    </div>
+                                    <p className={`font-body text-sm mb-8 leading-relaxed ${tier.badge === 'Most Popular' ? 'text-white/60' : 'text-primary/55'}`}>{tier.description}</p>
+                                    <ul className="space-y-3 mb-8 flex-grow">
+                                        {tier.features.map((feature, fi) => (
+                                            <li key={fi} className={`flex items-start gap-3 text-sm ${tier.badge === 'Most Popular' ? 'text-white/75' : 'text-primary/65'}`}>
+                                                {feature !== '—' ? (
+                                                    <>
+                                                        <Check className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-green-500'}`} size={16} />
+                                                        <span className="font-body">{feature}</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <X className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}`} size={16} />
+                                                        <span className={tier.badge === 'Most Popular' ? 'text-white/30' : 'text-primary/30'}>Not included</span>
+                                                    </>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <button className={`w-full py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 ${tier.badge === 'Most Popular'
+                                        ? 'bg-secondary text-white hover:bg-secondary/90 shadow-lg shadow-secondary/25'
+                                        : 'bg-primary/[0.04] text-primary hover:bg-primary hover:text-white'
+                                        }`}>
+                                        Select Tier
+                                    </button>
                                 </div>
-                                <p className={`font-body text-sm mb-8 leading-relaxed ${tier.badge === 'Most Popular' ? 'text-white/60' : 'text-primary/55'}`}>{tier.description}</p>
-                                <ul className="space-y-3 mb-8 flex-grow">
-                                    {tier.features.map((feature, fi) => (
-                                        <li key={fi} className={`flex items-start gap-3 text-sm ${tier.badge === 'Most Popular' ? 'text-white/75' : 'text-primary/65'}`}>
-                                            {feature !== '—' ? (
-                                                <>
-                                                    <Check className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-green-500'}`} size={16} />
-                                                    <span className="font-body">{feature}</span>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <X className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}`} size={16} />
-                                                    <span className={tier.badge === 'Most Popular' ? 'text-white/30' : 'text-primary/30'}>Not included</span>
-                                                </>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className={`w-full py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 ${tier.badge === 'Most Popular'
-                                    ? 'bg-secondary text-white hover:bg-secondary/90 shadow-lg shadow-secondary/25'
-                                    : 'bg-primary/[0.04] text-primary hover:bg-primary hover:text-white'
-                                    }`}>
-                                    Select Tier
-                                </button>
                             </motion.div>
                         ))}
                     </div>
