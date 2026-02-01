@@ -3,7 +3,7 @@ import SportsOffered from '@/components/SportsOffered';
 import About from '@/components/About';
 import WhatWeDo from '@/components/WhatWeDo';
 import Tournaments from '@/components/Tournaments';
-import Membership from '@/components/Membership';
+// import Membership from '@/components/Membership'; // Hidden
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import Partners from '@/components/Partners';
@@ -17,7 +17,7 @@ export default function HomePage() {
       <About />
       <WhatWeDo />
       <Tournaments />
-      <Membership />
+      {/* <Membership /> */}
       <Gallery />
       <Testimonials />
       <Partners />

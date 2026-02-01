@@ -3,7 +3,7 @@ import { Poppins, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LiveTicker from "@/components/LiveTicker";
+// import LiveTicker from "@/components/LiveTicker"; // Hidden
 import ScrollToTop from "@/components/ScrollToTop";
 
 const poppins = Poppins({
@@ -90,7 +90,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${inter.variable} ${jetbrainsMono.variable} bg-bg-cream text-text-dark font-body leading-relaxed overflow-x-hidden antialiased`}
       >
         <div className="min-h-screen flex flex-col">
-          <LiveTicker />
+          {/* <LiveTicker /> */}
           <Navbar />
           <main className="flex-grow">
             {children}
