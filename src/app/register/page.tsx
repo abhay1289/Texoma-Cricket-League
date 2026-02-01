@@ -608,8 +608,201 @@ export default function RegisterPage() {
                 </div>
             </section>
 
-            {/* Why Academies Choose TCL */}
+            {/* Partner Tier Overview Table */}
             <section className="py-32 lg:py-40 bg-[#FAFAF8] relative overflow-hidden">
+                <FloatingShapes />
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
+                    <motion.div
+                        className="text-center mb-20"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15 shadow-[0_4px_20px_rgb(201,151,63,0.1)]">Detailed Benefits</span>
+                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[1.02] tracking-[-0.03em]">Partner Tier Overview</h2>
+                        <p className="font-body text-primary/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">A comprehensive breakdown of benefits across all partner tiers</p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="overflow-x-auto"
+                    >
+                        <div className="bg-white rounded-[2rem] border border-primary/[0.05] shadow-[0_40px_100px_rgb(0,0,0,0.08)] overflow-hidden">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="border-b-2 border-primary/10">
+                                        <th className="text-left py-6 px-6 font-heading text-primary font-bold text-sm min-w-[240px]">Benefit</th>
+                                        <th className="text-center py-6 px-4 font-heading text-white font-bold text-sm bg-gradient-to-r from-secondary to-secondary/90 min-w-[140px]">
+                                            <div className="flex flex-col items-center gap-1">
+                                                <Crown className="w-4 h-4" />
+                                                <span>Founding</span>
+                                            </div>
+                                        </th>
+                                        <th className="text-center py-6 px-4 font-heading text-primary font-bold text-sm bg-primary/[0.04] min-w-[140px]">National</th>
+                                        <th className="text-center py-6 px-4 font-heading text-primary font-bold text-sm bg-primary/[0.02] min-w-[140px]">Regional</th>
+                                        <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-sm min-w-[140px]">Development</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {partnerTierOverview.map((row, i) => (
+                                        <tr key={i} className="border-b border-primary/[0.04] hover:bg-secondary/[0.02] transition-colors">
+                                            <td className="py-5 px-6 font-body text-primary/75 text-[15px]">{row.benefit}</td>
+                                            <td className="text-center py-5 px-4 bg-secondary/[0.03]">
+                                                {typeof row.founding === 'boolean' ? (
+                                                    <CheckIcon status={row.founding} />
+                                                ) : (
+                                                    <span className="font-body text-primary/70 text-sm font-medium">{row.founding}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4 bg-primary/[0.02]">
+                                                {typeof row.national === 'boolean' ? (
+                                                    <CheckIcon status={row.national} />
+                                                ) : (
+                                                    <span className="font-body text-primary/60 text-sm">{row.national}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4 bg-primary/[0.01]">
+                                                {typeof row.regional === 'boolean' ? (
+                                                    <CheckIcon status={row.regional} />
+                                                ) : (
+                                                    <span className="font-body text-primary/50 text-sm">{row.regional}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4">
+                                                {typeof row.development === 'boolean' ? (
+                                                    <CheckIcon status={row.development} />
+                                                ) : (
+                                                    <span className="font-body text-primary/40 text-sm">{row.development}</span>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Facilities & High-Performance Camps Access Table */}
+            <section className="py-32 lg:py-40 bg-primary relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/[0.08] via-transparent to-transparent" />
+                <PremiumPattern />
+
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
+                    <motion.div
+                        className="text-center mb-20"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
+                            <Building2 className="w-4 h-4" />
+                            Facilities Access
+                        </span>
+                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-[1.02] tracking-[-0.03em]">Facilities & High-Performance Camps</h2>
+                        <p className="font-body text-white/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">Access to premium facilities and elite training opportunities</p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="overflow-x-auto"
+                    >
+                        <div className="bg-white/[0.03] backdrop-blur-sm rounded-[2rem] border border-white/[0.08] overflow-hidden">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="border-b border-white/[0.08]">
+                                        <th className="text-left py-6 px-6 font-heading text-white font-bold text-sm min-w-[280px]">Access Type</th>
+                                        <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-sm bg-secondary/[0.1] min-w-[140px]">
+                                            <div className="flex flex-col items-center gap-1">
+                                                <Crown className="w-4 h-4" />
+                                                <span>Founding</span>
+                                            </div>
+                                        </th>
+                                        <th className="text-center py-6 px-4 font-heading text-white/80 font-bold text-sm min-w-[140px]">National</th>
+                                        <th className="text-center py-6 px-4 font-heading text-white/60 font-bold text-sm min-w-[140px]">Regional</th>
+                                        <th className="text-center py-6 px-4 font-heading text-white/40 font-bold text-sm min-w-[140px]">Development</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {facilitiesAccess.map((row, i) => (
+                                        <tr key={i} className="border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors">
+                                            <td className="py-5 px-6 font-body text-white/70 text-[15px]">{row.benefit}</td>
+                                            <td className="text-center py-5 px-4 bg-secondary/[0.05]">
+                                                {typeof row.founding === 'boolean' ? (
+                                                    row.founding ? (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-secondary/20 shadow-[0_4px_12px_rgb(201,151,63,0.2)]">
+                                                            <Check className="text-secondary" size={16} />
+                                                        </span>
+                                                    ) : (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
+                                                            <X className="text-white/20" size={16} />
+                                                        </span>
+                                                    )
+                                                ) : (
+                                                    <span className="font-body text-secondary text-sm font-medium">{row.founding}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4">
+                                                {typeof row.national === 'boolean' ? (
+                                                    row.national ? (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
+                                                            <Check className="text-emerald-400" size={16} />
+                                                        </span>
+                                                    ) : (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
+                                                            <X className="text-white/20" size={16} />
+                                                        </span>
+                                                    )
+                                                ) : (
+                                                    <span className="font-body text-white/60 text-sm">{row.national}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4">
+                                                {typeof row.regional === 'boolean' ? (
+                                                    row.regional ? (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
+                                                            <Check className="text-emerald-400" size={16} />
+                                                        </span>
+                                                    ) : (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
+                                                            <X className="text-white/20" size={16} />
+                                                        </span>
+                                                    )
+                                                ) : (
+                                                    <span className="font-body text-white/50 text-sm">{row.regional}</span>
+                                                )}
+                                            </td>
+                                            <td className="text-center py-5 px-4">
+                                                {typeof row.development === 'boolean' ? (
+                                                    row.development ? (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
+                                                            <Check className="text-emerald-400" size={16} />
+                                                        </span>
+                                                    ) : (
+                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
+                                                            <X className="text-white/20" size={16} />
+                                                        </span>
+                                                    )
+                                                ) : (
+                                                    <span className="font-body text-white/40 text-sm">{row.development}</span>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Why Academies Choose TCL */}
+            <section className="py-32 lg:py-40 bg-white relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <motion.div
