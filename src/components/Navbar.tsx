@@ -6,13 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Logo: React.FC = () => (
-    <Link href="/" className="flex items-center space-x-3 group">
-        <div className="w-12 h-12 bg-primary border-2 border-secondary rounded-full flex items-center justify-center overflow-hidden shadow-lg transform transition-transform group-hover:rotate-12">
-            <div className="text-secondary font-heading font-black text-center leading-none">
-                <span className="block text-[7px] uppercase tracking-tighter text-white">Sports</span>
-                <span className="block text-xs uppercase">Texoma</span>
-            </div>
-        </div>
+    <Link href="/" className="flex items-center group">
+        <img
+            src="/logo.png"
+            alt="Texoma Cricket League"
+            className="h-14 w-auto object-contain transform transition-transform group-hover:scale-105"
+        />
     </Link>
 );
 
