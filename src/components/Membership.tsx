@@ -12,12 +12,16 @@ const PricingCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, ind
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
         viewport={{ once: true }}
-        className={`relative bg-white rounded-lg sm:rounded-xl p-6 sm:p-8 md:p-10 flex flex-col transition-all duration-500 shadow-card hover:shadow-elevated group overflow-hidden border border-primary/5 ${tier.isPremium ? 'md:-translate-y-4 border-secondary/30 ring-1 ring-secondary/10' : ''
+        className={`relative bg-white rounded-xl sm:rounded-2xl p-8 flex flex-col transition-all duration-500 hover:shadow-super group overflow-hidden ${tier.isPremium
+            ? 'md:-translate-y-4 shadow-elevated ring-1 ring-secondary/20'
+            : 'border border-primary/5 hover:border-primary/10 shadow-card'
             }`}
     >
         {tier.isPremium && (
-            <div className="absolute top-0 right-0 p-4 sm:p-6">
-                <ShieldCheck className="text-secondary w-6 h-6 sm:w-7 sm:h-7" strokeWidth={1.5} />
+            <div className="absolute top-0 right-0 p-6">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center border border-secondary/20 shadow-inner">
+                    <ShieldCheck className="text-secondary w-4 h-4" strokeWidth={2} />
+                </div>
             </div>
         )}
         <div className="mb-6 sm:mb-8">

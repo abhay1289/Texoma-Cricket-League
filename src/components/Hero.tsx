@@ -70,7 +70,8 @@ const Hero: React.FC = () => {
                     priority
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
