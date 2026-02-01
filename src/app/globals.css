@@ -2,18 +2,22 @@
 
 /* Theme Colors - Refined for Trust & Maturity */
 @theme inline {
-  /* Primary Palette - Deeper, more authoritative */
-  --color-primary: #7A1B38;
-  --color-secondary: #C9973F;
+  /* Primary Palette - Enterprise Grade */
+  --color-primary: #6D162F;
+  /* Deeper Maroon for authority */
+  --color-secondary: #D4AF37;
+  /* Metallic Gold, less yellow */
   --color-accent: #1A3350;
+  /* Navy unchanged */
 
   /* Background - Warmer, more professional */
-  --color-bg-cream: #FAF7F2;
-  --color-bg-light: #FEFCF9;
+  --color-bg-cream: #F9F6F0;
+  /* Slightly cooler cream */
+  --color-bg-light: #FFFEFC;
 
-  /* Text - Higher contrast for readability */
-  --color-text-dark: #1F1714;
-  --color-text-light: #F2E8DC;
+  /* Text - High contrast, softer blacks */
+  --color-text-dark: #1A1210;
+  --color-text-light: #F4EBE0;
 
   /* Font Families */
   --font-heading: 'Poppins', sans-serif;
@@ -21,25 +25,21 @@
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Border Radius - Slightly tighter for professionalism */
-  --radius-super: 16px;
+  /* Border Radius - Refined */
+  --radius-super: 20px;
   --radius-button: 8px;
 
-  /* Shadows - Subtle, professional depth */
-  --shadow-soft: 0 2px 8px rgba(31, 23, 20, 0.06);
-  --shadow-card: 0 4px 20px rgba(31, 23, 20, 0.08);
-  --shadow-elevated: 0 8px 32px rgba(31, 23, 20, 0.12);
-  --shadow-super: 0 20px 48px rgba(31, 23, 20, 0.16);
+  /* Premium Shadows (Multi-layered ambient occlusion) */
+  --shadow-soft: 0px 1px 2px rgba(31, 23, 20, 0.04), 0px 4px 8px rgba(31, 23, 20, 0.02);
+  --shadow-card: 0px 4px 6px -1px rgba(31, 23, 20, 0.05), 0px 10px 15px -3px rgba(31, 23, 20, 0.05);
+  --shadow-elevated: 0px 10px 15px -3px rgba(31, 23, 20, 0.05), 0px 20px 25px -5px rgba(31, 23, 20, 0.05);
+  --shadow-super: 0px 25px 50px -12px rgba(31, 23, 20, 0.15);
 
   /* Standardized Section Spacing */
   --section-py: 5rem;
-  /* 80px - consistent vertical padding */
-  --section-py-lg: 7rem;
-  /* 112px - for desktop */
-  --section-gap: 4rem;
-  /* 64px - gap between major elements */
-  --section-gap-sm: 2rem;
-  /* 32px - smaller internal gaps */
+  --section-py-lg: 7.5rem;
+  --section-gap: 4.5rem;
+  --section-gap-sm: 2.25rem;
 }
 
 /* Base Styles */
@@ -59,8 +59,9 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   font-weight: 600;
+  font-feature-settings: "cv11", "ss01";
 }
 
 p {
@@ -106,17 +107,35 @@ button:active,
 
 /* Geometric Pattern Background - Subtler */
 .geometric-pattern {
-  background-color: #FAF7F2;
+  background-color: #F9F6F0;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   opacity: 1;
 }
 
+/* Noise Texture for depth */
+.texture-noise {
+  position: relative;
+}
+
+.texture-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Glass Navigation - More Solid */
 .glass-nav {
-  background: rgba(250, 247, 242, 0.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(122, 27, 56, 0.08);
-  box-shadow: 0 1px 3px rgba(31, 23, 20, 0.04);
+  background: rgba(249, 246, 240, 0.85);
+  /* Slightly lighter/cleaner */
+  backdrop-filter: blur(20px);
+  /* Increased blur */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Inner light border */
+  box-shadow: var(--shadow-elevated);
 }
 
 /* Marquee Animation - Slower, more dignified */
