@@ -213,7 +213,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Leadership Section */}
+            {/* Leadership Section - Hidden for now
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-light">
                 <div className="container mx-auto px-6 max-w-7xl">
                     <SectionHeader label="Leadership" title="Meet the Team" />
@@ -224,6 +224,7 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+            */}
 
             {/* CTA Final */}
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-secondary text-primary text-center">
