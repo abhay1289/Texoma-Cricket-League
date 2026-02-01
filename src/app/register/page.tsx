@@ -167,16 +167,16 @@ const SectionHeader: React.FC<{ label: string; title: string; description?: stri
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
     >
-        <span className="inline-flex items-center gap-2 font-heading text-secondary font-semibold uppercase tracking-[0.25em] text-[10px] mb-5 px-5 py-2 bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 rounded-full border border-secondary/10">{label}</span>
-        <h2 className="font-heading text-4xl sm:text-5xl md:text-[3.5rem] text-primary font-bold leading-[1.05] tracking-[-0.02em]">{title}</h2>
-        {description && <p className="font-body text-primary/50 text-lg lg:text-xl mt-6 max-w-3xl mx-auto leading-relaxed">{description}</p>}
+        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15 shadow-[0_4px_20px_rgb(201,151,63,0.1)]">{label}</span>
+        <h2 className="font-heading text-4xl sm:text-5xl md:text-[3.75rem] text-primary font-bold leading-[1.02] tracking-[-0.03em]">{title}</h2>
+        {description && <p className="font-body text-primary/45 text-lg lg:text-xl mt-7 max-w-3xl mx-auto leading-relaxed">{description}</p>}
     </motion.div>
 );
 
 const CheckIcon: React.FC<{ status: boolean | 'limited' }> = ({ status }) => {
-    if (status === true) return <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-500/10"><Check className="text-green-600" size={14} /></span>;
-    if (status === 'limited') return <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/10"><span className="w-1.5 h-1.5 rounded-full bg-amber-500" /></span>;
-    return <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-500/5"><X className="text-red-300" size={14} /></span>;
+    if (status === true) return <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-green-500/15 to-green-500/5 shadow-[0_2px_8px_rgb(34,197,94,0.15)]"><Check className="text-green-600" size={15} /></span>;
+    if (status === 'limited') return <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-amber-500/15 to-amber-500/5 shadow-[0_2px_8px_rgb(245,158,11,0.15)]"><span className="w-2 h-2 rounded-full bg-amber-500" /></span>;
+    return <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-500/5"><X className="text-red-300" size={15} /></span>;
 };
 
 export default function RegisterPage() {
@@ -312,14 +312,19 @@ export default function RegisterPage() {
             </section>
 
             {/* Partners vs Non-Partners Comparison */}
-            <section className="py-20 lg:py-28 bg-[#FAFAF8]">
-                <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+            <section className="py-24 lg:py-32 bg-[#FAFAF8] relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-[120px]" />
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <SectionHeader
                         label="Comparison"
                         title="TCL Academy Partners vs. Non-Partner Academies"
                         description="See the difference between being a partner and participating on an event-by-event basis"
                     />
-                    <div className="overflow-x-auto bg-white rounded-2xl border border-primary/[0.06] shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="overflow-x-auto bg-white rounded-3xl border border-primary/[0.05] shadow-[0_25px_80px_rgb(0,0,0,0.06)]">
                         <table className="w-full">
                             <thead>
                                 <tr className="border-b-2 border-primary/10">
@@ -348,7 +353,7 @@ export default function RegisterPage() {
                                 ))}
                             </tbody>
                         </table>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -415,56 +420,60 @@ export default function RegisterPage() {
                         title="Academy Partner Membership Tiers"
                         description="Choose the tier that best fits your academy's stage and goals"
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
                         {membershipTiers.map((tier, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }}
+                                initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: i * 0.1 }}
+                                transition={{ duration: 0.7, delay: i * 0.12 }}
                                 className="relative group"
                             >
                                 {/* Premium glow for featured tier */}
                                 {tier.badge === 'Most Popular' && (
-                                    <div className="absolute -inset-[2px] bg-gradient-to-br from-secondary via-secondary/50 to-primary rounded-[1.75rem] opacity-90" />
+                                    <div className="absolute -inset-[3px] bg-gradient-to-br from-secondary via-secondary/60 to-primary rounded-[2rem] opacity-95 blur-[1px]" />
                                 )}
-                                <div className={`relative h-full p-8 lg:p-9 rounded-3xl transition-all duration-500 ${tier.badge === 'Most Popular'
-                                    ? 'bg-primary text-white lg:scale-[1.03]'
-                                    : 'bg-white border border-primary/[0.06] hover:border-primary/[0.12] hover:shadow-[0_25px_60px_rgb(0,0,0,0.08)]'
+                                <div className={`relative h-full p-9 lg:p-10 rounded-[1.75rem] transition-all duration-500 ${tier.badge === 'Most Popular'
+                                    ? 'bg-primary text-white lg:scale-[1.04]'
+                                    : 'bg-white border border-primary/[0.05] hover:border-primary/[0.1] hover:shadow-[0_30px_80px_rgb(0,0,0,0.1)] hover:-translate-y-1'
                                     }`}
                                 >
                                     {tier.badge && (
-                                        <div className={`absolute -top-3.5 left-8 px-4 py-1.5 rounded-full text-[9px] font-heading font-bold uppercase tracking-[0.15em] ${tier.badge === 'Most Popular' ? 'bg-secondary text-white shadow-lg shadow-secondary/40' : 'bg-gradient-to-r from-primary/[0.08] to-primary/[0.04] text-primary/60'}`}>
+                                        <div className={`absolute -top-4 left-9 px-5 py-2 rounded-full text-[8px] font-heading font-bold uppercase tracking-[0.2em] ${tier.badge === 'Most Popular' ? 'bg-secondary text-white shadow-xl shadow-secondary/50' : 'bg-gradient-to-r from-primary/10 to-primary/5 text-primary/55 border border-primary/[0.08]'}`}>
                                             {tier.badge}
                                         </div>
                                     )}
-                                    <h3 className={`font-heading text-xl font-bold mt-3 mb-3 ${tier.badge === 'Most Popular' ? 'text-white' : 'text-primary'}`}>{tier.name}</h3>
-                                    <div className="mb-5">
-                                        <span className={`font-heading text-[2.75rem] font-bold tracking-[-0.02em] ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-primary'}`}>{tier.price}</span>
-                                        <span className={`font-body text-sm ml-1 ${tier.badge === 'Most Popular' ? 'text-white/40' : 'text-primary/35'}`}>{tier.period}</span>
+                                    <h3 className={`font-heading text-[1.35rem] font-bold mt-4 mb-4 ${tier.badge === 'Most Popular' ? 'text-white' : 'text-primary'}`}>{tier.name}</h3>
+                                    <div className="mb-6">
+                                        <span className={`font-heading text-[3rem] font-bold tracking-[-0.03em] ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-primary'}`}>{tier.price}</span>
+                                        <span className={`font-body text-sm ml-1.5 ${tier.badge === 'Most Popular' ? 'text-white/35' : 'text-primary/30'}`}>{tier.period}</span>
                                     </div>
-                                    <p className={`font-body text-sm mb-8 leading-relaxed ${tier.badge === 'Most Popular' ? 'text-white/60' : 'text-primary/55'}`}>{tier.description}</p>
-                                    <ul className="space-y-3 mb-8 flex-grow">
+                                    <p className={`font-body text-[15px] mb-9 leading-relaxed ${tier.badge === 'Most Popular' ? 'text-white/55' : 'text-primary/50'}`}>{tier.description}</p>
+                                    <ul className="space-y-4 mb-10 flex-grow">
                                         {tier.features.map((feature, fi) => (
-                                            <li key={fi} className={`flex items-start gap-3 text-sm ${tier.badge === 'Most Popular' ? 'text-white/75' : 'text-primary/65'}`}>
+                                            <li key={fi} className={`flex items-start gap-3.5 text-[15px] ${tier.badge === 'Most Popular' ? 'text-white/80' : 'text-primary/65'}`}>
                                                 {feature !== '—' ? (
                                                     <>
-                                                        <Check className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-green-500'}`} size={16} />
+                                                        <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${tier.badge === 'Most Popular' ? 'bg-secondary/20' : 'bg-green-500/10'}`}>
+                                                            <Check className={`${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-green-500'}`} size={12} />
+                                                        </span>
                                                         <span className="font-body">{feature}</span>
                                                     </>
                                                 ) : (
                                                     <>
-                                                        <X className={`mt-0.5 flex-shrink-0 ${tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}`} size={16} />
-                                                        <span className={tier.badge === 'Most Popular' ? 'text-white/30' : 'text-primary/30'}>Not included</span>
+                                                        <span className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${tier.badge === 'Most Popular' ? 'bg-white/10' : 'bg-primary/[0.04]'}`}>
+                                                            <X className={`${tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}`} size={12} />
+                                                        </span>
+                                                        <span className={tier.badge === 'Most Popular' ? 'text-white/25' : 'text-primary/25'}>Not included</span>
                                                     </>
                                                 )}
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className={`w-full py-4 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all duration-300 ${tier.badge === 'Most Popular'
-                                        ? 'bg-secondary text-white hover:bg-secondary/90 shadow-lg shadow-secondary/25'
-                                        : 'bg-primary/[0.04] text-primary hover:bg-primary hover:text-white'
+                                    <button className={`w-full py-4.5 rounded-2xl font-heading font-bold text-[13px] uppercase tracking-[0.15em] transition-all duration-400 ${tier.badge === 'Most Popular'
+                                        ? 'bg-secondary text-white hover:bg-secondary/90 shadow-xl shadow-secondary/30 hover:shadow-secondary/40'
+                                        : 'bg-gradient-to-r from-primary/[0.06] to-primary/[0.03] text-primary border border-primary/[0.08] hover:bg-primary hover:text-white hover:border-primary'
                                         }`}>
                                         Select Tier
                                     </button>
@@ -472,7 +481,7 @@ export default function RegisterPage() {
                             </motion.div>
                         ))}
                     </div>
-                    <p className="text-center font-body text-primary/50 text-sm mt-8 italic">
+                    <p className="text-center font-body text-primary/40 text-sm mt-12 italic">
                         Tournament entry fees are charged separately per event.
                     </p>
                 </div>
