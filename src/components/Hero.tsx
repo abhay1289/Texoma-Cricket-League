@@ -19,7 +19,7 @@ const HeroContent = () => (
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
         </div>
 
-        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-[0.95] text-white uppercase tracking-tight">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-[0.95] text-white uppercase tracking-tight">
             Texoma <br /> <span className="text-secondary font-medium">Cricket League</span>
         </h1>
 

@@ -7,23 +7,6 @@ import { TOURNAMENTS } from '@/lib/constants';
 import { Calendar, Users, Trophy, ArrowUpRight } from 'lucide-react';
 import { Tournament } from '@/lib/types';
 
-const FilterBar = ({ categories, currentFilter, onFilterChange }: { categories: string[]; currentFilter: string; onFilterChange: (cat: string) => void }) => (
-    <div className="flex items-center gap-2 sm:gap-4 bg-gray-50 p-1.5 sm:p-2 rounded-full border border-gray-100 shadow-sm overflow-x-auto no-scrollbar">
-        {categories.map(cat => (
-            <button
-                key={cat}
-                onClick={() => onFilterChange(cat)}
-                className={`px-4 sm:px-8 py-2 sm:py-3 rounded-full font-heading text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-500 whitespace-nowrap ${currentFilter === cat
-                    ? 'bg-primary text-white shadow-lg scale-105'
-                    : 'text-primary/50 hover:text-primary hover:bg-white'
-                    }`}
-            >
-                {cat.toUpperCase()}
-            </button>
-        ))}
-    </div>
-);
-
 const TournamentCard: React.FC<{ t: Tournament }> = ({ t }) => (
     <motion.div
         layout
@@ -76,23 +59,12 @@ const TournamentCard: React.FC<{ t: Tournament }> = ({ t }) => (
 );
 
 const Tournaments: React.FC = () => {
-    const [filter, setFilter] = useState('All');
-    const categories = ['All', 'T20 Elite', 'Knockout', 'Indoor', 'Junior'];
-    const filteredTournaments = filter === 'All' ? TOURNAMENTS : TOURNAMENTS.filter(t => t.sport === filter);
-
     return (
         <section id="tournaments" className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white">
             <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                <div className="text-center mb-10 sm:mb-16">
-                    <span className="font-heading tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase mb-3 sm:mb-4 block">Events</span>
-                    <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8 tracking-tight">Youth <span className="text-secondary font-medium">Tournaments</span></h2>
-                    <div className="flex justify-center overflow-x-auto pb-2">
-                        <FilterBar categories={categories} currentFilter={filter} onFilterChange={setFilter} />
-                    </div>
-                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
                     <AnimatePresence mode="popLayout">
-                        {filteredTournaments.map(t => <TournamentCard key={t.id} t={t} />)}
+                        {TOURNAMENTS.map(t => <TournamentCard key={t.id} t={t} />)}
                     </AnimatePresence>
                 </div>
             </div>

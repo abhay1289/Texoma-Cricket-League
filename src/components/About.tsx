@@ -27,7 +27,7 @@ const AboutHeader: React.FC = () => (
                 Built around the belief that young cricketers deserve professional competition and clear pathways, TCL brings together teams from across the country to compete in well-organized, high-quality tournaments that reward preparation, skill, and sportsmanship.
             </p>
             <p>
-                At the heart of TCL is <strong className="text-primary">Sports Texoma</strong>, our home venue in Texoma. By anchoring our national championships at a centralized, purpose-built facility, we ensure consistency in playing conditions, operations, and overall tournament quality.
+                At the heart of TCL is <strong className="text-primary">Sports Texoma</strong>, the home venue in Texoma. By anchoring the national championships at a centralized, purpose-built facility, we ensure consistency in playing conditions, operations, and overall tournament quality.
             </p>
         </div>
     </div>

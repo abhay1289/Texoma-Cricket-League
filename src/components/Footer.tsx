@@ -59,6 +59,7 @@ const Footer: React.FC = () => {
         { name: 'Home', href: '/' },
         { name: 'Tournaments', href: '/tournaments' },
         { name: 'About Us', href: '/about' },
+        { name: 'Register', href: '/register' },
         { name: 'Contact', href: '/contact' },
     ];
 

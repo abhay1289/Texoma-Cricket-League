@@ -2,11 +2,11 @@ import Hero from '@/components/Hero';
 import SportsOffered from '@/components/SportsOffered';
 import About from '@/components/About';
 import WhatWeDo from '@/components/WhatWeDo';
-import Tournaments from '@/components/Tournaments';
+// import Tournaments from '@/components/Tournaments';
 // import Membership from '@/components/Membership'; // Hidden
 import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
-import Partners from '@/components/Partners';
+// import Partners from '@/components/Partners'; // Hidden
 import Contact from '@/components/Contact';
 
 export default function HomePage() {
@@ -16,11 +16,11 @@ export default function HomePage() {
       <SportsOffered />
       <About />
       <WhatWeDo />
-      <Tournaments />
+      {/* <Tournaments /> */}
       {/* <Membership /> */}
       <Gallery />
       <Testimonials />
-      <Partners />
+      {/* <Partners /> */}
       <Contact />
     </>
   );

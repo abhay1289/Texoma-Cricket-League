@@ -116,19 +116,6 @@ export const TOURNAMENTS: Tournament[] = [
         teamsTotal: 2,
         status: 'live',
         image: '/tournament-finals.png'
-    },
-    {
-        id: 'winter-2024-completed',
-        title: 'Winter Championship 2024',
-        date: 'Dec 7-8, 2024',
-        sport: 'Cricket',
-        format: 'T20',
-        ageGroup: 'U-12, U-14',
-        venue: 'Indoor Arena',
-        fee: 150,
-        winner: 'TCL Tigers',
-        status: 'completed',
-        image: '/tournament-winter.png'
     }
 ];
 

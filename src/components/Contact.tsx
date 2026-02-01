@@ -56,7 +56,6 @@ const ContactForm = () => (
             <div className="relative group">
                 <select className="w-full bg-transparent border-b border-primary/10 py-3 sm:py-4 outline-none focus:border-secondary transition-colors font-body text-sm sm:text-base appearance-none cursor-pointer">
                     <option>General Inquiry</option>
-                    <option>Membership</option>
                     <option>Corporate Partnership</option>
                     <option>Media</option>
                 </select>

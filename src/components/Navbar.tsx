@@ -10,7 +10,7 @@ const Logo: React.FC = () => (
         <img
             src="/logo.png"
             alt="Texoma Cricket League"
-            className="h-14 w-auto object-contain transform transition-transform group-hover:scale-105"
+            className="h-24 w-auto object-contain transform transition-transform group-hover:scale-105"
         />
     </Link>
 );

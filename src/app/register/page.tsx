@@ -203,6 +203,8 @@ const CheckIcon: React.FC<{ status: boolean | 'limited' }> = ({ status }) => {
 };
 
 export default function RegisterPage() {
+    const [activeTab, setActiveTab] = useState(0);
+
     return (
         <div className="w-full bg-white">
             {/* Hero Header */}
@@ -328,121 +330,260 @@ export default function RegisterPage() {
                 </div>
             </section>
 
-            {/* What It Means to Be a Partner - Premium Dark Section */}
-            <section className="py-32 lg:py-40 bg-primary text-white relative overflow-hidden">
-                {/* Premium background effects */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/[0.08] via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent" />
-                <PremiumPattern />
+            {/* What It Means to Be a Partner - Balanced Layout */}
+            <section className="py-24 lg:py-32 bg-[#0B1221] text-white">
+                <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
 
-                {/* Floating elements */}
-                <div className="absolute top-20 right-[10%] w-40 h-40 border border-white/[0.05] rounded-full hidden lg:block" />
-                <div className="absolute bottom-32 left-[15%] w-24 h-24 border border-secondary/20 rounded-2xl rotate-45 hidden lg:block" />
+                    {/* Centered Header */}
+                    <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
+                        <div className="w-16 h-2 bg-secondary mb-8 rounded-full" />
+                        <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                            What It Means to Be a <span className="text-secondary">TCL Partner</span>
+                        </h2>
+                        <p className="font-body text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                            As a TCL Academy Partner, your academy becomes part of a national ecosystem built around competition, credibility, and progression.
+                        </p>
+                    </div>
+
+                    {/* Centered Benefits Grid */}
+                    <div className="flex flex-wrap justify-center gap-6">
+                        {gainAccessTo.map((item, i) => (
+                            <div
+                                key={i}
+                                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-[#131b2e] border border-white/5 p-8 rounded-xl hover:border-secondary/50 transition-colors duration-300 flex flex-col items-start"
+                            >
+                                <div className="w-12 h-12 bg-[#0B1221] rounded-lg flex items-center justify-center mb-6 text-secondary border border-white/5 shrink-0">
+                                    {React.cloneElement(item.icon, { className: "w-6 h-6" })}
+                                </div>
+                                <h3 className="font-heading text-lg font-bold text-white mb-3">{item.title}</h3>
+                                <p className="font-body text-sm text-gray-400 leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Centered CTA */}
+                    <div className="mt-16 text-center">
+                        <Link href="/contact" className="inline-flex items-center justify-center px-10 py-4 bg-secondary text-white font-heading font-bold uppercase tracking-wider text-xs rounded-lg hover:bg-secondary/90 transition-colors">
+                            Become a Partner
+                        </Link>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Detailed Benefits Analysis - Interactive Tabbed Matrix */}
+            <section className="py-32 lg:py-40 bg-[#FAFAF8] relative overflow-hidden texture-noise">
+                {/* Subtle Grid Background */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <motion.div
-                        className="text-center mb-20"
+                        className="text-center mb-16"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1] shadow-[0_8px_32px_rgb(0,0,0,0.2)]">
-                            <Trophy className="w-4 h-4" />
-                            Partnership Benefits
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
+                            Comparison
                         </span>
-                        <h2 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.03em]">
-                            What It Means to Be a{' '}
-                            <span className="text-secondary">TCL Partner</span>
+                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em]">
+                            Full Comparison Matrix
                         </h2>
-                        <p className="font-body text-white/50 text-xl mt-8 max-w-3xl mx-auto leading-relaxed">
-                            As a TCL Academy Partner, your academy becomes part of a national ecosystem built around competition, credibility, and progression.
-                        </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                        {gainAccessTo.map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: i * 0.1 }}
-                                className="group relative"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-[1.75rem] opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
-                                <div className="relative p-8 bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-[1.75rem] h-full transition-all duration-500 hover:bg-white/[0.08] hover:border-white/[0.12] hover:-translate-y-2">
-                                    <div className="w-14 h-14 bg-gradient-to-br from-secondary/30 to-secondary/10 rounded-2xl flex items-center justify-center mb-6 text-secondary shadow-[0_8px_24px_rgb(201,151,63,0.2)] group-hover:scale-110 transition-transform duration-500">
-                                        {item.icon}
-                                    </div>
-                                    <h3 className="font-heading text-white text-lg font-bold mb-3">{item.title}</h3>
-                                    <p className="font-body text-white/50 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
+                    {/* Tabs Component - Physical Design */}
+                    <div className="rounded-[2.5rem] bg-white border border-primary/5 shadow-2xl overflow-hidden backdrop-blur-sm relative min-h-[600px]">
+                        {/* Tab Headers */}
+                        <div className="flex border-b border-primary/5 bg-primary/[0.02] overflow-x-auto scrollbar-hide">
+                            {['Overview', 'Facilities & Training', 'Partner vs Non-Partner'].map((tab, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setActiveTab(i)}
+                                    className={`px-8 py-6 font-heading font-bold text-sm uppercase tracking-widest whitespace-nowrap transition-all relative
+                                        ${activeTab === i ? 'text-primary' : 'text-primary/40 hover:text-primary/70'}
+                                    `}
+                                >
+                                    {tab}
+                                    {activeTab === i && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute bottom-0 left-0 right-0 h-1 bg-secondary shadow-[0_-2px_10px_rgba(201,151,63,0.5)]"
+                                        />
+                                    )}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Tab Content */}
+                        <div className="p-0">
+                            {activeTab === 0 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-x-auto"
+                                >
+                                    <table className="w-full min-w-[800px]">
+                                        <thead>
+                                            <tr className="bg-primary/[0.01]">
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Benefit Feature</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {partnerTierOverview.map((row, i) => (
+                                                <tr key={i} className="group hover:bg-primary/[0.02] transition-colors">
+                                                    <td className="py-5 px-8 font-heading text-primary font-bold text-sm border-b border-primary/5 leading-snug group-hover:text-secondary transition-colors">
+                                                        {row.benefit}
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 bg-secondary/[0.03] border-b border-primary/5 border-l border-r border-dashed border-secondary/20">
+                                                        {typeof row.founding === 'boolean' ? (
+                                                            <div className="flex justify-center"><CheckIcon status={row.founding} /></div>
+                                                        ) : (
+                                                            <span className="font-heading text-secondary text-xs font-bold uppercase tracking-wide">{row.founding}</span>
+                                                        )}
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5">
+                                                        {typeof row.national === 'boolean' ? (
+                                                            <div className="flex justify-center"><CheckIcon status={row.national} /></div>
+                                                        ) : (
+                                                            <span className="font-body text-primary/70 text-xs font-medium">{row.national}</span>
+                                                        )}
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5 bg-primary/[0.01]">
+                                                        {typeof row.regional === 'boolean' ? (
+                                                            <div className="flex justify-center"><CheckIcon status={row.regional} /></div>
+                                                        ) : (
+                                                            <span className="font-body text-primary/50 text-xs">{row.regional}</span>
+                                                        )}
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5">
+                                                        {typeof row.development === 'boolean' ? (
+                                                            <div className="flex justify-center"><CheckIcon status={row.development} /></div>
+                                                        ) : (
+                                                            <span className="font-body text-primary/30 text-xs">{row.development}</span>
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </motion.div>
+                            )}
+
+                            {activeTab === 1 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-x-auto"
+                                >
+                                    <table className="w-full min-w-[800px]">
+                                        <thead>
+                                            <tr className="bg-primary/[0.01]">
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Access Type</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {facilitiesAccess.map((row, i) => (
+                                                <tr key={`fac-${i}`} className="group hover:bg-primary/[0.02] transition-colors">
+                                                    <td className="py-5 px-8 font-heading text-primary font-bold text-sm border-b border-primary/5 leading-snug group-hover:text-secondary transition-colors">
+                                                        {row.benefit}
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 bg-secondary/[0.03] border-b border-primary/5 border-l border-r border-dashed border-secondary/20">
+                                                        <span className="font-body text-secondary text-xs font-bold">{typeof row.founding === 'string' ? row.founding : (row.founding ? 'Included' : '—')}</span>
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5">
+                                                        <span className="font-body text-primary/70 text-xs">{typeof row.national === 'string' ? row.national : (row.national ? 'Included' : '—')}</span>
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5 bg-primary/[0.01]">
+                                                        <span className="font-body text-primary/50 text-xs">{typeof row.regional === 'string' ? row.regional : (row.regional ? 'Included' : '—')}</span>
+                                                    </td>
+                                                    <td className="text-center py-5 px-4 border-b border-primary/5">
+                                                        <span className="font-body text-primary/30 text-xs">{typeof row.development === 'string' ? row.development : (row.development ? 'Included' : '—')}</span>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </motion.div>
+                            )}
+
+                            {activeTab === 2 && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-x-auto"
+                                >
+                                    <table className="w-full min-w-[600px]">
+                                        <thead>
+                                            <tr className="bg-primary/[0.01]">
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Feature / Access</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">TCL Partner</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Non-Partner</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {partnerComparison.map((row, i) => (
+                                                <tr key={i} className="group hover:bg-primary/[0.02] transition-colors">
+                                                    <td className="py-5 px-8 font-heading text-primary font-bold text-sm border-b border-primary/5 leading-snug group-hover:text-secondary transition-colors">
+                                                        {row.feature}
+                                                    </td>
+                                                    <td className="text-center py-5 px-8 bg-secondary/[0.03] border-b border-primary/5 border-l border-r border-dashed border-secondary/20">
+                                                        <div className="flex items-center justify-center gap-3">
+                                                            <CheckIcon status={row.partnerCheck} />
+                                                            <span className="font-body text-primary/80 text-sm font-medium">{row.partner}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td className="text-center py-5 px-8 border-b border-primary/5 bg-primary/[0.01] opacity-50 grayscale">
+                                                        <div className="flex items-center justify-center gap-3">
+                                                            <CheckIcon status={row.nonPartnerCheck} />
+                                                            {row.nonPartnerCheck !== 'limited' && <span className="font-body text-primary/60 text-sm">{row.nonPartner}</span>}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </motion.div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Partners vs Non-Partners Comparison */}
-            <section className="py-32 lg:py-40 bg-[#FAFAF8] relative overflow-hidden">
-                <FloatingShapes />
-                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
-                    <motion.div
-                        className="text-center mb-20"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15 shadow-[0_4px_20px_rgb(201,151,63,0.1)]">Comparison</span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[1.02] tracking-[-0.03em]">TCL Academy Partners vs. Non-Partners</h2>
-                        <p className="font-body text-primary/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">See the difference between being a partner and participating on an event-by-event basis</p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="overflow-x-auto"
-                    >
-                        <div className="bg-white rounded-[2rem] border border-primary/[0.05] shadow-[0_40px_100px_rgb(0,0,0,0.08)] overflow-hidden">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="border-b-2 border-primary/10">
-                                        <th className="text-left py-6 px-8 font-heading text-primary font-bold text-sm">Feature / Access</th>
-                                        <th className="text-center py-6 px-8 font-heading text-white font-bold text-sm bg-gradient-to-r from-secondary to-secondary/90">
-                                            <div className="flex items-center justify-center gap-2">
-                                                <Crown className="w-4 h-4" />
-                                                TCL Academy Partners
-                                            </div>
-                                        </th>
-                                        <th className="text-center py-6 px-8 font-heading text-primary/50 font-bold text-sm bg-primary/[0.02]">Non-Partner Academies</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {partnerComparison.map((row, i) => (
-                                        <tr key={i} className="border-b border-primary/[0.04] hover:bg-secondary/[0.02] transition-colors">
-                                            <td className="py-5 px-8 font-body text-primary/75 text-[15px]">{row.feature}</td>
-                                            <td className="text-center py-5 px-8 bg-secondary/[0.03]">
-                                                <div className="flex items-center justify-center gap-3">
-                                                    <CheckIcon status={row.partnerCheck} />
-                                                    <span className="font-body text-primary/70 text-sm font-medium">{row.partner}</span>
-                                                </div>
-                                            </td>
-                                            <td className="text-center py-5 px-8 bg-primary/[0.01]">
-                                                <div className="flex items-center justify-center gap-3">
-                                                    <CheckIcon status={row.nonPartnerCheck} />
-                                                    {row.nonPartnerCheck !== 'limited' && <span className="font-body text-primary/40 text-sm">{row.nonPartner}</span>}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+            {/* Need Help CTA - Elegant Inline */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="container mx-auto px-6 lg:px-8 max-w-4xl relative -mt-10 mb-32 z-10"
+            >
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-white border border-primary/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="flex items-center gap-5">
+                        <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                            <Users className="w-5 h-5 text-secondary" />
                         </div>
-                    </motion.div>
+                        <div>
+                            <h4 className="font-heading text-primary font-bold text-lg">Need help choosing a tier?</h4>
+                            <p className="font-body text-primary/50 text-sm">Our partnership team can guide you to the right fit.</p>
+                        </div>
+                    </div>
+                    <Link href="/contact" className="px-6 py-3 bg-white border border-primary/10 rounded-xl font-heading text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary/5 transition-colors whitespace-nowrap">
+                        Contact Us
+                    </Link>
                 </div>
-            </section>
+            </motion.div>
 
             {/* How Partnership Works */}
             <section className="py-32 lg:py-40 relative overflow-hidden">
@@ -501,19 +642,27 @@ export default function RegisterPage() {
                 </div>
             </section>
 
-            {/* Membership Tiers - Premium Cards */}
-            <section className="py-32 lg:py-40 bg-white relative overflow-hidden">
-                <FloatingShapes />
+            {/* Membership Tiers - Premium Physical Cards */}
+            <section className="py-32 lg:py-40 bg-white relative overflow-hidden texture-noise">
+                {/* Background subtleties */}
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <motion.div
-                        className="text-center mb-20"
+                        className="text-center mb-24"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15 shadow-[0_4px_20px_rgb(201,151,63,0.1)]">Pricing</span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[1.02] tracking-[-0.03em]">Academy Partner Membership Tiers</h2>
-                        <p className="font-body text-primary/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">Choose the tier that best fits your academy's stage and goals</p>
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/10 shadow-sm rounded-full">
+                            Membership
+                        </span>
+                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em] mb-6">
+                            Choose Your <span className="text-secondary">Legacy</span>
+                        </h2>
+                        <p className="font-body text-primary/60 text-lg max-w-2xl mx-auto leading-relaxed">
+                            Select the partnership tier that aligns with your academy's ambition.
+                        </p>
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -524,278 +673,122 @@ export default function RegisterPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.7, delay: i * 0.12 }}
-                                className={`relative group ${tier.badge === 'Most Popular' ? 'lg:-mt-6 lg:mb-6' : ''}`}
+                                className={`relative group perspective-1000 ${tier.badge === 'Most Popular' ? 'lg:-mt-12 z-10' : ''}`}
                             >
-                                {/* Featured tier glow */}
-                                {tier.badge === 'Most Popular' && (
-                                    <>
-                                        <div className="absolute -inset-4 bg-gradient-to-br from-secondary/40 via-secondary/20 to-primary/20 rounded-[2.5rem] blur-2xl opacity-60" />
-                                        <div className="absolute -inset-[3px] bg-gradient-to-br from-secondary via-secondary/70 to-primary rounded-[2.25rem]" />
-                                    </>
-                                )}
+                                {/* The Physical Card */}
+                                <div className={`relative h-full rounded-[1.5rem] transition-all duration-500 transform-gpu hover:-translate-y-3 hover:rotate-x-2 
+                                    ${tier.name.includes('Founding')
+                                        ? 'bg-[#1a1a1a] text-white shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] border-t border-white/10' // Black Card
+                                        : tier.name.includes('National')
+                                            ? 'bg-[#E5E4E2] text-primary shadow-[0_20px_50px_-10px_rgba(0,0,0,0.2)] border-t border-white/50' // Platinum
+                                            : tier.name.includes('Regional')
+                                                ? 'bg-[#F5F5F7] text-primary shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] border-t border-white' // Steel
+                                                : 'bg-white text-primary shadow-[0_15px_30px_-10px_rgba(0,0,0,0.08)] border border-primary/5' // White
+                                    }
+                                    ${tier.badge === 'Most Popular' ? 'ring-1 ring-secondary/50' : ''}
+                                `}>
 
-                                <div className={`relative h-full rounded-[2rem] transition-all duration-500 ${tier.badge === 'Most Popular'
-                                    ? 'bg-primary text-white p-10 lg:p-12'
-                                    : 'bg-white border border-primary/[0.06] hover:border-primary/[0.12] hover:shadow-[0_40px_100px_rgb(0,0,0,0.1)] hover:-translate-y-2 p-9 lg:p-10'
-                                    }`}>
+                                    {/* Texture Overlay */}
+                                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-[1.5rem] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
 
-                                    {/* Badge */}
-                                    {tier.badge && (
-                                        <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full text-[9px] font-heading font-bold uppercase tracking-[0.2em] whitespace-nowrap ${tier.badge === 'Most Popular'
-                                            ? 'bg-secondary text-white shadow-[0_12px_40px_rgb(201,151,63,0.5)]'
-                                            : 'bg-gradient-to-r from-primary/10 to-primary/5 text-primary/50 border border-primary/[0.08]'
-                                            }`}>
-                                            {tier.badge}
+                                    {/* Card Content Top */}
+                                    <div className="p-8 lg:p-10 relative">
+                                        {/* Chip/Logo Area */}
+                                        <div className="flex justify-between items-start mb-12">
+                                            <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-white/20 to-transparent flex items-center justify-center border border-white/10 backdrop-blur-md ${tier.name.includes('Founding') ? 'text-secondary' : 'text-current opacity-70'}`}>
+                                                {tier.icon}
+                                            </div>
+                                            {tier.badge && (
+                                                <span className={`px-3 py-1 rounded text-[9px] font-heading font-bold uppercase tracking-widest border
+                                                    ${tier.badge === 'Most Popular'
+                                                        ? 'bg-secondary text-white border-secondary'
+                                                        : 'bg-primary/5 text-primary/50 border-primary/10'}
+                                                `}>
+                                                    {tier.badge}
+                                                </span>
+                                            )}
                                         </div>
-                                    )}
 
-                                    {/* Icon */}
-                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mt-2 ${tier.badge === 'Most Popular'
-                                        ? 'bg-secondary/20 text-secondary'
-                                        : 'bg-gradient-to-br from-primary/10 to-primary/5 text-primary'
-                                        }`}>
-                                        {tier.icon}
+                                        {/* Tier Name */}
+                                        <h3 className={`font-heading text-lg font-bold tracking-widest uppercase mb-2 opacity-90`}>
+                                            {tier.name}
+                                        </h3>
+
+                                        {/* Price */}
+                                        <div className="mb-8">
+                                            <span className="font-heading text-4xl font-bold tracking-tighter">{tier.price}</span>
+                                            <span className="font-body text-xs opacity-60 ml-1">{tier.period}</span>
+                                        </div>
+
+                                        {/* Divider */}
+                                        <div className={`h-px w-full mb-8 ${tier.name.includes('Founding') ? 'bg-white/10' : 'bg-primary/10'}`} />
+
+                                        {/* Features */}
+                                        <ul className="space-y-4 mb-2 min-h-[180px]">
+                                            {tier.features.slice(0, 5).map((feature, fi) => (
+                                                <li key={fi} className="flex items-start gap-3 text-sm group/item">
+                                                    {feature !== '—' ? (
+                                                        <>
+                                                            <Check size={14} className={`mt-1 flex-shrink-0 ${tier.name.includes('Founding') ? 'text-secondary' : 'text-green-600'}`} />
+                                                            <span className="font-body opacity-80 leading-snug">{feature}</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <X size={14} className="mt-1 flex-shrink-0 opacity-20" />
+                                                            <span className="font-body opacity-30 leading-snug">Not included</span>
+                                                        </>
+                                                    )}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
-                                    <h3 className={`font-heading text-xl font-bold mb-2 ${tier.badge === 'Most Popular' ? 'text-white' : 'text-primary'}`}>{tier.name}</h3>
-
-                                    {/* Price */}
-                                    <div className="mb-6">
-                                        <span className={`font-heading text-5xl font-bold tracking-[-0.03em] ${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-primary'}`}>{tier.price}</span>
-                                        <span className={`font-body text-sm ml-2 ${tier.badge === 'Most Popular' ? 'text-white/30' : 'text-primary/30'}`}>{tier.period}</span>
+                                    {/* Card Footer Button */}
+                                    <div className="p-8 lg:p-10 pt-0">
+                                        <button className={`w-full py-4 rounded-xl font-heading font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300
+                                            ${tier.name.includes('Founding')
+                                                ? 'bg-gradient-to-r from-secondary to-[#bf9530] text-white hover:shadow-[0_0_20px_rgba(201,151,63,0.4)]'
+                                                : 'bg-primary text-white hover:bg-primary/90 hover:shadow-lg'
+                                            }
+                                        `}>
+                                            Select Tier
+                                        </button>
+                                        <p className="text-center text-[10px] mt-4 opacity-40 font-body">
+                                            Includes {tier.name} benefits
+                                        </p>
                                     </div>
-
-                                    <p className={`font-body text-sm mb-8 leading-relaxed ${tier.badge === 'Most Popular' ? 'text-white/50' : 'text-primary/45'}`}>{tier.description}</p>
-
-                                    {/* Features */}
-                                    <ul className="space-y-4 mb-10">
-                                        {tier.features.map((feature, fi) => (
-                                            <li key={fi} className={`flex items-start gap-4 text-sm ${tier.badge === 'Most Popular' ? 'text-white/75' : 'text-primary/60'}`}>
-                                                {feature !== '—' ? (
-                                                    <>
-                                                        <span className={`flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center mt-0.5 ${tier.badge === 'Most Popular' ? 'bg-secondary/25' : 'bg-emerald-500/10'}`}>
-                                                            <Check className={`${tier.badge === 'Most Popular' ? 'text-secondary' : 'text-emerald-500'}`} size={14} />
-                                                        </span>
-                                                        <span className="font-body">{feature}</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <span className={`flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center mt-0.5 ${tier.badge === 'Most Popular' ? 'bg-white/10' : 'bg-primary/[0.04]'}`}>
-                                                            <X className={`${tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}`} size={14} />
-                                                        </span>
-                                                        <span className={tier.badge === 'Most Popular' ? 'text-white/20' : 'text-primary/20'}>Not included</span>
-                                                    </>
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    {/* CTA Button */}
-                                    <button className={`w-full py-5 rounded-2xl font-heading font-bold text-[13px] uppercase tracking-[0.15em] transition-all duration-400 ${tier.badge === 'Most Popular'
-                                        ? 'bg-secondary text-white hover:bg-secondary/90 shadow-[0_12px_40px_rgb(201,151,63,0.4)] hover:shadow-[0_16px_50px_rgb(201,151,63,0.5)]'
-                                        : 'bg-primary text-white hover:bg-primary/90 shadow-[0_12px_40px_rgb(26,51,80,0.2)] hover:shadow-[0_16px_50px_rgb(26,51,80,0.3)]'
-                                        }`}>
-                                        Get Started
-                                    </button>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
-
-                    <p className="text-center font-body text-primary/35 text-sm mt-16 italic">
-                        Tournament entry fees are charged separately per event.
-                    </p>
                 </div>
             </section>
 
-            {/* Partner Tier Overview Table */}
-            <section className="py-32 lg:py-40 bg-[#FAFAF8] relative overflow-hidden">
-                <FloatingShapes />
-                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
+
+            {/* What We Expect from Academy Partners */}
+            <section className="py-24 lg:py-32 bg-[#FAFAF8] relative overflow-hidden">
+                <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative">
                     <motion.div
-                        className="text-center mb-20"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
+                        className="text-center"
                     >
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15 shadow-[0_4px_20px_rgb(201,151,63,0.1)]">Detailed Benefits</span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[1.02] tracking-[-0.03em]">Partner Tier Overview</h2>
-                        <p className="font-body text-primary/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">A comprehensive breakdown of benefits across all partner tiers</p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="overflow-x-auto"
-                    >
-                        <div className="bg-white rounded-[2rem] border border-primary/[0.05] shadow-[0_40px_100px_rgb(0,0,0,0.08)] overflow-hidden">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="border-b-2 border-primary/10">
-                                        <th className="text-left py-6 px-6 font-heading text-primary font-bold text-sm min-w-[240px]">Benefit</th>
-                                        <th className="text-center py-6 px-4 font-heading text-white font-bold text-sm bg-gradient-to-r from-secondary to-secondary/90 min-w-[140px]">
-                                            <div className="flex flex-col items-center gap-1">
-                                                <Crown className="w-4 h-4" />
-                                                <span>Founding</span>
-                                            </div>
-                                        </th>
-                                        <th className="text-center py-6 px-4 font-heading text-primary font-bold text-sm bg-primary/[0.04] min-w-[140px]">National</th>
-                                        <th className="text-center py-6 px-4 font-heading text-primary font-bold text-sm bg-primary/[0.02] min-w-[140px]">Regional</th>
-                                        <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-sm min-w-[140px]">Development</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {partnerTierOverview.map((row, i) => (
-                                        <tr key={i} className="border-b border-primary/[0.04] hover:bg-secondary/[0.02] transition-colors">
-                                            <td className="py-5 px-6 font-body text-primary/75 text-[15px]">{row.benefit}</td>
-                                            <td className="text-center py-5 px-4 bg-secondary/[0.03]">
-                                                {typeof row.founding === 'boolean' ? (
-                                                    <CheckIcon status={row.founding} />
-                                                ) : (
-                                                    <span className="font-body text-primary/70 text-sm font-medium">{row.founding}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4 bg-primary/[0.02]">
-                                                {typeof row.national === 'boolean' ? (
-                                                    <CheckIcon status={row.national} />
-                                                ) : (
-                                                    <span className="font-body text-primary/60 text-sm">{row.national}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4 bg-primary/[0.01]">
-                                                {typeof row.regional === 'boolean' ? (
-                                                    <CheckIcon status={row.regional} />
-                                                ) : (
-                                                    <span className="font-body text-primary/50 text-sm">{row.regional}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4">
-                                                {typeof row.development === 'boolean' ? (
-                                                    <CheckIcon status={row.development} />
-                                                ) : (
-                                                    <span className="font-body text-primary/40 text-sm">{row.development}</span>
-                                                )}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Facilities & High-Performance Camps Access Table */}
-            <section className="py-32 lg:py-40 bg-primary relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/[0.08] via-transparent to-transparent" />
-                <PremiumPattern />
-
-                <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
-                    <motion.div
-                        className="text-center mb-20"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
-                            <Building2 className="w-4 h-4" />
-                            Facilities Access
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
+                            Expectations
                         </span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-white font-bold leading-[1.02] tracking-[-0.03em]">Facilities & High-Performance Camps</h2>
-                        <p className="font-body text-white/45 text-xl mt-7 max-w-3xl mx-auto leading-relaxed">Access to premium facilities and elite training opportunities</p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="overflow-x-auto"
-                    >
-                        <div className="bg-white/[0.03] backdrop-blur-sm rounded-[2rem] border border-white/[0.08] overflow-hidden">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="border-b border-white/[0.08]">
-                                        <th className="text-left py-6 px-6 font-heading text-white font-bold text-sm min-w-[280px]">Access Type</th>
-                                        <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-sm bg-secondary/[0.1] min-w-[140px]">
-                                            <div className="flex flex-col items-center gap-1">
-                                                <Crown className="w-4 h-4" />
-                                                <span>Founding</span>
-                                            </div>
-                                        </th>
-                                        <th className="text-center py-6 px-4 font-heading text-white/80 font-bold text-sm min-w-[140px]">National</th>
-                                        <th className="text-center py-6 px-4 font-heading text-white/60 font-bold text-sm min-w-[140px]">Regional</th>
-                                        <th className="text-center py-6 px-4 font-heading text-white/40 font-bold text-sm min-w-[140px]">Development</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {facilitiesAccess.map((row, i) => (
-                                        <tr key={i} className="border-b border-white/[0.04] hover:bg-white/[0.02] transition-colors">
-                                            <td className="py-5 px-6 font-body text-white/70 text-[15px]">{row.benefit}</td>
-                                            <td className="text-center py-5 px-4 bg-secondary/[0.05]">
-                                                {typeof row.founding === 'boolean' ? (
-                                                    row.founding ? (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-secondary/20 shadow-[0_4px_12px_rgb(201,151,63,0.2)]">
-                                                            <Check className="text-secondary" size={16} />
-                                                        </span>
-                                                    ) : (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
-                                                            <X className="text-white/20" size={16} />
-                                                        </span>
-                                                    )
-                                                ) : (
-                                                    <span className="font-body text-secondary text-sm font-medium">{row.founding}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4">
-                                                {typeof row.national === 'boolean' ? (
-                                                    row.national ? (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
-                                                            <Check className="text-emerald-400" size={16} />
-                                                        </span>
-                                                    ) : (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
-                                                            <X className="text-white/20" size={16} />
-                                                        </span>
-                                                    )
-                                                ) : (
-                                                    <span className="font-body text-white/60 text-sm">{row.national}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4">
-                                                {typeof row.regional === 'boolean' ? (
-                                                    row.regional ? (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
-                                                            <Check className="text-emerald-400" size={16} />
-                                                        </span>
-                                                    ) : (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
-                                                            <X className="text-white/20" size={16} />
-                                                        </span>
-                                                    )
-                                                ) : (
-                                                    <span className="font-body text-white/50 text-sm">{row.regional}</span>
-                                                )}
-                                            </td>
-                                            <td className="text-center py-5 px-4">
-                                                {typeof row.development === 'boolean' ? (
-                                                    row.development ? (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/20">
-                                                            <Check className="text-emerald-400" size={16} />
-                                                        </span>
-                                                    ) : (
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-white/5">
-                                                            <X className="text-white/20" size={16} />
-                                                        </span>
-                                                    )
-                                                ) : (
-                                                    <span className="font-body text-white/40 text-sm">{row.development}</span>
-                                                )}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                        <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
+                            What We Expect from Academy Partners
+                        </h2>
+                        <div className="max-w-3xl mx-auto p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-[0_20px_60px_rgb(0,0,0,0.08)]">
+                            <div className="flex items-start gap-6">
+                                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-2xl flex items-center justify-center shadow-[0_8px_24px_rgb(201,151,63,0.15)]">
+                                    <Shield className="text-secondary w-7 h-7" />
+                                </div>
+                                <p className="font-body text-primary/75 text-lg leading-relaxed text-left">
+                                    Academy Partners should conduct themselves in a manner that reflects positively on youth cricket and supports the broader goal of growing the sport responsibly in the United States.
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
@@ -898,6 +891,6 @@ export default function RegisterPage() {
                     </motion.div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }

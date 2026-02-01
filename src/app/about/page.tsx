@@ -200,7 +200,7 @@ export default function AboutPage() {
                             <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-4">Our Home</span>
                             <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-6">Sports Texoma</h2>
                             <p className="font-body text-lg text-white/80 mb-8 leading-relaxed">
-                                Sports Texoma is a regional sports complex platform rooted in the <strong className="text-secondary">Texoma Region</strong>, spanning communities across <strong className="text-secondary">Texas and Oklahoma</strong>. At the heart of TCL is Sports Texoma, our home venue where we anchor our national championships at a centralized, purpose-built facility.
+                                Sports Texoma is a regional sports complex platform rooted in the <strong className="text-secondary">Texoma Region</strong>, spanning communities across <strong className="text-secondary">Texas and Oklahoma</strong>. At the heart of TCL is Sports Texoma, the home venue where we anchor the national championships at a centralized, purpose-built facility.
                             </p>
                             <div className="space-y-4">
                                 <h3 className="font-heading text-white font-semibold">We exist to:</h3>
@@ -247,7 +247,7 @@ export default function AboutPage() {
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-secondary text-primary text-center">
                 <div className="container mx-auto px-6 max-w-4xl">
                     <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Join the TCL Family?</h2>
-                    <p className="font-body text-lg opacity-80 mb-10">Whether you&apos;re a player, parent, coach, or academy—there&apos;s a place for you here.</p>
+                    <p className="font-body text-lg opacity-80 mb-10">Whether you&apos;re a player, parent, coach, academy, umpire, or scorer—there&apos;s a place for you here.</p>
                     <Link href="/register" className="inline-block px-12 py-5 bg-primary text-white font-heading font-bold text-xs tracking-widest uppercase rounded-lg shadow-xl hover:bg-accent transition-all">
                         REGISTER NOW
                     </Link>
