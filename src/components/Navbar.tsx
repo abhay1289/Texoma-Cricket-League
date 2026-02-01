@@ -22,9 +22,9 @@ interface NavLinkItem {
 
 const navLinks: NavLinkItem[] = [
     { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
     { name: 'Tournaments', href: '/tournaments' },
     { name: 'Register', href: '/register' },
-    { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
 ];
 
