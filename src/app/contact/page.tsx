@@ -86,21 +86,21 @@ const ContactInfo = () => (
             {
                 icon: <Mail size={24} />,
                 title: "Email Us",
-                content: "info@sports-texoma.com",
+                content: "Coming Soon",
                 sub: "Response within 2 hrs",
                 bg: "bg-blue-50 text-blue-600"
             },
             {
                 icon: <Phone size={24} />,
                 title: "Call Us",
-                content: "(555) 123-4567",
+                content: "Coming Soon",
                 sub: "Mon-Sat, 9am-6pm",
                 bg: "bg-green-50 text-green-600"
             },
             {
                 icon: <MapPin size={24} />,
                 title: "Visit HQ",
-                content: "1234 Heritage Way",
+                content: "Coming Soon",
                 sub: "Pottsboro, TX 75076",
                 bg: "bg-orange-50 text-orange-600"
             }

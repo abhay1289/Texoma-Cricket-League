@@ -106,30 +106,47 @@ export default function AboutPage() {
                 align="center"
             />
 
-            {/* Vision & Mission */}
-            <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white">
+            {/* Vision & Mission - Premium Natural Design */}
+            <section className="py-20 md:py-28 bg-white">
                 <div className="container mx-auto px-6 max-w-6xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+                    {/* Intro Content - Missing paragraphs from user's image */}
+                    <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
+                        <p className="font-body text-lg md:text-xl text-primary/80 leading-relaxed mb-6">
+                            Texoma Cricket League is not a local league that happens to host tournaments. It is a national platform built to unify youth cricket communities, showcase emerging talent, and establish Sports Texoma as the home of America's premier youth cricket championships.
+                        </p>
+                        <p className="font-body text-lg md:text-xl text-primary/70 leading-relaxed mb-6">
+                            As we continue to grow, TCL aims to become the trusted destination for academies, coaches, players, and families seeking meaningful competition, professional execution, and a clear national stage.
+                        </p>
+                        <p className="font-body text-lg md:text-xl text-primary/70 leading-relaxed">
+                            Sports Texoma is a regional sports complex platform rooted in the <strong className="text-primary font-semibold">Texoma Region</strong>, spanning communities across <strong className="text-primary font-semibold">Texas and Oklahoma</strong>.
+                        </p>
+                    </div>
+
+                    {/* Vision & Mission Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="p-10 bg-primary rounded-2xl text-white"
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="relative p-8 md:p-10 bg-primary rounded-xl"
                         >
-                            <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-4">Vision</span>
-                            <p className="font-body text-lg leading-relaxed text-white/90">
+                            <div className="absolute top-0 left-8 w-12 h-1 bg-secondary rounded-b-full" />
+                            <span className="font-heading text-secondary font-semibold uppercase tracking-widest text-xs block mb-5 pt-2">Our Vision</span>
+                            <p className="font-body text-white/90 text-base md:text-lg leading-relaxed">
                                 To build a unified national pathway that connects grassroots participation to elite youth competition—bringing clarity, consistency, and aspiration to the youth cricket ecosystem and supporting the sport's growth into the American mainstream.
                             </p>
                         </motion.div>
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="p-10 bg-bg-cream rounded-2xl border border-primary/10"
+                            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                            className="relative p-8 md:p-10 bg-bg-cream rounded-xl border border-primary/8"
                         >
-                            <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-4">Mission</span>
-                            <p className="font-body text-lg leading-relaxed text-primary/80">
+                            <div className="absolute top-0 left-8 w-12 h-1 bg-secondary rounded-b-full" />
+                            <span className="font-heading text-primary font-semibold uppercase tracking-widest text-xs block mb-5 pt-2">Our Mission</span>
+                            <p className="font-body text-primary/80 text-base md:text-lg leading-relaxed">
                                 To unite youth cricket teams from across the United States through a nationally respected tournament platform that delivers meaningful competition, clear development pathways, and consistently high standards—creating positive, accessible, and inspiring experiences for players, families, and the broader cricket community.
                             </p>
                         </motion.div>
@@ -138,24 +155,24 @@ export default function AboutPage() {
             </section>
 
             {/* About TCL Story */}
-            <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-light">
+            <section className="py-20 md:py-28 bg-bg-light">
                 <div className="container mx-auto px-6 max-w-7xl">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="lg:w-1/2 space-y-8">
+                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                        <div className="lg:w-1/2 space-y-6">
                             <SectionHeader label="About Texoma Cricket League" title="Premier National Youth Cricket Platform" alignment="left" />
-                            <div className="space-y-6 font-body text-primary/70 text-lg leading-relaxed">
+                            <div className="space-y-5 font-body text-primary/75 text-base md:text-lg leading-relaxed">
                                 <p>Texoma Cricket League (TCL) is a premier national youth cricket tournament platform built on global standards, delivering a world-class youth cricket experience in the United States.</p>
                                 <p>Built around the belief that young cricketers deserve professional competition and clear pathways, TCL brings together teams from across the country to compete in well-organized, high-quality tournaments that reward preparation, skill, and sportsmanship.</p>
                                 <p>TCL operates on a <strong className="text-primary">national tournament pathway model</strong>, with regional events and qualifiers leading to flagship championships at Sports Texoma. This structure gives academies and teams a clear objective, meaningful competition, and a reason to return year after year.</p>
                             </div>
-                            <div className="space-y-8 mt-8">
+                            <div className="space-y-6 mt-6">
                                 <TimelineItem year="2024" title="TCL Launched" desc="First community matches organized" />
                                 <TimelineItem year="2024" title="Growing Community" desc="New teams joining each month" />
                                 <TimelineItem year="2025" title="National Stage" desc="Regional qualifiers leading to championships" />
                             </div>
                         </div>
                         <div className="lg:w-1/2 relative">
-                            <div className="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+                            <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                                 <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Our Story" />
                             </div>
                         </div>
