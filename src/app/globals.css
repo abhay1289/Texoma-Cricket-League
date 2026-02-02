@@ -5,10 +5,10 @@
   /* Primary Palette - Logo Derived */
   --color-primary: #1e3a5f;
   /* Deep Navy Blue - from logo badge */
-  --color-secondary: #c41e3a;
-  /* Crimson Red - from Cricket League ribbon */
-  --color-accent: #f5a623;
+  --color-secondary: #f5a623;
   /* Golden Orange - from sunburst */
+  --color-accent: #4a90d9;
+  /* Sky Blue - from Texas outline */
 
   /* Extended Primary Shades (Navy) */
   --color-primary-50: #e8f0f7;
@@ -22,34 +22,29 @@
   --color-primary-800: #152b47;
   --color-primary-900: #0c1a2e;
 
-  /* Extended Secondary Shades (Crimson) */
-  --color-secondary-50: #fdeaee;
-  --color-secondary-100: #f9c5ce;
-  --color-secondary-200: #f49dab;
-  --color-secondary-300: #ef7488;
-  --color-secondary-400: #ea5570;
-  --color-secondary-500: #e43658;
-  --color-secondary-600: #c41e3a;
-  --color-secondary-700: #9b1830;
-  --color-secondary-800: #721226;
-  --color-secondary-900: #490c1b;
+  /* Extended Secondary Shades (Golden Orange) */
+  --color-secondary-50: #fef9eb;
+  --color-secondary-100: #fcefc4;
+  --color-secondary-200: #fae49a;
+  --color-secondary-300: #f8d970;
+  --color-secondary-400: #f6cf50;
+  --color-secondary-500: #f5a623;
+  --color-secondary-600: #d98d1c;
+  --color-secondary-700: #b87415;
+  --color-secondary-800: #965b0e;
+  --color-secondary-900: #744209;
 
-  /* Extended Accent Shades (Golden) */
-  --color-accent-50: #fef9eb;
-  --color-accent-100: #fcefc4;
-  --color-accent-200: #fae49a;
-  --color-accent-300: #f8d970;
-  --color-accent-400: #f6cf50;
-  --color-accent-500: #f5a623;
-  --color-accent-600: #d98d1c;
-  --color-accent-700: #b87415;
-  --color-accent-800: #965b0e;
-  --color-accent-900: #744209;
-
-  /* Sky Blue for accents (from Texas outline) */
-  --color-sky: #4a90d9;
-  --color-sky-light: #7ab3e8;
-  --color-sky-dark: #2e6bb3;
+  /* Extended Accent Shades (Sky Blue) */
+  --color-accent-50: #e8f4fc;
+  --color-accent-100: #c5e2f7;
+  --color-accent-200: #9fcff1;
+  --color-accent-300: #78bbea;
+  --color-accent-400: #5ba8e3;
+  --color-accent-500: #4a90d9;
+  --color-accent-600: #3a74b3;
+  --color-accent-700: #2e6bb3;
+  --color-accent-800: #235290;
+  --color-accent-900: #183a6d;
 
   /* Background - Clean, professional */
   --color-bg-cream: #f8fafc;
