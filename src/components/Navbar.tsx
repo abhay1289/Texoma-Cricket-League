@@ -10,7 +10,7 @@ const Logo: React.FC = () => (
         <img
             src="/logo.png"
             alt="Texoma Cricket League"
-            className="h-24 w-auto object-contain transform transition-transform group-hover:scale-105"
+            className="h-28 w-auto object-contain transform transition-transform group-hover:scale-105"
         />
     </Link>
 );
@@ -41,7 +41,7 @@ const NavLinks: React.FC<{ className?: string }> = ({ className = "" }) => {
                     <Link
                         key={link.name}
                         href={link.href}
-                        className={`font-subheading text-[11px] font-bold tracking-[0.15em] transition-all uppercase px-5 py-2.5 rounded-full relative ${isActive
+                        className={`font-subheading text-[12px] font-bold tracking-[0.15em] transition-all uppercase px-5 py-2.5 rounded-full relative ${isActive
                             ? 'text-primary bg-white shadow-soft ring-1 ring-black/5'
                             : 'text-text-dark/60 hover:text-primary hover:bg-white/50 hover:shadow-sm'
                             }`}

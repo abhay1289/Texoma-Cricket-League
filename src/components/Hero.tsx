@@ -61,7 +61,7 @@ const HeroIndicators = () => (
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative h-[90svh] w-full flex items-center justify-center overflow-hidden bg-accent">
+        <section className="relative h-[80svh] w-full flex items-center justify-center overflow-hidden bg-accent">
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2600"
