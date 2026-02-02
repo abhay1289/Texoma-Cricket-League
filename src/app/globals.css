@@ -1,23 +1,64 @@
 @import "tailwindcss";
 
-/* Theme Colors - Refined for Trust & Maturity */
+/* Theme Colors - Based on TCL Logo Palette */
 @theme inline {
-  /* Primary Palette - Enterprise Grade */
-  --color-primary: #6D162F;
-  /* Deeper Maroon for authority */
-  --color-secondary: #D4AF37;
-  /* Metallic Gold, less yellow */
-  --color-accent: #1A3350;
-  /* Navy unchanged */
+  /* Primary Palette - Logo Derived */
+  --color-primary: #1e3a5f;
+  /* Deep Navy Blue - from logo badge */
+  --color-secondary: #c41e3a;
+  /* Crimson Red - from Cricket League ribbon */
+  --color-accent: #f5a623;
+  /* Golden Orange - from sunburst */
 
-  /* Background - Warmer, more professional */
-  --color-bg-cream: #F9F6F0;
-  /* Slightly cooler cream */
-  --color-bg-light: #FFFEFC;
+  /* Extended Primary Shades (Navy) */
+  --color-primary-50: #e8f0f7;
+  --color-primary-100: #c5d9eb;
+  --color-primary-200: #9fc0de;
+  --color-primary-300: #78a6d0;
+  --color-primary-400: #5b92c6;
+  --color-primary-500: #3d7eba;
+  --color-primary-600: #2d6294;
+  --color-primary-700: #1e3a5f;
+  --color-primary-800: #152b47;
+  --color-primary-900: #0c1a2e;
 
-  /* Text - High contrast, softer blacks */
-  --color-text-dark: #1A1210;
-  --color-text-light: #F4EBE0;
+  /* Extended Secondary Shades (Crimson) */
+  --color-secondary-50: #fdeaee;
+  --color-secondary-100: #f9c5ce;
+  --color-secondary-200: #f49dab;
+  --color-secondary-300: #ef7488;
+  --color-secondary-400: #ea5570;
+  --color-secondary-500: #e43658;
+  --color-secondary-600: #c41e3a;
+  --color-secondary-700: #9b1830;
+  --color-secondary-800: #721226;
+  --color-secondary-900: #490c1b;
+
+  /* Extended Accent Shades (Golden) */
+  --color-accent-50: #fef9eb;
+  --color-accent-100: #fcefc4;
+  --color-accent-200: #fae49a;
+  --color-accent-300: #f8d970;
+  --color-accent-400: #f6cf50;
+  --color-accent-500: #f5a623;
+  --color-accent-600: #d98d1c;
+  --color-accent-700: #b87415;
+  --color-accent-800: #965b0e;
+  --color-accent-900: #744209;
+
+  /* Sky Blue for accents (from Texas outline) */
+  --color-sky: #4a90d9;
+  --color-sky-light: #7ab3e8;
+  --color-sky-dark: #2e6bb3;
+
+  /* Background - Clean, professional */
+  --color-bg-cream: #f8fafc;
+  /* Light blue-gray tint */
+  --color-bg-light: #ffffff;
+
+  /* Text - High contrast */
+  --color-text-dark: #0f172a;
+  --color-text-light: #f1f5f9;
 
   /* Font Families */
   --font-heading: 'Poppins', sans-serif;
@@ -45,8 +86,8 @@
 /* Base Styles */
 body {
   overflow-x: hidden;
-  background-color: #FAF7F2;
-  color: #1F1714;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -93,21 +134,21 @@ button:active,
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F2;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7A1B38;
+  background: #1e3a5f;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5A1428;
+  background: #152b47;
 }
 
 /* Geometric Pattern Background - Subtler */
 .geometric-pattern {
-  background-color: #F9F6F0;
+  background-color: #f8fafc;
   background-image: url("https://www.transparenttextures.com/patterns/az-subtle.png");
   opacity: 1;
 }
@@ -129,8 +170,8 @@ button:active,
 
 /* Glass Navigation - More Solid */
 .glass-nav {
-  background: rgba(249, 246, 240, 0.85);
-  /* Slightly lighter/cleaner */
+  background: rgba(248, 250, 252, 0.9);
+  /* Clean blue-gray tint */
   backdrop-filter: blur(20px);
   /* Increased blur */
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -178,13 +219,13 @@ html {
 
 /* Selection Colors */
 ::selection {
-  background-color: #7A1B38;
+  background-color: #1e3a5f;
   color: white;
 }
 
 /* Focus States - Professional */
 :focus-visible {
-  outline: 2px solid #C9973F;
+  outline: 2px solid #f5a623;
   outline-offset: 2px;
 }
 
@@ -207,8 +248,8 @@ a {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #C9973F;
-  box-shadow: 0 0 0 3px rgba(201, 151, 63, 0.15);
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
 }
 
 /* Table Styles for Tournament Data */
@@ -239,7 +280,7 @@ th {
   right: 2rem;
   width: 48px;
   height: 48px;
-  background: #7A1B38;
+  background: #1e3a5f;
   color: white;
   border: none;
   border-radius: 50%;
@@ -251,7 +292,7 @@ th {
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(122, 27, 56, 0.3);
+  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.3);
   z-index: 50;
 }
 
@@ -262,9 +303,9 @@ th {
 }
 
 .scroll-to-top:hover {
-  background: #5A1428;
+  background: #152b47;
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(122, 27, 56, 0.4);
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.4);
 }
 
 .scroll-to-top:active {
