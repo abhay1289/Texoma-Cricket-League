@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
     return (
         <>
             <nav className="sticky top-0 z-[100] pt-2 sm:pt-4 pb-2 flex justify-center w-full pointer-events-none">
-                <div className="pointer-events-auto flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 md:px-12 py-1.5 sm:py-2 rounded-full transition-all duration-500 glass-nav shadow-super mx-2 sm:mx-4">
+                <div className="pointer-events-auto flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 md:px-12 py-3 sm:py-4 rounded-full transition-all duration-500 glass-nav shadow-super mx-2 sm:mx-4">
                     <Logo />
                     <NavLinks className="hidden lg:flex items-center space-x-4" />
                     <SocialLinks />
