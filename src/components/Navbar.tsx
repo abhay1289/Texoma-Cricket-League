@@ -6,11 +6,11 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Logo: React.FC = () => (
-    <Link href="/" className="flex items-center group relative -my-6">
+    <Link href="/" className="flex items-center group relative -my-8">
         <img
             src="/logo.png"
             alt="Texoma Cricket League"
-            className="h-24 w-auto object-contain transform transition-transform group-hover:scale-105"
+            className="h-28 w-auto object-contain transform transition-transform group-hover:scale-105"
         />
     </Link>
 );
