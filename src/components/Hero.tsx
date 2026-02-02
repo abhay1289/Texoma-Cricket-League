@@ -31,7 +31,7 @@ const HeroContent = () => (
             <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} className="w-full sm:w-auto">
                 <Link
                     href="/register"
-                    className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-secondary text-text-dark font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase shadow-lg hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-secondary text-white font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase shadow-lg hover:shadow-xl transition-all"
                 >
                     Register Now
                     <ArrowRight size={14} className="sm:w-4 sm:h-4" />
