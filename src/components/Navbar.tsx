@@ -43,7 +43,7 @@ const NavLinks: React.FC<{ className?: string }> = ({ className = "" }) => {
                         href={link.href}
                         className={`font-subheading text-[12px] font-bold tracking-[0.15em] transition-all uppercase px-5 py-2.5 rounded-full relative ${isActive
                             ? 'text-primary bg-white shadow-soft ring-1 ring-black/5'
-                            : 'text-text-dark/60 hover:text-primary hover:bg-white/50 hover:shadow-sm'
+                            : 'text-text-dark/80 hover:text-primary hover:bg-white/50 hover:shadow-sm'
                             }`}
                     >
                         {link.name}
