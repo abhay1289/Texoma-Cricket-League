@@ -159,21 +159,37 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 max-w-7xl">
                     <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
                         <div className="lg:w-1/2 space-y-6">
-                            <SectionHeader label="About Texoma Cricket League" title="Premier National Youth Cricket Platform" alignment="left" />
+                            <SectionHeader label="Our Vision" title="Building the Future of American Cricket" alignment="left" />
                             <div className="space-y-5 font-body text-primary/75 text-base md:text-lg leading-relaxed">
-                                <p>Texoma Cricket League (TCL) is a premier national youth cricket tournament platform built on global standards, delivering a world-class youth cricket experience in the United States.</p>
-                                <p>Built around the belief that young cricketers deserve professional competition and clear pathways, TCL brings together teams from across the country to compete in well-organized, high-quality tournaments that reward preparation, skill, and sportsmanship.</p>
-                                <p>TCL operates on a <strong className="text-primary">national tournament pathway model</strong>, with regional events and qualifiers leading to flagship championships at Sports Texoma. This structure gives academies and teams a clear objective, meaningful competition, and a reason to return year after year.</p>
-                            </div>
-                            <div className="space-y-6 mt-6">
-                                <TimelineItem year="2024" title="TCL Launched" desc="First community matches organized" />
-                                <TimelineItem year="2024" title="Growing Community" desc="New teams joining each month" />
-                                <TimelineItem year="2025" title="National Stage" desc="Regional qualifiers leading to championships" />
+                                <p>We envision a future where cricket in the United States is organized, accessible, and respected at every level—from first exposure at the grassroots to elite competition on the national stage.</p>
+                                <p>At Texoma Cricket League, our vision is to help build a strong, sustainable cricket ecosystem by providing structured competition, professional environments, and clear pathways for player development. We believe the long-term success of American cricket depends on consistent standards, centralized championship venues, and community-driven participation, rather than fragmented, short-term events.</p>
+                                <p>Our focus begins at the grassroots, where passion for the game is formed and fundamentals are built. From there, we aim to support the natural progression of players, teams, and officials through well-defined competitive tiers that encourage growth, accountability, and excellence.</p>
+                                <p>By anchoring national events at Sports Texoma, we seek to create a recognized home for major cricket championships in the United States—a destination that reflects professionalism, fairness, and pride in the game.</p>
+                                <p className="font-semibold text-primary">Ultimately, our vision is to contribute meaningfully to an American cricket landscape where:</p>
+                                <ul className="space-y-3 pl-4">
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                                        <span><strong>Players are developed</strong>, not rushed</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                                        <span><strong>Competition is challenging</strong>, not chaotic</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                                        <span><strong>Communities are united</strong>, not isolated</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                                        <span><strong>Cricket is treated as a long-term sport</strong>, not a seasonal activity</span>
+                                    </li>
+                                </ul>
+                                <p>Through disciplined growth, collaboration, and a commitment to standards, Texoma Cricket League aims to play a defining role in shaping the future of American cricket.</p>
                             </div>
                         </div>
                         <div className="lg:w-1/2 relative">
                             <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Our Story" />
+                                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Our Vision" />
                             </div>
                         </div>
                     </div>
