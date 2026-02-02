@@ -189,13 +189,13 @@ export default function AboutPage() {
                         </div>
                         <div className="lg:w-1/2 relative space-y-6">
                             <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                                <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Our Vision" />
+                                <img src="/vision-cricket-field.png" className="w-full h-full object-cover" alt="Youth Cricket Championship" />
                             </div>
                             <div className="aspect-[16/9] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                                 <img
-                                    src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1200"
+                                    src="/vision-team-celebration.png"
                                     className="w-full h-full object-cover"
-                                    alt="Youth Cricket Championship"
+                                    alt="Team Celebration"
                                 />
                             </div>
                         </div>
