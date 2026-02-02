@@ -186,6 +186,14 @@ export default function AboutPage() {
                                 </ul>
                                 <p>Through disciplined growth, collaboration, and a commitment to standards, Texoma Cricket League aims to play a defining role in shaping the future of American cricket.</p>
                             </div>
+                            {/* Horizontal Image */}
+                            <div className="mt-8 aspect-[16/7] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                                <img
+                                    src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1200"
+                                    className="w-full h-full object-cover"
+                                    alt="Youth Cricket Championship"
+                                />
+                            </div>
                         </div>
                         <div className="lg:w-1/2 relative">
                             <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
