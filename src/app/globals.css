@@ -289,7 +289,7 @@ th {
   height: 48px;
   background: white;
   color: #1e3a5f;
-  border: 1px solid rgba(30, 58, 95, 0.15);
+  border: 2px solid #1e3a5f;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
