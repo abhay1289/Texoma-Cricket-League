@@ -88,18 +88,6 @@ export default function TournamentsPage() {
                     { label: 'Home', href: '/' },
                     { label: 'Tournaments', active: true }
                 ]}
-                badges={
-                    <div className="flex items-center gap-3">
-                        <div className="px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center gap-2.5">
-                            <Calendar className="text-secondary" size={16} />
-                            <span className="text-white text-xs font-semibold tracking-wide uppercase">2025 Season</span>
-                        </div>
-                        <div className="px-5 py-2.5 bg-secondary/20 backdrop-blur-sm rounded-full border border-secondary/30 flex items-center gap-2.5">
-                            <Trophy className="text-secondary" size={16} />
-                            <span className="text-secondary text-xs font-semibold tracking-wide uppercase">Partner Access</span>
-                        </div>
-                    </div>
-                }
             />
 
             {/* Calendar Section */}
