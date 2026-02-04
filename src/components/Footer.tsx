@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={label}
-                                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-secondary hover:bg-secondary hover:text-primary transition-all"
+                                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-secondary hover:bg-secondary hover:text-primary transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                                 >
                                     <Icon size={18} />
                                 </a>
@@ -116,12 +116,17 @@ const Footer: React.FC = () => {
                             Sign up for the latest league updates and draft news.
                         </p>
                         <form className="flex flex-col gap-2">
+                            <label htmlFor="footer-email" className="sr-only">Email Address</label>
                             <input
+                                id="footer-email"
                                 type="email"
                                 placeholder="Email Address"
-                                className="bg-white/10 border border-white/20 text-white text-sm p-3 rounded focus:outline-none focus:border-secondary transition-colors"
+                                className="bg-white/10 border border-white/20 text-white text-sm p-3 rounded focus:outline-none focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary/50 transition-colors"
                             />
-                            <button className="bg-secondary text-primary font-bold text-sm py-2 px-4 rounded hover:bg-white hover:text-primary transition-colors">
+                            <button
+                                type="submit"
+                                className="bg-secondary text-primary font-bold text-sm py-2 px-4 rounded hover:bg-white hover:text-primary transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                            >
                                 SUBSCRIBE
                             </button>
                         </form>

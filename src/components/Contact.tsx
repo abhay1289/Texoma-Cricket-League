@@ -38,10 +38,18 @@ const ContactDetails = () => (
     </div>
 );
 
-const FormInput = ({ label, type }: { label: string; type: string }) => (
+const FormInput = ({ label, type, id }: { label: string; type: string; id: string }) => (
     <div className="relative group">
-        <input type={type} className="w-full bg-transparent border-b border-primary/20 py-4 outline-none focus:border-secondary transition-colors font-body text-base peer text-primary" placeholder=" " />
-        <label className="absolute left-0 top-4 text-text-dark/50 font-heading text-xs tracking-widest uppercase font-semibold transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-5">
+        <input
+            id={id}
+            type={type}
+            className="w-full bg-transparent border-b border-primary/20 py-4 outline-none focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary/20 transition-colors font-body text-base peer text-primary"
+            placeholder=" "
+        />
+        <label
+            htmlFor={id}
+            className="absolute left-0 top-4 text-text-dark/50 font-heading text-xs tracking-widest uppercase font-semibold transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-5 cursor-text"
+        >
             {label}
         </label>
     </div>
@@ -52,22 +60,33 @@ const ContactForm = () => (
         <h3 className="font-heading text-xl sm:text-2xl text-primary mb-6 tracking-tight font-bold">Send a Message</h3>
         <form className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <FormInput label="Full Name" type="text" />
-                <FormInput label="Email" type="email" />
+                <FormInput label="Full Name" type="text" id="contact-name" />
+                <FormInput label="Email" type="email" id="contact-email" />
             </div>
             <div className="relative group">
-                <select className="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-secondary transition-colors font-body text-sm appearance-none cursor-pointer text-primary">
+                <label htmlFor="contact-subject" className="absolute left-0 -top-5 text-secondary font-heading text-xs tracking-widest uppercase font-bold">Subject</label>
+                <select
+                    id="contact-subject"
+                    className="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary/20 transition-colors font-body text-sm appearance-none cursor-pointer text-primary"
+                >
                     <option>General Inquiry</option>
                     <option>Corporate Partnership</option>
                     <option>Media</option>
                 </select>
-                <label className="absolute left-0 -top-5 text-secondary font-heading text-xs tracking-widest uppercase font-bold">Subject</label>
             </div>
             <div className="relative group">
-                <textarea rows={3} className="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-secondary transition-colors font-body text-sm resize-none" placeholder=" "></textarea>
-                <label className="absolute left-0 top-3 text-text-dark/40 font-heading text-xs tracking-widest uppercase font-bold transition-all">Message</label>
+                <label htmlFor="contact-message" className="absolute left-0 top-3 text-text-dark/40 font-heading text-xs tracking-widest uppercase font-bold transition-all">Message</label>
+                <textarea
+                    id="contact-message"
+                    rows={3}
+                    className="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-secondary focus-visible:ring-2 focus-visible:ring-secondary/20 transition-colors font-body text-sm resize-none"
+                    placeholder=" "
+                ></textarea>
             </div>
-            <button className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-heading font-bold text-sm tracking-wider rounded-lg shadow-md hover:bg-secondary hover:text-primary transition-all group duration-300">
+            <button
+                type="submit"
+                className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-heading font-bold text-sm tracking-wider rounded-lg shadow-md hover:bg-secondary hover:text-primary transition-all group duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+            >
                 Send Message <Send size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
         </form>

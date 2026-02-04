@@ -35,7 +35,7 @@ const PricingCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, ind
                 </li>
             ))}
         </ul>
-        <button className={`w-full py-3 sm:py-4 font-heading font-semibold text-xs tracking-widest transition-all duration-300 uppercase rounded-lg active:scale-[0.98] ${tier.isPremium ? 'bg-primary text-white hover:bg-secondary' : 'bg-bg-light text-primary border border-primary/10 hover:bg-primary hover:text-white'
+        <button className={`w-full py-3 sm:py-4 font-heading font-semibold text-xs tracking-widest transition-all duration-300 uppercase rounded-lg active:scale-[0.98] cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 ${tier.isPremium ? 'bg-primary text-white hover:bg-secondary' : 'bg-bg-light text-primary border border-primary/10 hover:bg-primary hover:text-white'
             }`}>
             {tier.isPremium ? 'Get Started' : 'Choose Plan'}
         </button>

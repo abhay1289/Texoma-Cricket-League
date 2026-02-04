@@ -8,14 +8,15 @@ import { Testimonial } from '@/lib/types';
 
 const CarouselControls = ({ onNext, onPrev }: { onNext: () => void; onPrev: () => void }) => (
     <div className="flex gap-3 sm:gap-4" role="group" aria-label="Testimonial navigation">
-        <button onClick={onPrev} aria-label="Previous testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
+        <button onClick={onPrev} aria-label="Previous testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
             <ChevronLeft size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
         </button>
-        <button onClick={onNext} aria-label="Next testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
+        <button onClick={onNext} aria-label="Next testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
             <ChevronRight size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
         </button>
     </div>
 );
+
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => (
     <div className="bg-white rounded-lg p-8 sm:p-10 md:p-12 shadow-lg relative border border-primary/5 w-full">
