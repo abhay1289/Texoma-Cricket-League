@@ -297,7 +297,7 @@ export default function TournamentsPage() {
                                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center mt-0.5">
                                         <CheckCircle className="text-secondary w-3.5 h-3.5" />
                                     </span>
-                                    <span className="font-body text-primary/70 text-[15px] leading-relaxed">
+                                    <span className="font-body text-primary/70 text-sm leading-relaxed">
                                         {n.prefix}{n.prefix ? ' ' : ''}
                                         <strong className="font-semibold text-primary">{n.bold}</strong>
                                         {n.suffix}

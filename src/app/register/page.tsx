@@ -283,7 +283,7 @@ export default function RegisterPage() {
                                                 <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                                     <Check className="text-secondary" size={18} />
                                                 </span>
-                                                <span className="font-body text-primary/75 text-[15px]">{item}</span>
+                                                <span className="font-body text-primary/75 text-sm">{item}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -432,11 +432,11 @@ export default function RegisterPage() {
                                     <table className="w-full min-w-[800px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
-                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Access Type</th>
-                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/3">Access Type</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -469,9 +469,9 @@ export default function RegisterPage() {
                                     <table className="w-full min-w-[600px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
-                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Feature / Access</th>
-                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">TCL Partner</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Non-Partner</th>
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/3">Feature / Access</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/3">TCL Partner</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/3">Non-Partner</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -533,7 +533,7 @@ export default function RegisterPage() {
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <div className="text-center mb-20">
-                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
+                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
                             <Rocket className="w-4 h-4" />
                             Process
                         </span>
@@ -573,7 +573,7 @@ export default function RegisterPage() {
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <div className="text-center mb-24">
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/10 shadow-sm rounded-full">
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-white border border-primary/10 shadow-sm rounded-full">
                             Membership
                         </span>
                         <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em] mb-6">
@@ -665,7 +665,7 @@ export default function RegisterPage() {
                                         `}>
                                             Select Tier
                                         </button>
-                                        <p className="text-center text-[10px] mt-4 opacity-40 font-body">
+                                        <p className="text-center text-xs mt-4 opacity-40 font-body">
                                             Includes {tier.name} benefits
                                         </p>
                                     </div>
@@ -681,7 +681,7 @@ export default function RegisterPage() {
             <section className="py-24 lg:py-32 bg-[#FAFAF8] relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative">
                     <div className="text-center">
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
                             Expectations
                         </span>
                         <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
@@ -706,7 +706,7 @@ export default function RegisterPage() {
                 <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15">Why TCL</span>
+                            <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15">Why TCL</span>
                             <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[1.02] tracking-[-0.03em] mb-8">Why Academies Choose TCL</h2>
 
                             <ul className="space-y-6">
@@ -733,7 +733,7 @@ export default function RegisterPage() {
                                 <p className="font-body text-primary/50 mb-8 text-sm">Annual membership, not individual event fees</p>
                                 <ul className="space-y-4">
                                     {feesBenefits.map((benefit, i) => (
-                                        <li key={i} className="flex items-start gap-4 font-body text-primary/65 text-[15px]">
+                                        <li key={i} className="flex items-start gap-4 font-body text-primary/65 text-sm">
                                             <span className="flex-shrink-0 w-6 h-6 rounded-lg bg-emerald-500/10 flex items-center justify-center mt-0.5">
                                                 <Check className="text-emerald-500" size={14} />
                                             </span>
@@ -754,7 +754,7 @@ export default function RegisterPage() {
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-4xl relative text-center">
                     <div>
-                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
+                        <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
                             <Sparkles className="w-4 h-4" />
                             Get Started
                         </span>
