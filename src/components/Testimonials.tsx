@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
 import { TESTIMONIALS } from '@/lib/constants';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Testimonial } from '@/lib/types';
@@ -19,13 +18,7 @@ const CarouselControls = ({ onNext, onPrev }: { onNext: () => void; onPrev: () =
 );
 
 const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }) => (
-    <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white rounded-lg p-8 sm:p-10 md:p-12 shadow-lg relative border border-primary/5 w-full"
-    >
+    <div className="bg-white rounded-lg p-8 sm:p-10 md:p-12 shadow-lg relative border border-primary/5 w-full">
         <Quote size={40} className="sm:w-[60px] sm:h-[60px] text-secondary opacity-20 absolute top-6 sm:top-10 right-6 sm:right-10" />
         <p className="font-heading text-lg sm:text-xl md:text-3xl text-primary leading-relaxed mb-8 sm:mb-12 italic font-light pr-8 sm:pr-0">
             &quot;{testimonial.text}&quot;
@@ -39,7 +32,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
                 <p className="font-heading text-xs sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-secondary font-bold">{testimonial.role}</p>
             </div>
         </div>
-    </motion.div>
+    </div>
 );
 
 const Testimonials: React.FC = () => {
@@ -62,9 +55,7 @@ const Testimonials: React.FC = () => {
                         </div>
                     </div>
                     <div className="lg:w-2/3 relative min-h-[280px] sm:min-h-[350px] lg:h-[420px] flex items-center w-full">
-                        <AnimatePresence mode="wait">
-                            <TestimonialCard key={index} testimonial={TESTIMONIALS[index]} />
-                        </AnimatePresence>
+                        <TestimonialCard key={index} testimonial={TESTIMONIALS[index]} />
                         <div className="absolute -bottom-2 sm:-bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
                             {TESTIMONIALS.map((_, i) => (
                                 <div key={i} className={`h-1 transition-all duration-500 rounded-full ${i === index ? 'w-6 sm:w-8 bg-secondary' : 'w-2 sm:w-3 bg-primary/10'}`} />

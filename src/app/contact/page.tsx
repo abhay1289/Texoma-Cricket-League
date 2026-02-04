@@ -1,15 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
-    Mail, Phone, MessageCircle, Send, Clock, MapPin,
-    ExternalLink, CheckCircle2, ChevronRight, User
+    Mail, Phone, Send, MapPin,
+    CheckCircle2
 } from 'lucide-react';
 import PageHero from '@/components/PageHero';
-
-// Component removed, replaced by PageHero
 
 const ContactForm = () => {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
@@ -22,11 +18,7 @@ const ContactForm = () => {
 
     if (status === 'success') {
         return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-white p-12 rounded-super shadow-super border border-primary/5 text-center"
-            >
+            <div className="bg-white p-12 rounded-super shadow-super border border-primary/5 text-center">
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
                     <CheckCircle2 size={40} />
                 </div>
@@ -38,7 +30,7 @@ const ContactForm = () => {
                 >
                     Send Another
                 </button>
-            </motion.div>
+            </div>
         );
     }
 
@@ -118,10 +110,6 @@ const ContactInfo = () => (
         ))}
     </div>
 );
-
-
-
-// ...
 
 const MapSection = () => (
     <div className="w-full h-[400px] md:h-[500px] rounded-super overflow-hidden shadow-elevated border border-gray-100 relative grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
