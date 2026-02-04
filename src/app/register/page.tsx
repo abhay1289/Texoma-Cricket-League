@@ -576,7 +576,7 @@ export default function RegisterPage() {
                         <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-white border border-primary/10 shadow-sm rounded-full">
                             Membership
                         </span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em] mb-6">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em] mb-6">
                             Choose Your <span className="text-secondary">Legacy</span>
                         </h2>
                         <p className="font-body text-primary/60 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -684,7 +684,7 @@ export default function RegisterPage() {
                         <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
                             Expectations
                         </span>
-                        <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
                             What We Expect from Academy Partners
                         </h2>
                         <div className="max-w-3xl mx-auto p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-lg">
@@ -706,8 +706,8 @@ export default function RegisterPage() {
                 <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15">Why TCL</span>
-                            <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[1.02] tracking-[-0.03em] mb-8">Why Academies Choose TCL</h2>
+                            <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15">The TCL Advantage</span>
+                            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-[1.02] tracking-[-0.03em] mb-8">Why Academies Choose TCL</h2>
 
                             <ul className="space-y-6">
                                 {whyChooseTCL.map((item, i) => (
