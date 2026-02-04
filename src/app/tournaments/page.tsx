@@ -81,8 +81,8 @@ export default function TournamentsPage() {
     return (
         <div className="bg-bg-light min-h-screen">
             <PageHero
-                title="Tournaments"
-                description="Your comprehensive guide to TCL's annual tournament calendar"
+                title="Tournament Calendar"
+                description="Your comprehensive guide to TCL's annual competitive season and championship events"
                 image="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=95&w=2600"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },

@@ -133,8 +133,8 @@ export default function ContactPage() {
     return (
         <div className="bg-bg-cream min-h-screen">
             <PageHero
-                title="Get In Touch"
-                description="Contact us for inquiries about youth cricket tournaments, team registration, or partnership opportunities."
+                title="Connect With Us"
+                description="Have questions about the league, registration, or partnership opportunities? We're here to help you succeed."
                 image="/contact-hero.png"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },

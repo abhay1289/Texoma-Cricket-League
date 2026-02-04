@@ -94,14 +94,22 @@ export default function AboutPage() {
         <div className="w-full bg-bg-light">
             {/* Hero Header */}
             <PageHero
-                title="About Us"
-                description="Big Dreams! Young Bats"
+                title="Empowering Youth Cricket"
+                description="Building the premier platform for the next generation of American cricketers."
                 image="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2000"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'About', active: true }
                 ]}
                 align="center"
+                badges={
+                    <div className="flex items-center gap-3">
+                        <div className="px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center gap-2.5">
+                            <Shield className="text-secondary" size={16} />
+                            <span className="text-white text-xs font-semibold tracking-wide uppercase">Est. 2024</span>
+                        </div>
+                    </div>
+                }
             />
 
             {/* Vision & Mission - Premium Natural Design */}
