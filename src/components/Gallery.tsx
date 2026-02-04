@@ -2,17 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { GALLERY_IMAGES } from '@/lib/constants';
 
-const GalleryItem: React.FC<{ src: string; className: string; delay: number; title: string }> = ({ src, className, delay, title }) => (
-    <motion.div
-        initial={{ opacity: 0, scale: 0.98, y: 20 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true }}
-        className={`relative group overflow-hidden rounded-lg shadow-lg cursor-pointer ${className}`}
-    >
+const GalleryItem: React.FC<{ src: string; className: string; title: string }> = ({ src, className, title }) => (
+    <div className={`relative group overflow-hidden rounded-lg shadow-lg cursor-pointer ${className}`}>
         <Image
             src={src}
             alt={title}
@@ -20,10 +13,10 @@ const GalleryItem: React.FC<{ src: string; className: string; delay: number; tit
             className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-6 sm:p-10">
-            <span className="font-subheading text-xs sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-secondary uppercase mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Season Highlights</span>
+            <span className="font-subheading text-xs tracking-widest text-secondary uppercase mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Season Highlights</span>
             <h4 className="font-heading text-lg sm:text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{title}</h4>
         </div>
-    </motion.div>
+    </div>
 );
 
 const Gallery: React.FC = () => {
@@ -45,11 +38,11 @@ const Gallery: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[280px]">
-                    <GalleryItem src={GALLERY_IMAGES[0]} className="md:col-span-8 md:row-span-2" delay={0.1} title="The Opening Ceremony" />
-                    <GalleryItem src={GALLERY_IMAGES[2]} className="md:col-span-4 md:row-span-1" delay={0.2} title="Victory Moment" />
-                    <GalleryItem src={GALLERY_IMAGES[1]} className="md:col-span-4 md:row-span-1" delay={0.3} title="Pitch Precision" />
-                    <GalleryItem src={GALLERY_IMAGES[3]} className="md:col-span-6 md:row-span-1" delay={0.4} title="Academy Drills" />
-                    <GalleryItem src={GALLERY_IMAGES[4]} className="md:col-span-6 md:row-span-1" delay={0.5} title="The Founder's Circle" />
+                    <GalleryItem src={GALLERY_IMAGES[0]} className="md:col-span-8 md:row-span-2" title="The Opening Ceremony" />
+                    <GalleryItem src={GALLERY_IMAGES[2]} className="md:col-span-4 md:row-span-1" title="Victory Moment" />
+                    <GalleryItem src={GALLERY_IMAGES[1]} className="md:col-span-4 md:row-span-1" title="Pitch Precision" />
+                    <GalleryItem src={GALLERY_IMAGES[3]} className="md:col-span-6 md:row-span-1" title="Academy Drills" />
+                    <GalleryItem src={GALLERY_IMAGES[4]} className="md:col-span-6 md:row-span-1" title="The Founder's Circle" />
                 </div>
             </div>
         </section>

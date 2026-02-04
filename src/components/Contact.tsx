@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { Phone, Clock, Send, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const ContactInfoItem = ({ icon, title, detail, sub }: { icon: React.ReactNode; title: string; detail: string; sub: string }) => (
     <div className="flex items-start gap-4 group">
@@ -19,7 +18,7 @@ const ContactInfoItem = ({ icon, title, detail, sub }: { icon: React.ReactNode; 
 );
 
 const ContactDetails = () => (
-    <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+    <div>
         <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-1 bg-secondary" />
             <span className="font-heading tracking-[0.2em] text-secondary text-xs font-bold uppercase">Contact</span>
@@ -36,7 +35,7 @@ const ContactDetails = () => (
             <Image src="/about-facility.png" fill className="object-cover transition-transform duration-700 group-hover:scale-105" alt="Texoma Cricket Facility" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
         </div>
-    </motion.div>
+    </div>
 );
 
 const FormInput = ({ label, type }: { label: string; type: string }) => (
@@ -49,7 +48,7 @@ const FormInput = ({ label, type }: { label: string; type: string }) => (
 );
 
 const ContactForm = () => (
-    <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }} viewport={{ once: true }} className="bg-bg-light p-6 sm:p-8 md:p-10 shadow-lg rounded-lg h-full flex flex-col justify-center">
+    <div className="bg-bg-light p-6 sm:p-8 md:p-10 shadow-lg rounded-lg h-full flex flex-col justify-center">
         <h3 className="font-heading text-xl sm:text-2xl text-primary mb-6 tracking-tight font-bold">Send a Message</h3>
         <form className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -72,15 +71,13 @@ const ContactForm = () => (
                 Send Message <Send size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
         </form>
-    </motion.div>
+    </div>
 );
 
 const Contact: React.FC = () => {
     return (
         <section id="contact" className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white relative overflow-hidden">
-            {/* Subtle Background */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-bg-cream/30 -z-0"></div>
-
             <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
                     <div className="lg:w-1/2"><ContactDetails /></div>
@@ -92,4 +89,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-

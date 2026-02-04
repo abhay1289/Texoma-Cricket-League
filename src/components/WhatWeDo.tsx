@@ -1,10 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import {
-    Trophy, Map, BarChart3, Users, Award
-} from 'lucide-react';
+import { Trophy, Map, BarChart3, Users, Award } from 'lucide-react';
 
 const whatWeDoItems = [
     {
@@ -39,32 +36,21 @@ const WhatWeDoCard: React.FC<{
     title: string;
     description: string;
     index: number;
-}> = ({ icon, title, description, index }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.1, duration: 0.5 }}
-        className="group relative p-6 bg-white rounded-lg border border-primary/5 shadow-sm hover:shadow-md transition-all duration-300"
-    >
+}> = ({ icon, title, description }) => (
+    <div className="group relative p-6 bg-white rounded-lg border border-primary/5 shadow-sm hover:shadow-md transition-all duration-300">
         <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
             {icon}
         </div>
         <h3 className="font-heading text-primary text-lg font-bold mb-2">{title}</h3>
         <p className="font-body text-text-dark/60 text-sm leading-relaxed">{description}</p>
-    </motion.div>
+    </div>
 );
 
 const WhatWeDo: React.FC = () => {
     return (
         <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-light relative overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-10 md:mb-12"
-                >
+                <div className="text-center mb-10 md:mb-12">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="w-10 h-1 bg-secondary" />
                         <span className="font-heading text-secondary font-bold uppercase tracking-[0.2em] text-xs">What We Do</span>
@@ -76,7 +62,7 @@ const WhatWeDo: React.FC = () => {
                     <p className="font-body text-text-dark/60 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                         TCL offers a national competition platform designed to grow youth cricket—giving teams meaningful tournaments, clear pathways, and a professional stage.
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {whatWeDoItems.map((item, index) => (

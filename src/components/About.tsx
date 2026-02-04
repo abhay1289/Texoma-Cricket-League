@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Target, Users, Trophy, Star, Shield } from 'lucide-react';
 
 const commitments = [
@@ -50,13 +49,7 @@ const CommitmentsList: React.FC = () => (
 );
 
 const AboutMedia: React.FC = () => (
-    <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="relative h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] group"
-    >
+    <div className="relative h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] group">
         <div className="relative h-full w-full overflow-hidden rounded-lg shadow-2xl">
             <Image
                 src="/about-facility.png"
@@ -65,26 +58,19 @@ const AboutMedia: React.FC = () => (
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
-
-            {/* Clean accent bar at bottom */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary"></div>
         </div>
-    </motion.div>
+    </div>
 );
 
 const ValueCard: React.FC<{ icon: React.ReactNode; title: string; desc: string }> = ({ icon, title, desc }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="p-6 bg-white rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow"
-    >
+    <div className="p-6 bg-white rounded-xl border border-primary/5 shadow-sm hover:shadow-md transition-shadow">
         <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 text-secondary">
             {icon}
         </div>
         <h4 className="font-heading text-primary text-lg font-bold mb-2">{title}</h4>
         <p className="font-body text-text-dark/60 text-sm leading-relaxed">{desc}</p>
-    </motion.div>
+    </div>
 );
 
 const values = [
@@ -98,24 +84,14 @@ const values = [
 const About: React.FC = () => {
     return (
         <>
-            {/* Sporty Skewed Container for About Section */}
             <section id="about" className="relative py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white overflow-hidden">
-                {/* Clean Background Accent */}
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-bg-cream/50 -z-0"></div>
-
                 <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                     <div className="flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                            className="lg:w-1/2"
-                        >
+                        <div className="lg:w-1/2">
                             <AboutHeader />
                             <CommitmentsList />
-                        </motion.div>
-
+                        </div>
                         <div className="lg:w-1/2 w-full">
                             <AboutMedia />
                         </div>
@@ -123,7 +99,6 @@ const About: React.FC = () => {
                 </div>
             </section>
 
-            {/* Our Values Section */}
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-cream">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8">
                     <div className="text-center mb-12">
