@@ -233,10 +233,10 @@ export default function RegisterPage() {
                                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary/20">
                                     <Sparkles className="w-3.5 h-3.5 text-secondary" />
                                 </span>
-                                <span className="font-heading text-secondary font-bold uppercase tracking-[0.25em] text-[10px]">TCL Academy Partner Program</span>
+                                <span className="font-heading text-secondary font-bold uppercase tracking-[0.25em] text-xs">TCL Academy Partner Program</span>
                             </div>
 
-                            <h2 className="font-heading text-5xl lg:text-6xl xl:text-7xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
+                            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-6 sm:mb-8">
                                 Partner with Youth Cricket Academies{' '}
                                 <span className="relative inline-block">
                                     <span className="text-secondary">Nationwide</span>
@@ -246,7 +246,7 @@ export default function RegisterPage() {
                                 </span>
                             </h2>
 
-                            <div className="space-y-5 font-body text-primary/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                            <div className="space-y-4 sm:space-y-5 font-body text-primary/60 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
                                 <p>Texoma Cricket League (TCL) partners with youth cricket academies that are committed to raising standards, developing players, and competing beyond local leagues on a national stage.</p>
                                 <p>Our Academy Partner program connects academies across the United States to a nationally respected competition platform—designed to help youth cricket grow into a mainstream sport in America.</p>
                             </div>
@@ -259,7 +259,7 @@ export default function RegisterPage() {
                                     { value: '5K+', label: 'Youth Players' },
                                 ].map((stat, i) => (
                                     <div key={i} className="text-center">
-                                        <div className="font-heading text-4xl lg:text-5xl font-bold text-primary tracking-tight">{stat.value}</div>
+                                        <div className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary tracking-tight">{stat.value}</div>
                                         <div className="font-body text-primary/40 text-sm mt-1 uppercase tracking-wider">{stat.label}</div>
                                     </div>
                                 ))}
@@ -344,10 +344,10 @@ export default function RegisterPage() {
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <div className="text-center mb-16">
-                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
+                        <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-xs mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
                             Comparison
                         </span>
-                        <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em]">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-[0.9] tracking-[-0.03em]">
                             Full Comparison Matrix
                         </h2>
                     </div>
@@ -379,11 +379,11 @@ export default function RegisterPage() {
                                     <table className="w-full min-w-[800px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
-                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/3">Benefit Feature</th>
-                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
-                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-[10px] uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
+                                                <th className="text-left py-6 px-8 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/3">Benefit Feature</th>
+                                                <th className="text-center py-6 px-4 font-heading text-secondary font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Founding</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/80 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">National</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/60 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Regional</th>
+                                                <th className="text-center py-6 px-4 font-heading text-primary/40 font-bold text-xs uppercase tracking-widest border-b border-primary/5 w-1/6">Dev</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -611,7 +611,7 @@ export default function RegisterPage() {
                                                 {tier.icon}
                                             </div>
                                             {tier.badge && (
-                                                <span className={`px-3 py-1 rounded text-[9px] font-heading font-bold uppercase tracking-widest border
+                                                <span className={`px-3 py-1 rounded text-xs font-heading font-bold uppercase tracking-widest border
                                                     ${tier.badge === 'Most Popular'
                                                         ? 'bg-secondary text-white border-secondary'
                                                         : 'bg-primary/5 text-primary/50 border-primary/10'}
