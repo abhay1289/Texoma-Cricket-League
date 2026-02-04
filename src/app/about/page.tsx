@@ -10,7 +10,7 @@ import PageHero from '@/components/PageHero';
 
 const SectionHeader: React.FC<{ label: string; title: string; alignment?: 'center' | 'left' }> = ({ label, title, alignment = 'center' }) => (
     <div className={`mb-12 ${alignment === 'center' ? 'text-center' : 'text-left'}`}>
-        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-3">{label}</span>
+        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-xs block mb-3">{label}</span>
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary font-bold leading-tight">{title}</h2>
     </div>
 );
@@ -52,14 +52,14 @@ const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
         <div className="p-8 space-y-4">
             <div>
                 <h3 className="font-heading text-xl text-primary font-bold mb-1">{member.name}</h3>
-                <span className="font-heading text-[10px] tracking-widest text-secondary uppercase font-bold">{member.role}</span>
+                <span className="font-heading text-xs tracking-widest text-secondary uppercase font-bold">{member.role}</span>
             </div>
             <p className="font-body text-sm text-primary/60 leading-relaxed italic line-clamp-3">{member.bio}</p>
             <div className="flex gap-4 pt-4 border-t border-gray-50">
-                <button type="button" aria-label={`View ${member.name}'s LinkedIn profile`} className="p-1 hover:bg-primary/5 rounded transition-colors">
+                <button type="button" aria-label={`View ${member.name}'s LinkedIn profile`} className="p-1 hover:bg-primary/5 rounded transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
                     <Linkedin size={18} className="text-primary/40 hover:text-primary transition-colors" aria-hidden="true" />
                 </button>
-                <button type="button" aria-label={`View ${member.name}'s Twitter profile`} className="p-1 hover:bg-secondary/5 rounded transition-colors">
+                <button type="button" aria-label={`View ${member.name}'s Twitter profile`} className="p-1 hover:bg-secondary/5 rounded transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
                     <Twitter size={18} className="text-primary/40 hover:text-secondary transition-colors" aria-hidden="true" />
                 </button>
             </div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 max-w-6xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-4">Our Home</span>
+                            <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-xs block mb-4">Our Home</span>
                             <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-6">Sports Texoma</h2>
                             <p className="font-body text-lg text-white/80 mb-8 leading-relaxed">
                                 Sports Texoma is a regional sports complex platform rooted in the <strong className="text-secondary">Texoma Region</strong>, spanning communities across <strong className="text-secondary">Texas and Oklahoma</strong>. At the heart of TCL is Sports Texoma, the home venue where we anchor the national championships at a centralized, purpose-built facility.
@@ -256,7 +256,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 max-w-4xl">
                     <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Ready to Join the TCL Family?</h2>
                     <p className="font-body text-lg opacity-80 mb-10">Whether you&apos;re a player, parent, coach, academy, umpire, or scorer—there&apos;s a place for you here.</p>
-                    <Link href="/register" className="inline-block px-12 py-5 bg-primary text-white font-heading font-bold text-xs tracking-widest uppercase rounded-lg shadow-xl hover:bg-accent transition-all">
+                    <Link href="/register" className="inline-block px-12 py-5 bg-primary text-white font-heading font-bold text-xs tracking-widest uppercase rounded-lg shadow-xl hover:bg-accent transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-secondary">
                         REGISTER NOW
                     </Link>
                 </div>

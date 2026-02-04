@@ -26,7 +26,7 @@ const ContactForm = () => {
                 <p className="font-body text-text-dark/60 mb-8">We'll respond within 24 hours.</p>
                 <button
                     onClick={() => setStatus('idle')}
-                    className="text-secondary font-bold font-subheading tracking-widest uppercase text-xs"
+                    className="text-secondary font-bold font-subheading tracking-widest uppercase text-xs cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                 >
                     Send Another
                 </button>
@@ -42,28 +42,28 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                        <label htmlFor="contact-first-name" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">First Name</label>
+                        <label htmlFor="contact-first-name" className="text-xs uppercase font-bold tracking-widest text-primary/40">First Name</label>
                         <input id="contact-first-name" name="firstName" required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="John" autoComplete="given-name" />
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="contact-last-name" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Last Name</label>
+                        <label htmlFor="contact-last-name" className="text-xs uppercase font-bold tracking-widest text-primary/40">Last Name</label>
                         <input id="contact-last-name" name="lastName" required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="Doe" autoComplete="family-name" />
                     </div>
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="contact-email" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Email Address</label>
+                    <label htmlFor="contact-email" className="text-xs uppercase font-bold tracking-widest text-primary/40">Email Address</label>
                     <input id="contact-email" name="email" required type="email" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="john@example.com" autoComplete="email" />
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="contact-message" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Message</label>
+                    <label htmlFor="contact-message" className="text-xs uppercase font-bold tracking-widest text-primary/40">Message</label>
                     <textarea id="contact-message" name="message" required rows={4} className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors resize-none" placeholder="How can we help?" />
                 </div>
 
                 <button
                     disabled={status === 'loading'}
-                    className="w-full py-5 bg-primary text-white font-subheading font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-accent transition-all shadow-lg flex items-center justify-center gap-3"
+                    className="w-full py-5 bg-primary text-white font-subheading font-bold tracking-[0.2em] uppercase rounded-lg hover:bg-accent transition-all shadow-lg flex items-center justify-center gap-3 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {status === 'loading' ? 'Sending...' : <>Send Message <Send size={16} /></>}
                 </button>
@@ -124,7 +124,7 @@ const MapSection = () => (
             referrerPolicy="no-referrer-when-downgrade"
         />
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm border border-gray-200">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Headquarters</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Headquarters</span>
         </div>
     </div>
 );
