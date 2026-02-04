@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import {
     Check, X, Users, Trophy, Target, Shield, Star, Award,
     FileText, Search, Layers, Rocket, Building2, ArrowRight,
@@ -228,26 +227,14 @@ export default function RegisterPage() {
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="lg:col-span-7"
-                        >
+                        <div className="lg:col-span-7">
                             {/* Premium badge */}
-                            <motion.div
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="inline-flex items-center gap-3 px-5 py-2.5 mb-10 rounded-full bg-secondary/10 border border-secondary/20"
-                            >
+                            <div className="inline-flex items-center gap-3 px-5 py-2.5 mb-10 rounded-full bg-secondary/10 border border-secondary/20">
                                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary/20">
                                     <Sparkles className="w-3.5 h-3.5 text-secondary" />
                                 </span>
                                 <span className="font-heading text-secondary font-bold uppercase tracking-[0.25em] text-[10px]">TCL Academy Partner Program</span>
-                            </motion.div>
+                            </div>
 
                             <h2 className="font-heading text-5xl lg:text-6xl xl:text-7xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
                                 Partner with Youth Cricket Academies{' '}
@@ -271,28 +258,15 @@ export default function RegisterPage() {
                                     { value: '12', label: 'States Covered' },
                                     { value: '5K+', label: 'Youth Players' },
                                 ].map((stat, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.4 + i * 0.1 }}
-                                        className="text-center"
-                                    >
+                                    <div key={i} className="text-center">
                                         <div className="font-heading text-4xl lg:text-5xl font-bold text-primary tracking-tight">{stat.value}</div>
                                         <div className="font-body text-primary/40 text-sm mt-1 uppercase tracking-wider">{stat.label}</div>
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                            className="lg:col-span-5"
-                        >
+                        <div className="lg:col-span-5">
                             <GlowBorder>
                                 <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.08] shadow-lg">
                                     {/* Card header decoration */}
@@ -305,24 +279,17 @@ export default function RegisterPage() {
 
                                     <ul className="space-y-5">
                                         {idealFor.map((item, i) => (
-                                            <motion.li
-                                                key={i}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.3 + i * 0.08 }}
-                                                className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-primary/[0.03] to-transparent hover:from-secondary/[0.08] transition-all duration-300 group"
-                                            >
+                                            <li key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-primary/[0.03] to-transparent hover:from-secondary/[0.08] transition-all duration-300 group">
                                                 <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                                     <Check className="text-secondary" size={18} />
                                                 </span>
                                                 <span className="font-body text-primary/75 text-[15px]">{item}</span>
-                                            </motion.li>
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>
                             </GlowBorder>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -376,19 +343,14 @@ export default function RegisterPage() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
-                    <motion.div
-                        className="text-center mb-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div className="text-center mb-16">
                         <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
                             Comparison
                         </span>
                         <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-primary font-bold leading-[0.9] tracking-[-0.03em]">
                             Full Comparison Matrix
                         </h2>
-                    </motion.div>
+                    </div>
 
                     {/* Tabs Component - Physical Design */}
                     <div className="rounded-[2.5rem] bg-white border border-primary/5 shadow-2xl overflow-hidden backdrop-blur-sm relative min-h-[600px]">
@@ -404,10 +366,7 @@ export default function RegisterPage() {
                                 >
                                     {tab}
                                     {activeTab === i && (
-                                        <motion.div
-                                            layoutId="activeTab"
-                                            className="absolute bottom-0 left-0 right-0 h-1 bg-secondary shadow-[0_-2px_10px_rgba(201,151,63,0.5)]"
-                                        />
+                                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary shadow-[0_-2px_10px_rgba(201,151,63,0.5)]" />
                                     )}
                                 </button>
                             ))}
@@ -416,12 +375,7 @@ export default function RegisterPage() {
                         {/* Tab Content */}
                         <div className="p-0">
                             {activeTab === 0 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-x-auto"
-                                >
+                                <div className="overflow-x-auto">
                                     <table className="w-full min-w-[800px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
@@ -470,16 +424,11 @@ export default function RegisterPage() {
                                             ))}
                                         </tbody>
                                     </table>
-                                </motion.div>
+                                </div>
                             )}
 
                             {activeTab === 1 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-x-auto"
-                                >
+                                <div className="overflow-x-auto">
                                     <table className="w-full min-w-[800px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
@@ -512,16 +461,11 @@ export default function RegisterPage() {
                                             ))}
                                         </tbody>
                                     </table>
-                                </motion.div>
+                                </div>
                             )}
 
                             {activeTab === 2 && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-x-auto"
-                                >
+                                <div className="overflow-x-auto">
                                     <table className="w-full min-w-[600px]">
                                         <thead>
                                             <tr className="bg-primary/[0.01]">
@@ -552,7 +496,7 @@ export default function RegisterPage() {
                                             ))}
                                         </tbody>
                                     </table>
-                                </motion.div>
+                                </div>
                             )}
                         </div>
                     </div>
@@ -560,12 +504,7 @@ export default function RegisterPage() {
             </section>
 
             {/* Need Help CTA - Elegant Inline */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="container mx-auto px-6 lg:px-8 max-w-4xl relative -mt-10 mb-32 z-10"
-            >
+            <div className="container mx-auto px-6 lg:px-8 max-w-4xl relative -mt-10 mb-32 z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-white border border-primary/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div className="flex items-center gap-5">
                         <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
@@ -580,7 +519,7 @@ export default function RegisterPage() {
                         Contact Us
                     </Link>
                 </div>
-            </motion.div>
+            </div>
 
             {/* How Partnership Works */}
             <section className="py-32 lg:py-40 relative overflow-hidden">
@@ -593,29 +532,17 @@ export default function RegisterPage() {
                 <PremiumPattern />
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
-                    <motion.div
-                        className="text-center mb-20"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div className="text-center mb-20">
                         <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
                             <Rocket className="w-4 h-4" />
                             Process
                         </span>
                         <h2 className="font-heading text-5xl sm:text-6xl text-white font-bold leading-[0.95] tracking-[-0.03em]">How the Partnership Works</h2>
-                    </motion.div>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {howItWorksSteps.map((step, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.15 }}
-                                className="relative group"
-                            >
+                            <div key={i} className="relative group">
                                 {/* Connector line */}
                                 {i < howItWorksSteps.length - 1 && (
                                     <div className="hidden lg:block absolute top-12 left-[60%] w-full h-[2px] bg-gradient-to-r from-secondary/50 to-secondary/10" />
@@ -633,7 +560,7 @@ export default function RegisterPage() {
                                     <h3 className="font-heading text-primary text-xl font-bold mb-3">{step.title}</h3>
                                     <p className="font-body text-primary/55 text-sm leading-relaxed">{step.description}</p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -645,12 +572,7 @@ export default function RegisterPage() {
                 <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
-                    <motion.div
-                        className="text-center mb-24"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div className="text-center mb-24">
                         <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/10 shadow-sm rounded-full">
                             Membership
                         </span>
@@ -660,18 +582,11 @@ export default function RegisterPage() {
                         <p className="font-body text-primary/60 text-lg max-w-2xl mx-auto leading-relaxed">
                             Select the partnership tier that aligns with your academy's ambition.
                         </p>
-                    </motion.div>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {membershipTiers.map((tier, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.7, delay: i * 0.12 }}
-                                className={`relative group perspective-1000 ${tier.badge === 'Most Popular' ? 'lg:-mt-12 z-10' : ''}`}
-                            >
+                            <div key={i}>
                                 {/* The Physical Card */}
                                 <div className={`relative h-full rounded-[1.5rem] transition-all duration-500 transform-gpu hover:-translate-y-3 hover:rotate-x-2 
                                     ${tier.name.includes('Founding')
@@ -755,7 +670,7 @@ export default function RegisterPage() {
                                         </p>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -765,12 +680,7 @@ export default function RegisterPage() {
             {/* What We Expect from Academy Partners */}
             <section className="py-24 lg:py-32 bg-[#FAFAF8] relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-8 max-w-5xl relative">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center"
-                    >
+                    <div className="text-center">
                         <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 px-6 py-2.5 bg-white border border-primary/5 shadow-sm rounded-full">
                             Expectations
                         </span>
@@ -787,7 +697,7 @@ export default function RegisterPage() {
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -795,43 +705,25 @@ export default function RegisterPage() {
             <section className="py-32 lg:py-40 bg-white relative overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-8 max-w-6xl relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div>
                             <span className="inline-flex items-center gap-2.5 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[9px] mb-6 px-6 py-2.5 bg-gradient-to-r from-secondary/15 via-secondary/8 to-secondary/15 rounded-full border border-secondary/15">Why TCL</span>
                             <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[1.02] tracking-[-0.03em] mb-8">Why Academies Choose TCL</h2>
 
                             <ul className="space-y-6">
                                 {whyChooseTCL.map((item, i) => (
-                                    <motion.li
-                                        key={i}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        className="flex items-start gap-4"
-                                    >
+                                    <li key={i} className="flex items-start gap-4">
                                         <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-secondary/10 flex items-center justify-center mt-1">
                                             <Check className="text-secondary" size={16} />
                                         </span>
                                         <span className="font-body text-primary/70 text-lg leading-relaxed">
                                             <strong className="text-primary font-semibold">{item.bold}</strong>{item.text}
                                         </span>
-                                    </motion.li>
+                                    </li>
                                 ))}
                             </ul>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative"
-                        >
+                        <div className="relative">
                             <div className="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl opacity-50" />
                             <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-lg">
                                 <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-8 shadow-md">
@@ -850,7 +742,7 @@ export default function RegisterPage() {
                                     ))}
                                 </ul>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -861,11 +753,7 @@ export default function RegisterPage() {
                 <PremiumPattern />
 
                 <div className="container mx-auto px-6 lg:px-8 max-w-4xl relative text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <div>
                         <span className="inline-flex items-center gap-3 font-heading text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-8 px-6 py-3 bg-white/[0.06] backdrop-blur-sm rounded-full border border-white/[0.1]">
                             <Sparkles className="w-4 h-4" />
                             Get Started
@@ -885,7 +773,7 @@ export default function RegisterPage() {
                                 View Tournaments
                             </Link>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
         </div >

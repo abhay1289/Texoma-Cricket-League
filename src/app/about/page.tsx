@@ -17,16 +17,13 @@ const SectionHeader: React.FC<{ label: string; title: string; alignment?: 'cente
 );
 
 const ValueCard: React.FC<{ icon: React.ReactNode; title: string; desc: string }> = ({ icon, title, desc }) => (
-    <motion.div
-        whileHover={{ y: -8 }}
-        className="bg-white p-8 rounded-2xl border border-gray-100 transition-all flex flex-col items-center text-center group shadow-sm hover:shadow-lg"
-    >
+    <div className="bg-white p-8 rounded-2xl border border-gray-100 transition-all flex flex-col items-center text-center group shadow-sm hover:shadow-lg hover:-translate-y-2">
         <div className="mb-6 p-4 rounded-xl bg-secondary/10 text-secondary transition-colors group-hover:bg-secondary group-hover:text-white">
             {icon}
         </div>
         <h4 className="font-heading text-lg text-primary font-bold mb-3">{title}</h4>
         <p className="font-body text-sm text-primary/60 leading-relaxed">{desc}</p>
-    </motion.div>
+    </div>
 );
 
 const TimelineItem: React.FC<{ year: string; title: string; desc: string }> = ({ year, title, desc }) => (
@@ -49,10 +46,7 @@ interface LeadershipMember {
 }
 
 const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
-    <motion.div
-        whileHover={{ y: -10 }}
-        className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 group"
-    >
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 group hover:-translate-y-3">
         <div className="h-[280px] bg-gray-100 relative overflow-hidden">
             <img src={member.photo} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
         </div>
@@ -71,7 +65,7 @@ const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
                 </button>
             </div>
         </div>
-    </motion.div>
+    </div>
 );
 
 export default function AboutPage() {
@@ -128,32 +122,20 @@ export default function AboutPage() {
 
                     {/* Vision & Mission Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="relative p-8 md:p-10 bg-primary rounded-xl"
-                        >
+                        <div className="relative p-8 md:p-10 bg-primary rounded-xl">
                             <div className="absolute top-0 left-8 w-12 h-1 bg-secondary rounded-b-full" />
                             <span className="font-heading text-secondary font-semibold uppercase tracking-widest text-xs block mb-5 pt-2">Our Vision</span>
                             <p className="font-body text-white/90 text-base md:text-lg leading-relaxed">
                                 To build a unified national pathway that connects grassroots participation to elite youth competition—bringing clarity, consistency, and aspiration to the youth cricket ecosystem and supporting the sport's growth into the American mainstream.
                             </p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                            className="relative p-8 md:p-10 bg-bg-cream rounded-xl border border-primary/8"
-                        >
+                        </div>
+                        <div className="relative p-8 md:p-10 bg-bg-cream rounded-xl border border-primary/8">
                             <div className="absolute top-0 left-8 w-12 h-1 bg-secondary rounded-b-full" />
                             <span className="font-heading text-primary font-semibold uppercase tracking-widest text-xs block mb-5 pt-2">Our Mission</span>
                             <p className="font-body text-primary/80 text-base md:text-lg leading-relaxed">
                                 To unite youth cricket teams from across the United States through a nationally respected tournament platform that delivers meaningful competition, clear development pathways, and consistently high standards—creating positive, accessible, and inspiring experiences for players, families, and the broader cricket community.
                             </p>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>

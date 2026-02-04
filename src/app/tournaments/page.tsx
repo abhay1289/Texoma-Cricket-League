@@ -1,44 +1,17 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, MapPin, Trophy, Users, Shield, Clock, Star, ChevronRight, CheckCircle } from 'lucide-react';
+import { Calendar, Trophy, Users, Shield, Clock, Star, CheckCircle } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
 // --- Premium Section Header ---
 const SectionHeader: React.FC<{ label: string; title: string; description?: string; light?: boolean }> = ({ label, title, description, light }) => (
-    <motion.div
-        className="mb-16 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-    >
-        <span className={`inline-flex items-center gap-2 font-heading font-semibold uppercase tracking-[0.25em] text-[10px] mb-5 px-5 py-2 rounded-full border ${light ? 'text-secondary bg-white/10 border-white/10' : 'text-secondary bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-secondary/10'}`}>{label}</span>
+    <div className="mb-16 text-center">
+        <span className={`inline-flex items-center gap-2 font-heading font-semibold uppercase tracking-[0.25em] text-xs mb-5 px-5 py-2 rounded-full border ${light ? 'text-secondary bg-white/10 border-white/10' : 'text-secondary bg-gradient-to-r from-secondary/10 via-secondary/5 to-secondary/10 border-secondary/10'}`}>{label}</span>
         <h2 className={`font-heading text-4xl sm:text-5xl font-bold leading-[1.05] tracking-[-0.02em] ${light ? 'text-white' : 'text-primary'}`}>{title}</h2>
         {description && <p className={`font-body text-lg lg:text-xl mt-6 max-w-3xl mx-auto leading-relaxed ${light ? 'text-white/60' : 'text-primary/50'}`}>{description}</p>}
-    </motion.div>
+    </div>
 );
-
-// --- Partner Tier Indicator ---
-const TierDot: React.FC<{ tier: 'development' | 'regional' | 'national' | 'founding' }> = ({ tier }) => {
-    const colors = {
-        development: 'bg-emerald-500',
-        regional: 'bg-blue-500',
-        national: 'bg-purple-500',
-        founding: 'bg-secondary',
-    };
-
-    if (tier === 'founding') {
-        return (
-            <span className="inline-flex items-center justify-center w-5 h-5 text-[12px] text-secondary">
-                ★
-            </span>
-        );
-    }
-
-    return <span className={`inline-block w-3 h-3 rounded-full ${colors[tier]} ring-2 ring-white shadow-sm`} />;
-};
 
 // --- Main Page ---
 export default function TournamentsPage() {
@@ -106,11 +79,7 @@ export default function TournamentsPage() {
     ];
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-bg-light min-h-screen"
-        >
+        <div className="bg-bg-light min-h-screen">
             <PageHero
                 title="Tournaments"
                 description="Your comprehensive guide to TCL's annual tournament calendar"
@@ -182,12 +151,8 @@ export default function TournamentsPage() {
                             {/* Mobile Cards - Hidden on lg and up */}
                             <div className="lg:hidden space-y-4">
                                 {seasons.map((s, i) => (
-                                    <motion.div
+                                    <div
                                         key={i}
-                                        initial={{ opacity: 0, y: 10 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.05 }}
                                         className={`bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden ${s.featured ? 'ring-2 ring-secondary' : ''}`}
                                     >
                                         {/* Card Header */}
@@ -248,7 +213,7 @@ export default function TournamentsPage() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
 
@@ -267,12 +232,8 @@ export default function TournamentsPage() {
                                     </thead>
                                     <tbody className="divide-y divide-gray-100">
                                         {seasons.map((s, i) => (
-                                            <motion.tr
+                                            <tr
                                                 key={i}
-                                                initial={{ opacity: 0, y: 10 }}
-                                                whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: i * 0.05 }}
                                                 className="hover:bg-gray-50/50 transition-colors"
                                             >
                                                 <td className="py-6 px-6 align-top">
@@ -313,7 +274,7 @@ export default function TournamentsPage() {
                                                         })}
                                                     </div>
                                                 </td>
-                                            </motion.tr>
+                                            </tr>
                                         ))}
                                     </tbody>
                                 </table>
@@ -323,13 +284,7 @@ export default function TournamentsPage() {
                     </div>
 
                     {/* Planning Notes */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="p-8 lg:p-10 bg-[#FAFAF8] rounded-3xl border border-primary/[0.06]"
-                    >
+                    <div className="p-8 lg:p-10 bg-[#FAFAF8] rounded-3xl border border-primary/[0.06]">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="w-12 h-12 bg-gradient-to-br from-secondary/15 to-secondary/5 rounded-xl flex items-center justify-center">
                                 <Clock className="text-secondary w-6 h-6" />
@@ -350,11 +305,11 @@ export default function TournamentsPage() {
                                 </li>
                             ))}
                         </ul>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
 
-        </motion.div>
+        </div>
     );
 }

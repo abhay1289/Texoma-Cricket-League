@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, Database, Mail, FileText } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
@@ -62,28 +61,20 @@ export default function PrivacyPage() {
             <section className="py-20 lg:py-28">
                 <div className="container mx-auto px-6 lg:px-8 max-w-4xl">
                     {/* Last Updated Notice */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center justify-center gap-3 mb-12"
-                    >
+                    <div className="flex items-center justify-center gap-3 mb-12">
                         <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
                             <Shield className="w-5 h-5 text-secondary" />
                         </div>
                         <p className="font-body text-primary/60 text-sm">
                             Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                         </p>
-                    </motion.div>
+                    </div>
 
                     {/* Policy Sections */}
                     <div className="space-y-8">
                         {sections.map((section, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
                                 className="bg-white rounded-2xl p-8 lg:p-10 border border-primary/[0.06] shadow-sm hover:shadow-md transition-shadow"
                             >
                                 <div className="flex items-start gap-4">
@@ -109,17 +100,12 @@ export default function PrivacyPage() {
                                         )}
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 
                     {/* Contact CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-12 p-8 bg-primary rounded-2xl text-center"
-                    >
+                    <div className="mt-12 p-8 bg-primary rounded-2xl text-center">
                         <h3 className="font-heading text-xl text-white font-bold mb-3">Have Questions?</h3>
                         <p className="font-body text-white/70 mb-6">We're here to help with any privacy concerns.</p>
                         <a
@@ -129,7 +115,7 @@ export default function PrivacyPage() {
                             <Mail className="w-4 h-4" />
                             Contact Us
                         </a>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
         </div>

@@ -26,13 +26,9 @@ const SportCard: React.FC<{ sport: Sport; index: number }> = ({ sport, index }) 
                 </div>
                 <div className="transform translate-y-2 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="font-heading text-base sm:text-xl md:text-2xl lg:text-3xl text-white mb-2 sm:mb-4 tracking-tight leading-tight">{sport.name}</h3>
-                    <p className="font-body text-white/60 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3 sm:line-clamp-none">
+                    <p className="font-body text-white/60 text-xs sm:text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3 sm:line-clamp-none">
                         {sport.description}
                     </p>
-                    <button className="flex items-center gap-2 sm:gap-3 group/btn">
-                        <span className="font-heading text-xs tracking-widest text-secondary font-semibold uppercase">Learn More</span>
-                        <div className="w-4 sm:w-6 h-[1px] bg-secondary/50 group-hover/btn:w-8 sm:group-hover/btn:w-12 transition-all duration-300" />
-                    </button>
                 </div>
             </div>
         </div>
