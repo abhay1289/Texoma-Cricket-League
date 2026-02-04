@@ -8,12 +8,12 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Testimonial } from '@/lib/types';
 
 const CarouselControls = ({ onNext, onPrev }: { onNext: () => void; onPrev: () => void }) => (
-    <div className="flex gap-3 sm:gap-4">
-        <button onClick={onPrev} className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
-            <ChevronLeft size={18} className="sm:w-5 sm:h-5" />
+    <div className="flex gap-3 sm:gap-4" role="group" aria-label="Testimonial navigation">
+        <button onClick={onPrev} aria-label="Previous testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
+            <ChevronLeft size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
         </button>
-        <button onClick={onNext} className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
-            <ChevronRight size={18} className="sm:w-5 sm:h-5" />
+        <button onClick={onNext} aria-label="Next testimonial" className="w-11 h-11 sm:w-14 sm:h-14 rounded-full border border-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all active:scale-95">
+            <ChevronRight size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
         </button>
     </div>
 );
@@ -24,7 +24,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white rounded-xl sm:rounded-super p-8 sm:p-12 md:p-20 shadow-elevated relative border border-gray-100 w-full"
+        className="bg-white rounded-lg p-8 sm:p-10 md:p-12 shadow-lg relative border border-primary/5 w-full"
     >
         <Quote size={40} className="sm:w-[60px] sm:h-[60px] text-secondary opacity-20 absolute top-6 sm:top-10 right-6 sm:right-10" />
         <p className="font-heading text-lg sm:text-xl md:text-3xl text-primary leading-relaxed mb-8 sm:mb-12 italic font-light pr-8 sm:pr-0">
@@ -49,14 +49,14 @@ const Testimonials: React.FC = () => {
 
     return (
         <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-light relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading text-[15vw] sm:text-[12vw] text-primary/3 select-none pointer-events-none whitespace-nowrap leading-none hidden sm:block">
-                TESTIMONIALS
-            </div>
             <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-                <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
+                <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-12">
                     <div className="lg:w-1/3 relative text-center lg:text-left w-full">
-                        <span className="font-heading tracking-[0.3em] text-secondary text-[10px] sm:text-[11px] font-semibold uppercase mb-3 sm:mb-4 block">Testimonials</span>
-                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-tight mb-4 sm:mb-6 tracking-tight">What Our <span className="text-secondary font-medium">Community</span> Says</h2>
+                        <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                            <div className="w-10 h-1 bg-secondary" />
+                            <span className="font-heading tracking-[0.2em] text-secondary text-xs font-bold uppercase">Testimonials</span>
+                        </div>
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary leading-tight mb-4 tracking-tight">What Our <span className="text-secondary">Community</span> Says</h2>
                         <div className="flex justify-center lg:justify-start">
                             <CarouselControls onNext={next} onPrev={prev} />
                         </div>

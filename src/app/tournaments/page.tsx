@@ -179,7 +179,81 @@ export default function TournamentsPage() {
                                 TCL One-Page Calendar <span className="text-primary/60 font-normal">(Table View)</span>
                             </h2>
 
-                            <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm bg-white">
+                            {/* Mobile Cards - Hidden on lg and up */}
+                            <div className="lg:hidden space-y-4">
+                                {seasons.map((s, i) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.05 }}
+                                        className={`bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden ${s.featured ? 'ring-2 ring-secondary' : ''}`}
+                                    >
+                                        {/* Card Header */}
+                                        <div className={`px-5 py-4 ${s.featured ? 'bg-secondary/10' : 'bg-gray-50'} border-b border-gray-200`}>
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-secondary">{s.icon}</span>
+                                                    <span className="font-heading font-bold text-primary text-lg">{s.season}</span>
+                                                </div>
+                                                <span className="font-body text-primary/70 text-sm bg-white px-3 py-1 rounded-full border border-gray-200">{s.timeframe}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Card Body */}
+                                        <div className="p-5 space-y-4">
+                                            {/* Events */}
+                                            <div>
+                                                <span className="text-xs font-heading font-bold uppercase tracking-wider text-primary/50 block mb-2">Key Events</span>
+                                                <ul className="space-y-1.5">
+                                                    {s.events.map((e, idx) => (
+                                                        <li key={idx} className={`text-sm leading-snug ${s.featured && idx === 0 ? 'font-bold text-primary' : 'text-primary/80'} ${e.includes('*') ? 'italic' : ''}`}>
+                                                            • {e}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            {/* Details Row */}
+                                            <div className="flex flex-wrap gap-4 pt-2">
+                                                <div>
+                                                    <span className="text-xs font-heading font-bold uppercase tracking-wider text-primary/50 block mb-1">Age Groups</span>
+                                                    <span className="font-body text-primary text-sm">{s.ageGroups}</span>
+                                                </div>
+                                                <div className="flex-1 min-w-[150px]">
+                                                    <span className="text-xs font-heading font-bold uppercase tracking-wider text-primary/50 block mb-1">Purpose</span>
+                                                    <span className="font-body text-primary/70 text-sm">{s.purpose}</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Tier Access */}
+                                            <div className="pt-3 border-t border-gray-100">
+                                                <span className="text-xs font-heading font-bold uppercase tracking-wider text-primary/50 block mb-2">Partner Tier Access</span>
+                                                <div className="flex items-center gap-2 flex-wrap">
+                                                    {[...s.tiers].map((tierKey, idx) => {
+                                                        const tierConfig = tiers.find(t => t.key === tierKey);
+                                                        if (!tierConfig) return null;
+                                                        return (
+                                                            <div key={idx} className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded-full">
+                                                                {tierConfig.star ? (
+                                                                    <span className="text-secondary text-sm">★</span>
+                                                                ) : (
+                                                                    <span className={`w-3 h-3 rounded-full ${tierConfig.color} shadow-sm`} />
+                                                                )}
+                                                                <span className="text-xs text-primary/70">{tierConfig.label.split(' ')[0]}</span>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Desktop Table - Hidden on mobile */}
+                            <div className="hidden lg:block overflow-x-auto rounded-2xl border border-gray-200 shadow-sm bg-white">
                                 <table className="w-full text-left min-w-[1000px]">
                                     <thead>
                                         <tr className="bg-gray-50 border-b border-gray-200">

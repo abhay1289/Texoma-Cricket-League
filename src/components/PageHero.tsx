@@ -35,8 +35,11 @@ export default function PageHero({
             <div className="absolute inset-0">
                 <img
                     src={image}
-                    alt={title}
+                    alt=""
+                    width={1920}
+                    height={1080}
                     className="w-full h-full object-cover"
+                    aria-hidden="true"
                 />
                 <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
             </div>
@@ -47,20 +50,22 @@ export default function PageHero({
                     animate={{ opacity: 1, x: 0 }}
                     className={`max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}
                 >
-                    <div className={`flex items-center gap-2 mb-4 md:mb-6 text-text-light font-subheading text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase ${align === 'center' ? 'justify-center' : 'justify-center lg:justify-start'}`}>
-                        {breadcrumbs.map((item, index) => (
-                            <React.Fragment key={index}>
-                                {index > 0 && <ChevronRight size={10} className="opacity-40 sm:w-3 sm:h-3" />}
-                                {item.href ? (
-                                    <Link href={item.href} className="hover:text-secondary cursor-pointer">
-                                        {item.label}
-                                    </Link>
-                                ) : (
-                                    <span className={item.active ? 'text-secondary' : ''}>{item.label}</span>
-                                )}
-                            </React.Fragment>
-                        ))}
-                    </div>
+                    <nav aria-label="Breadcrumb" className={`flex items-center gap-2 mb-4 md:mb-6 ${align === 'center' ? 'justify-center' : 'justify-center lg:justify-start'}`}>
+                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full text-text-light font-subheading text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+                            {breadcrumbs.map((item, index) => (
+                                <React.Fragment key={index}>
+                                    {index > 0 && <ChevronRight size={10} className="opacity-60 sm:w-3 sm:h-3" />}
+                                    {item.href ? (
+                                        <Link href={item.href} className="hover:text-secondary transition-colors">
+                                            {item.label}
+                                        </Link>
+                                    ) : (
+                                        <span className={item.active ? 'text-secondary font-semibold' : ''}>{item.label}</span>
+                                    )}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </nav>
 
                     <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-black uppercase mb-4 md:mb-6 leading-[0.95]">
                         {title}

@@ -2,88 +2,139 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 
-const FooterIdentity: React.FC = () => (
-    <div>
-        <div className="flex items-center space-x-2 mb-8">
-            <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
-                <span className="font-heading font-bold text-primary">ST</span>
-            </div>
-            <span className="font-heading text-2xl font-bold tracking-wider uppercase">SPORTS <span className="text-secondary">TEXOMA</span></span>
-        </div>
-        <p className="font-body opacity-60 leading-relaxed mb-8">
-            Youth cricket tournaments hosted at Sports Texoma. Dedicated to developing young cricketers through quality coaching and competitive play.
-        </p>
-        <div className="flex space-x-4">
-            {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary hover:text-primary transition-all">
-                    <Icon size={20} />
-                </a>
-            ))}
-        </div>
-    </div>
-);
-
-const FooterLinkColumn: React.FC<{ title: string; links: { name: string; href: string }[] }> = ({ title, links }) => (
-    <div>
-        <h4 className="font-heading text-xl text-secondary mb-8">{title}</h4>
-        <ul className="space-y-4 font-subheading tracking-widest text-sm opacity-60">
-            {links.map((link, i) => (
-                <li key={i}>
-                    <Link
-                        href={link.href}
-                        className="hover:text-secondary hover:opacity-100 transition-all text-left"
-                    >
-                        {link.name.toUpperCase()}
-                    </Link>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
-
-const FooterNewsletter: React.FC = () => (
-    <div>
-        <h4 className="font-heading text-xl text-secondary mb-8">Clubhouse</h4>
-        <p className="font-body opacity-60 mb-6">Join the newsletter for draft news and fixture announcements.</p>
-        <form className="relative">
-            <input type="email" placeholder="Your Official Email" className="w-full bg-white/10 border-b border-white/20 p-4 focus:border-secondary outline-none font-body transition-colors" />
-            <button className="absolute right-0 top-1/2 -translate-y-1/2 text-secondary font-bold font-subheading px-4">JOIN</button>
-        </form>
-    </div>
-);
-
 const Footer: React.FC = () => {
-    const leagueLinks = [
+    // Navigation Links (Combined)
+    const navLinks = [
         { name: 'Home', href: '/' },
         { name: 'Tournaments', href: '/tournaments' },
-        { name: 'About Us', href: '/about' },
         { name: 'Register', href: '/register' },
-        { name: 'Contact', href: '/contact' },
+        { name: 'About Us', href: '/about' },
+        { name: 'Contact Us', href: '/contact' },
     ];
 
-    const facilityLinks = [
+    // Support/Info Links
+    const supportLinks = [
         { name: 'Contact Support', href: '/contact' },
         { name: 'League Info', href: '/about' },
+        { name: 'Terms & Conditions', href: '/terms' },
+        { name: 'Privacy Policy', href: '/privacy' },
     ];
 
     return (
-        <footer className="bg-primary text-white pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 border-t-8 border-secondary">
-            <div className="container mx-auto px-4 sm:px-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 md:gap-16 mb-12 sm:mb-16 md:mb-20">
-                    <FooterIdentity />
-                    <FooterLinkColumn title="Navigation" links={leagueLinks} />
-                    <FooterLinkColumn title="Facilities" links={facilityLinks} />
-                    <FooterNewsletter />
+        <footer className="bg-primary text-white pt-12 pb-8">
+            <div className="container mx-auto px-6">
+
+                {/* MAIN CONTENT: 4-column grid (Brand, Nav, Support, Newsletter) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+                    {/* Column 1: Branding + Bio + Socials */}
+                    <div className="md:col-span-2 lg:col-span-1 flex flex-col">
+                        {/* Logo + Name */}
+                        <div className="flex items-center space-x-3 mb-4">
+                            <div className="w-16 h-16 relative bg-white rounded-full flex items-center justify-center border-2 border-secondary overflow-hidden flex-shrink-0">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Texoma Cricket League"
+                                    fill
+                                    className="object-contain p-1"
+                                />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="font-heading text-xl font-bold tracking-wider leading-tight">TEXOMA</span>
+                                <span className="font-heading text-xl font-bold tracking-wider leading-tight text-secondary">CRICKET LEAGUE</span>
+                            </div>
+                        </div>
+
+                        {/* Bio */}
+                        <p className="text-sm text-white/70 leading-relaxed mb-6">
+                            Premier youth cricket tournaments hosted at Sports Texoma. Dedicated to developing young cricketers through quality coaching, competitive play, and community building across Texas and Oklahoma.
+                        </p>
+
+                        {/* Social Icons */}
+                        <div className="flex space-x-4">
+                            {[
+                                { Icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+                                { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+                                { Icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
+                                { Icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+                            ].map(({ Icon, href, label }, i) => (
+                                <a
+                                    key={i}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={label}
+                                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-secondary hover:bg-secondary hover:text-primary transition-all"
+                                >
+                                    <Icon size={18} />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Column 2: Navigation */}
+                    <div className="flex flex-col">
+                        <h4 className="font-heading font-bold text-sm tracking-widest mb-4 pb-2 border-b-2 border-secondary/80 uppercase">
+                            Navigation
+                        </h4>
+                        <ul className="flex flex-col space-y-3 text-sm text-white/80 font-body">
+                            {navLinks.map((link, i) => (
+                                <li key={i}>
+                                    <Link href={link.href} className="hover:text-secondary transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Support */}
+                    <div className="flex flex-col">
+                        <h4 className="font-heading font-bold text-sm tracking-widest mb-4 pb-2 border-b-2 border-secondary/80 uppercase">
+                            Support
+                        </h4>
+                        <ul className="flex flex-col space-y-3 text-sm text-white/80 font-body">
+                            {supportLinks.map((link, i) => (
+                                <li key={i}>
+                                    <Link href={link.href} className="hover:text-secondary transition-colors">
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Newsletter */}
+                    <div className="flex flex-col">
+                        <h4 className="font-heading font-bold text-sm tracking-widest mb-4 pb-2 border-b-2 border-secondary/80 uppercase">
+                            Newsletter
+                        </h4>
+                        <p className="text-sm text-white/60 mb-4 leading-relaxed">
+                            Sign up for the latest league updates and draft news.
+                        </p>
+                        <form className="flex flex-col gap-2">
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                className="bg-white/10 border border-white/20 text-white text-sm p-3 rounded focus:outline-none focus:border-secondary transition-colors"
+                            />
+                            <button className="bg-secondary text-primary font-bold text-sm py-2 px-4 rounded hover:bg-white hover:text-primary transition-colors">
+                                SUBSCRIBE
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
 
-                <div className="border-t border-white/10 pt-8 sm:pt-12 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 opacity-40 text-xs sm:text-sm font-subheading tracking-widest text-center md:text-left">
-                    <p>© {new Date().getFullYear()} SPORTS TEXOMA. ALL RIGHTS RESERVED.</p>
-                    <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
-                        <Link href="#" className="hover:text-white transition-colors">PRIVACY POLICY</Link>
-                        <Link href="#" className="hover:text-white transition-colors">CONSTITUTION</Link>
-                        <Link href="#" className="hover:text-white transition-colors">SAFETY</Link>
+                {/* BOTTOM BAR: Copyright */}
+                <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-widest">
+                    <p>© {new Date().getFullYear()} Texoma Cricket League. All Rights Reserved.</p>
+                    <div className="flex gap-6">
+                        <Link href="/terms" className="hover:text-secondary transition-colors">Terms</Link>
+                        <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy</Link>
                     </div>
                 </div>
             </div>

@@ -14,36 +14,38 @@ const commitments = [
 
 const AboutHeader: React.FC = () => (
     <div className="mb-6 sm:mb-8">
-        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-[11px] block mb-3 sm:mb-4">About Texoma Cricket League</span>
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6 sm:mb-8 leading-tight tracking-tight">
+        <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-1 bg-secondary"></div>
+            <span className="font-heading text-secondary font-bold uppercase tracking-[0.2em] text-xs">About TCL</span>
+        </div>
+        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary mb-6 leading-tight tracking-tight">
             Premier National Youth <br className="hidden sm:block" />
-            <span className="text-secondary italic font-light">Cricket Platform</span>
+            <span className="text-secondary">Cricket Platform</span>
         </h2>
-        <div className="space-y-4 font-body text-text-dark/70 text-sm sm:text-base md:text-lg leading-relaxed">
+        <div className="space-y-4 font-body text-text-dark/70 text-sm sm:text-base leading-relaxed">
             <p>
                 Texoma Cricket League (TCL) is a premier national youth cricket tournament platform built on global standards, delivering a world-class youth cricket experience in the United States.
             </p>
             <p>
-                Built around the belief that young cricketers deserve professional competition and clear pathways, TCL brings together teams from across the country to compete in well-organized, high-quality tournaments that reward preparation, skill, and sportsmanship.
-            </p>
-            <p>
-                At the heart of TCL is <strong className="text-primary">Sports Texoma</strong>, the home venue in Texoma. By anchoring the national championships at a centralized, purpose-built facility, we ensure consistency in playing conditions, operations, and overall tournament quality.
+                Built around the belief that young cricketers deserve professional competition and clear pathways, TCL brings together teams from across the country to compete in well-organized, high-quality tournaments.
             </p>
         </div>
     </div>
 );
 
 const CommitmentsList: React.FC = () => (
-    <div className="mt-8">
-        <h3 className="font-heading text-primary font-semibold text-lg mb-4">We are committed to:</h3>
-        <ul className="space-y-3">
+    <div className="mt-6 pt-6 border-t border-primary/10">
+        <h3 className="font-heading text-primary font-bold text-sm uppercase tracking-wider mb-4">Our Commitments</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {commitments.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 font-body text-text-dark/80 text-sm sm:text-base">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                    {item}
-                </li>
+                <div key={i} className="flex items-start gap-3 p-3 bg-bg-light rounded-lg">
+                    <div className="w-6 h-6 bg-secondary/20 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-secondary text-xs font-bold">{i + 1}</span>
+                    </div>
+                    <span className="font-body text-text-dark/80 text-sm leading-snug">{item}</span>
+                </div>
             ))}
-        </ul>
+        </div>
     </div>
 );
 
@@ -53,15 +55,20 @@ const AboutMedia: React.FC = () => (
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px]"
+        className="relative h-[320px] sm:h-[380px] md:h-[420px] lg:h-[480px] group"
     >
-        <Image
-            src="/about-facility.png"
-            alt="Texoma Cricket Facility"
-            fill
-            className="object-cover"
-        />
-        <div className="absolute inset-0 bg-primary/10" />
+        <div className="relative h-full w-full overflow-hidden rounded-lg shadow-2xl">
+            <Image
+                src="/about-facility.png"
+                alt="Texoma Cricket Facility"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+
+            {/* Clean accent bar at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary"></div>
+        </div>
     </motion.div>
 );
 
@@ -91,8 +98,12 @@ const values = [
 const About: React.FC = () => {
     return (
         <>
-            <section id="about" className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white">
-                <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            {/* Sporty Skewed Container for About Section */}
+            <section id="about" className="relative py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-white overflow-hidden">
+                {/* Clean Background Accent */}
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-bg-cream/50 -z-0"></div>
+
+                <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                     <div className="flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}

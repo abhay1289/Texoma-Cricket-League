@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Trophy } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 
 const HeroContent = () => (
     <motion.div
@@ -19,32 +19,34 @@ const HeroContent = () => (
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
         </div>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-[0.95] text-white uppercase tracking-tight">
-            Texoma <br /> <span className="text-secondary font-medium">Cricket League</span>
+        <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 sm:mb-8 leading-[0.9] text-white uppercase tracking-tighter italic">
+            Texoma <br /> <span className="text-secondary inline-block transform -skew-x-6">Cricket League</span>
         </h1>
 
-        <p className="font-body text-base sm:text-lg md:text-xl text-text-light/85 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-2 sm:px-0">
-            A premier national youth cricket tournament platform built on global standards, delivering a world-class youth cricket experience in the United States.
+        <p className="font-body text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed px-2 sm:px-0 font-medium">
+            Premier youth cricket tournament platform. <span className="text-secondary font-bold">Global standards.</span> World-class experience.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} className="w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Link
                     href="/register"
-                    className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-secondary text-white font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase shadow-lg hover:shadow-xl transition-all"
+                    className="w-full sm:w-auto px-10 py-4 bg-secondary hover:bg-amber-400 text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all border-2 border-transparent"
                 >
-                    Register Now
-                    <ArrowRight size={14} className="sm:w-4 sm:h-4" />
+                    <span className="skew-x-12 flex items-center gap-2">
+                        Register Now <ArrowRight size={18} strokeWidth={3} />
+                    </span>
                 </Link>
             </motion.div>
 
-            <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} className="w-full sm:w-auto">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Link
-                    href="/tournaments"
-                    className="w-full sm:w-auto px-8 sm:px-10 py-3.5 sm:py-4 bg-white/15 backdrop-blur-sm border border-white/25 text-white font-subheading font-semibold text-xs sm:text-sm tracking-wide rounded-lg flex items-center justify-center gap-2 sm:gap-3 uppercase hover:bg-white hover:text-primary transition-all"
+                    href="/contact"
+                    className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-lg transition-all"
                 >
-                    View Tournaments
-                    <Trophy size={14} className="text-secondary sm:w-4 sm:h-4" />
+                    <span className="skew-x-12 flex items-center gap-2">
+                        Contact Us <Mail size={18} strokeWidth={3} />
+                    </span>
                 </Link>
             </motion.div>
         </div>
@@ -61,7 +63,8 @@ const HeroIndicators = () => (
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative h-[80svh] w-full flex items-center justify-center overflow-hidden bg-accent">
+        <section className="relative h-[85svh] w-full flex items-center justify-center overflow-hidden bg-primary">
+            {/* Background Image with Sporty Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=95&w=2600"
@@ -70,8 +73,13 @@ const Hero: React.FC = () => {
                     priority
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+
+                {/* Dynamic Sporty Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40 mix-blend-multiply" />
+
+                {/* Diagonal Slashes */}
+                <div className="absolute top-0 right-0 h-full w-1/3 bg-secondary/10 transform skew-x-12 translate-x-20 mix-blend-overlay"></div>
+                <div className="absolute bottom-0 left-0 h-2/3 w-1/4 bg-accent/10 transform -skew-x-12 -translate-x-10 mix-blend-overlay"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -81,8 +89,8 @@ const Hero: React.FC = () => {
             </div>
             <HeroIndicators />
 
-            {/* Decorative SVG Pattern */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-bg-cream" style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 50% 100%, 0 0)' }} />
+            {/* Sporty Bottom Divider */}
+            <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-bg-cream transform -skew-y-2 origin-bottom-right translate-y-8 z-20 border-t-4 border-secondary"></div>
         </section>
     );
 };

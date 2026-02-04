@@ -84,15 +84,64 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Texoma Cricket League",
+    "alternateName": "TCL",
+    "url": "https://texomacricket.com",
+    "logo": "https://texomacricket.com/logo.png",
+    "description": "Premier national youth cricket tournament platform in the United States, delivering world-class youth cricket experiences.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pottsboro",
+      "addressRegion": "TX",
+      "postalCode": "75076",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Texas"
+      },
+      {
+        "@type": "State",
+        "name": "Oklahoma"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      }
+    ],
+    "sport": "Cricket",
+    "sameAs": [
+      "https://facebook.com/texomacricket",
+      "https://instagram.com/texomacricket",
+      "https://twitter.com/texomacricket"
+    ]
+  };
+
   return (
     <html lang="en">
       <body
         className={`${poppins.variable} ${inter.variable} ${jetbrainsMono.variable} bg-bg-cream text-text-dark font-body leading-relaxed overflow-x-hidden antialiased`}
       >
+        {/* JSON-LD Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:font-semibold"
+        >
+          Skip to main content
+        </a>
         <div className="min-h-screen flex flex-col">
           {/* <LiveTicker /> */}
           <Navbar />
-          <main className="flex-grow">
+          <main id="main-content" className="flex-grow scroll-mt-24">
             {children}
           </main>
           <Footer />

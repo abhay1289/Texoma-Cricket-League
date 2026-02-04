@@ -50,23 +50,23 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold tracking-widest text-primary/40">First Name</label>
-                        <input required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="John" />
+                        <label htmlFor="contact-first-name" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">First Name</label>
+                        <input id="contact-first-name" name="firstName" required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="John" autoComplete="given-name" />
                     </div>
                     <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Last Name</label>
-                        <input required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="Doe" />
+                        <label htmlFor="contact-last-name" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Last Name</label>
+                        <input id="contact-last-name" name="lastName" required type="text" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="Doe" autoComplete="family-name" />
                     </div>
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Email Address</label>
-                    <input required type="email" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="john@example.com" />
+                    <label htmlFor="contact-email" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Email Address</label>
+                    <input id="contact-email" name="email" required type="email" className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors" placeholder="john@example.com" autoComplete="email" />
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Message</label>
-                    <textarea required rows={4} className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors resize-none" placeholder="How can we help?" />
+                    <label htmlFor="contact-message" className="text-[10px] uppercase font-bold tracking-widest text-primary/40">Message</label>
+                    <textarea id="contact-message" name="message" required rows={4} className="w-full bg-bg-light border-b-2 border-primary/10 p-4 font-body focus:border-secondary outline-none transition-colors resize-none" placeholder="How can we help?" />
                 </div>
 
                 <button
@@ -126,6 +126,7 @@ const ContactInfo = () => (
 const MapSection = () => (
     <div className="w-full h-[400px] md:h-[500px] rounded-super overflow-hidden shadow-elevated border border-gray-100 relative grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
         <iframe
+            title="Texoma Cricket League headquarters location - Pottsboro, TX 75076"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106684.97632646274!2d-96.78066695666072!3d33.786523999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8635532d80d2858b%3A0xe24754388856637e!2sPottsboro%2C%20TX%2075076!5e0!3m2!1sen!2sus!4v1705537552943!5m2!1sen!2sus"
             width="100%"
             height="100%"

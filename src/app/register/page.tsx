@@ -159,12 +159,11 @@ const gainAccessTo = [
     { title: 'Direct Communication', desc: 'Access to TCL tournament leadership and support', icon: <Users className="w-5 h-5" /> },
 ];
 
-// Premium floating shapes component
+// Subtle background shapes (no animation)
 const FloatingShapes = () => (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-72 h-72 bg-secondary/[0.08] rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '4s' }} />
-        <div className="absolute top-[60%] right-[10%] w-96 h-96 bg-primary/[0.05] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '6s' }} />
-        <div className="absolute bottom-[20%] left-[15%] w-64 h-64 bg-secondary/[0.06] rounded-full blur-[60px] animate-pulse" style={{ animationDuration: '5s' }} />
+        <div className="absolute top-[10%] left-[5%] w-72 h-72 bg-primary/[0.02] rounded-full blur-[100px]" />
+        <div className="absolute top-[60%] right-[10%] w-96 h-96 bg-primary/[0.02] rounded-full blur-[120px]" />
     </div>
 );
 
@@ -175,23 +174,21 @@ const PremiumPattern = () => (
     }} />
 );
 
-// Animated gradient border
+// Simple card wrapper (no glow)
 const GlowBorder = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    <div className={`relative group ${className}`}>
-        <div className="absolute -inset-[1px] bg-gradient-to-r from-secondary/50 via-secondary/20 to-secondary/50 rounded-[2rem] opacity-0 group-hover:opacity-100 blur-sm transition-all duration-700" />
-        <div className="absolute -inset-[1px] bg-gradient-to-r from-secondary/30 via-transparent to-secondary/30 rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+    <div className={`relative ${className}`}>
         {children}
     </div>
 );
 
 const CheckIcon: React.FC<{ status: boolean | 'limited' }> = ({ status }) => {
     if (status === true) return (
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 shadow-[0_4px_12px_rgb(16,185,129,0.2)] border border-emerald-500/20">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
             <Check className="text-emerald-500" size={16} />
         </span>
     );
     if (status === 'limited') return (
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 shadow-[0_4px_12px_rgb(245,158,11,0.2)] border border-amber-500/20">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/20">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
         </span>
     );
@@ -244,7 +241,7 @@ export default function RegisterPage() {
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="inline-flex items-center gap-3 px-5 py-2.5 mb-10 rounded-full bg-gradient-to-r from-secondary/15 via-secondary/10 to-secondary/15 border border-secondary/20 shadow-[0_8px_32px_rgb(201,151,63,0.15)]"
+                                className="inline-flex items-center gap-3 px-5 py-2.5 mb-10 rounded-full bg-secondary/10 border border-secondary/20"
                             >
                                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-secondary/20">
                                     <Sparkles className="w-3.5 h-3.5 text-secondary" />
@@ -297,9 +294,9 @@ export default function RegisterPage() {
                             className="lg:col-span-5"
                         >
                             <GlowBorder>
-                                <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.08] shadow-[0_40px_100px_rgb(0,0,0,0.08)]">
+                                <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.08] shadow-lg">
                                     {/* Card header decoration */}
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center shadow-[0_12px_40px_rgb(201,151,63,0.4)] rotate-3">
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center shadow-md rotate-3">
                                         <Users className="text-white w-8 h-8" />
                                     </div>
 
@@ -316,7 +313,7 @@ export default function RegisterPage() {
                                                 transition={{ delay: 0.3 + i * 0.08 }}
                                                 className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-primary/[0.03] to-transparent hover:from-secondary/[0.08] transition-all duration-300 group"
                                             >
-                                                <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center shadow-[0_4px_12px_rgb(201,151,63,0.15)] group-hover:scale-110 transition-transform duration-300">
+                                                <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                                                     <Check className="text-secondary" size={18} />
                                                 </span>
                                                 <span className="font-body text-primary/75 text-[15px]">{item}</span>
@@ -624,9 +621,9 @@ export default function RegisterPage() {
                                     <div className="hidden lg:block absolute top-12 left-[60%] w-full h-[2px] bg-gradient-to-r from-secondary/50 to-secondary/10" />
                                 )}
 
-                                <div className="relative p-8 bg-white rounded-[2rem] shadow-[0_20px_60px_rgb(0,0,0,0.15)] hover:-translate-y-3 transition-all duration-500">
+                                <div className="relative p-8 bg-white rounded-[2rem] shadow-lg hover:-translate-y-2 transition-all duration-300">
                                     {/* Step number */}
-                                    <div className="absolute -top-5 -left-3 w-12 h-12 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center font-heading font-bold text-white text-lg shadow-[0_12px_30px_rgb(201,151,63,0.4)] rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                                    <div className="absolute -top-5 -left-3 w-12 h-12 bg-secondary rounded-2xl flex items-center justify-center font-heading font-bold text-white text-lg shadow-md rotate-3">
                                         {step.step}
                                     </div>
 
@@ -780,9 +777,9 @@ export default function RegisterPage() {
                         <h2 className="font-heading text-4xl sm:text-5xl text-primary font-bold leading-[0.95] tracking-[-0.03em] mb-8">
                             What We Expect from Academy Partners
                         </h2>
-                        <div className="max-w-3xl mx-auto p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-[0_20px_60px_rgb(0,0,0,0.08)]">
+                        <div className="max-w-3xl mx-auto p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-lg">
                             <div className="flex items-start gap-6">
-                                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-2xl flex items-center justify-center shadow-[0_8px_24px_rgb(201,151,63,0.15)]">
+                                <div className="flex-shrink-0 w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center">
                                     <Shield className="text-secondary w-7 h-7" />
                                 </div>
                                 <p className="font-body text-primary/75 text-lg leading-relaxed text-left">
@@ -817,7 +814,7 @@ export default function RegisterPage() {
                                         transition={{ delay: i * 0.1 }}
                                         className="flex items-start gap-4"
                                     >
-                                        <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center mt-1 shadow-[0_4px_12px_rgb(201,151,63,0.15)]">
+                                        <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-secondary/10 flex items-center justify-center mt-1">
                                             <Check className="text-secondary" size={16} />
                                         </span>
                                         <span className="font-body text-primary/70 text-lg leading-relaxed">
@@ -835,9 +832,9 @@ export default function RegisterPage() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative"
                         >
-                            <div className="absolute -inset-4 bg-gradient-to-br from-secondary/20 to-primary/10 rounded-[2.5rem] blur-2xl opacity-50" />
-                            <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-[0_40px_100px_rgb(0,0,0,0.08)]">
-                                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mb-8 shadow-[0_12px_40px_rgb(201,151,63,0.3)]">
+                            <div className="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl opacity-50" />
+                            <div className="relative p-10 lg:p-12 bg-white rounded-[2rem] border border-primary/[0.06] shadow-lg">
+                                <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-8 shadow-md">
                                     <Zap className="text-white w-8 h-8" />
                                 </div>
                                 <h3 className="font-heading text-primary text-2xl font-bold mb-4">What Your Fees Pay For</h3>
@@ -880,7 +877,7 @@ export default function RegisterPage() {
                             Take the first step toward national-level competition and become part of America's premier youth cricket ecosystem.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-secondary text-white font-heading font-bold text-sm uppercase tracking-[0.15em] rounded-2xl shadow-[0_16px_50px_rgb(201,151,63,0.4)] hover:shadow-[0_20px_60px_rgb(201,151,63,0.5)] hover:-translate-y-1 transition-all duration-300">
+                            <Link href="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-secondary text-white font-heading font-bold text-sm uppercase tracking-[0.15em] rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                                 Apply Now
                                 <ArrowRight className="w-5 h-5" />
                             </Link>

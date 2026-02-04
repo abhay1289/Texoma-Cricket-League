@@ -63,8 +63,12 @@ const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
             </div>
             <p className="font-body text-sm text-primary/60 leading-relaxed italic line-clamp-3">{member.bio}</p>
             <div className="flex gap-4 pt-4 border-t border-gray-50">
-                <Linkedin size={18} className="text-primary/40 hover:text-primary transition-colors cursor-pointer" />
-                <Twitter size={18} className="text-primary/40 hover:text-secondary transition-colors cursor-pointer" />
+                <button type="button" aria-label={`View ${member.name}'s LinkedIn profile`} className="p-1 hover:bg-primary/5 rounded transition-colors">
+                    <Linkedin size={18} className="text-primary/40 hover:text-primary transition-colors" aria-hidden="true" />
+                </button>
+                <button type="button" aria-label={`View ${member.name}'s Twitter profile`} className="p-1 hover:bg-secondary/5 rounded transition-colors">
+                    <Twitter size={18} className="text-primary/40 hover:text-secondary transition-colors" aria-hidden="true" />
+                </button>
             </div>
         </div>
     </motion.div>

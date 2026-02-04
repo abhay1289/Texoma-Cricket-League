@@ -10,6 +10,7 @@
   --color-accent: #4a90d9;
   /* Sky Blue - from Texas outline */
 
+
   /* Extended Primary Shades (Navy) */
   --color-primary-50: #e8f0f7;
   --color-primary-100: #c5d9eb;
@@ -103,6 +104,12 @@ h6 {
 p {
   letter-spacing: -0.01em;
   line-height: 1.7;
+}
+
+/* Readable line lengths for text containers */
+.prose p,
+.prose li {
+  max-width: 65ch;
 }
 
 /* Button Base Styles */
@@ -212,6 +219,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scroll margin for anchored sections */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
 /* Selection Colors */
 ::selection {
   background-color: #1e3a5f;
@@ -275,9 +287,9 @@ th {
   right: 2rem;
   width: 48px;
   height: 48px;
-  background: #1e3a5f;
-  color: white;
-  border: none;
+  background: white;
+  color: #1e3a5f;
+  border: 1px solid rgba(30, 58, 95, 0.15);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -287,8 +299,15 @@ th {
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(30, 58, 95, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 50;
+}
+
+/* Safe area for scroll-to-top (above footer links) */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 5rem;
+  }
 }
 
 .scroll-to-top.visible {
@@ -298,9 +317,10 @@ th {
 }
 
 .scroll-to-top:hover {
-  background: #152b47;
+  background: #1e3a5f;
+  color: white;
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.4);
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.3);
 }
 
 .scroll-to-top:active {
