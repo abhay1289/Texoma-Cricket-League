@@ -212,7 +212,6 @@ export default function RegisterPage() {
                     { label: 'Home', href: '/' },
                     { label: 'Register', active: true }
                 ]}
-                align="center"
             />
 
             {/* Intro Section - Enterprise Grade */}

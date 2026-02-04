@@ -55,7 +55,6 @@ export default function PrivacyPage() {
                     { label: 'Home', href: '/' },
                     { label: 'Privacy Policy', active: true }
                 ]}
-                align="center"
             />
 
             <section className="py-20 lg:py-28">

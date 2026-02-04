@@ -140,7 +140,6 @@ export default function ContactPage() {
                     { label: 'Home', href: '/' },
                     { label: 'Contact', active: true }
                 ]}
-                align="center"
             />
 
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] container mx-auto px-6">

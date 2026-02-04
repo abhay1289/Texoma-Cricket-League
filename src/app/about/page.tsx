@@ -101,7 +101,6 @@ export default function AboutPage() {
                     { label: 'Home', href: '/' },
                     { label: 'About', active: true }
                 ]}
-                align="center"
             />
 
             {/* Vision & Mission - Premium Natural Design */}

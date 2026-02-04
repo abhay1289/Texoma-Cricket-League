@@ -49,7 +49,6 @@ export default function TermsPage() {
                     { label: 'Home', href: '/' },
                     { label: 'Terms of Service', active: true }
                 ]}
-                align="center"
             />
 
             <section className="py-20 lg:py-28">
