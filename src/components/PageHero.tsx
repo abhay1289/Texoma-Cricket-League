@@ -52,7 +52,7 @@ export default function PageHero({
             <div className={`container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:pt-20 ${align === 'center' ? 'text-center lg:text-center justify-center' : 'text-center lg:text-left'}`}>
                 <div className={`max-w-3xl ${align === 'center' ? 'mx-auto' : ''}`}>
                     <nav aria-label="Breadcrumb" className={`flex items-center gap-2 mb-6 md:mb-8 opacity-0 animate-fade-in-up ${align === 'center' ? 'justify-center' : 'justify-center lg:justify-start'}`} style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-                        <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-text-light font-subheading text-[10px] sm:text-xs tracking-[0.2em] uppercase shadow-lg">
+                        <div className="flex items-center gap-2 bg-white/10 border border-white/10 px-4 py-1.5 rounded-full text-text-light font-subheading text-[10px] sm:text-xs tracking-[0.2em] uppercase shadow-lg">
                             {breadcrumbs.map((item, index) => (
                                 <React.Fragment key={index}>
                                     {index > 0 && <ChevronRight size={10} className="opacity-40 sm:w-3 sm:h-3 text-secondary" />}

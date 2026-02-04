@@ -16,7 +16,6 @@ const HeroContent = () => (
         <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 sm:mb-10 leading-[0.9] text-white uppercase tracking-tighter italic drop-shadow-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Texoma <br /> <span className="text-secondary inline-block transform -skew-x-6 relative">
                 Cricket League
-                <span className="absolute inset-0 text-secondary blur-lg opacity-30 select-none" aria-hidden="true">Cricket League</span>
             </span>
         </h1>
 
@@ -91,7 +90,7 @@ const Hero: React.FC = () => {
             <HeroIndicators />
 
             {/* Refined Bottom Divider - Smoother transition */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-bg-cream transform -skew-y-2 origin-bottom-right translate-y-12 z-20 border-t border-secondary/20 backdrop-blur-sm"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-bg-cream transform -skew-y-2 origin-bottom-right translate-y-12 z-20 border-t border-secondary/20"></div>
         </section>
     );
 };

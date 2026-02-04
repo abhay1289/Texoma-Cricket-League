@@ -214,6 +214,23 @@ button:active,
   animation: pulse-red 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Fade In Up Animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;

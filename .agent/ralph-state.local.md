@@ -1,29 +1,19 @@
 ---
 active: true
 iteration: 1
-max_iterations: 15
-completion_promise: "ALL HERO SECTIONS UPGRADED TO ENTERPRISE GRADE"
-started_at: "2026-02-04T03:55:00Z"
+max_iterations: 10
+completion_promise: "FIX BLURRYNESS AND INVISIBLE TEXT ON HERO SECTIONS"
+started_at: "2026-02-04T04:14:03Z"
 ---
 
-## Task: Upgrade All Hero Sections to Enterprise Grade
+## Task: Fix Hero Visibility and Blur Issues
 
-### Objectives
-- Refine visual hierarchy and typography
-- Add professional design elements (gradients, textures, better spacing)
-- Ensure "High Scale" optimization (performance, responsiveness)
-- Consistent look and feel across the site
+### Issues Identified by User
+1. Text is "invisible" (likely due to opacity-0 without animation running)
+2. "Blurryness" on all pages (likely backdrop-blur or text-shadow blur effects)
 
-### Pages/Components to Upgrade
-- [ ] `src/components/Hero.tsx` (Homepage)
-- [ ] `src/components/PageHero.tsx` (Generic component used by subpages)
-- [ ] `src/app/about/page.tsx` (Custom hero elements?)
-- [ ] `src/app/contact/page.tsx`
-- [ ] `src/app/register/page.tsx`
-- [ ] `src/app/tournaments/page.tsx`
-
-### Design Direction
-- Clean, authoritative typography
-- Subtle background effects (noise, gradients) to add depth
-- Improved CTA button styling in heroes
-- Perfect responsive scaling
+### Plan
+1. Check if `animate-fade-in-up` is defined in Tailwind config/CSS
+2. If missing, add it or remove the animation classes
+3. Reduce/Remove `blur-lg` and other heavy blur effects from Hero components
+4. Restore text visibility (remove `opacity-0` default)
