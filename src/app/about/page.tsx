@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Trophy, Users, Shield, Heart, Target, Star,
     Linkedin, Twitter, MapPin, Globe
@@ -47,7 +48,7 @@ interface LeadershipMember {
 const MemberCard: React.FC<{ member: LeadershipMember }> = ({ member }) => (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 group hover:-translate-y-3">
         <div className="h-[280px] bg-gray-100 relative overflow-hidden">
-            <img src={member.photo} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
+            <Image src={member.photo} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={member.name} />
         </div>
         <div className="p-8 space-y-4">
             <div>
@@ -173,13 +174,14 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="lg:w-1/2 relative space-y-6">
-                            <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                                <img src="/vision-cricket-field.png" className="w-full h-full object-cover" alt="Youth Cricket Championship" />
+                            <div className="aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg relative">
+                                <Image src="/vision-cricket-field.png" fill className="object-cover" alt="Youth Cricket Championship" />
                             </div>
-                            <div className="aspect-[16/9] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
-                                <img
+                            <div className="aspect-[16/9] bg-gray-100 rounded-xl overflow-hidden shadow-lg relative">
+                                <Image
                                     src="/vision-team-celebration.png"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                     alt="Team Celebration"
                                 />
                             </div>

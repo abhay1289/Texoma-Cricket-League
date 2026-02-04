@@ -301,7 +301,7 @@ export default function RegisterPage() {
                     {/* Centered Header */}
                     <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
                         <div className="w-16 h-2 bg-secondary mb-8 rounded-full" />
-                        <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                        <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
                             What It Means to Be a <span className="text-secondary">TCL Partner</span>
                         </h2>
                         <p className="font-body text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -537,7 +537,7 @@ export default function RegisterPage() {
                             <Rocket className="w-4 h-4" />
                             Process
                         </span>
-                        <h2 className="font-heading text-5xl sm:text-6xl text-white font-bold leading-[0.95] tracking-[-0.03em]">How the Partnership Works</h2>
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-[0.95] tracking-[-0.03em]">How the Partnership Works</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -628,7 +628,7 @@ export default function RegisterPage() {
 
                                         {/* Price */}
                                         <div className="mb-8">
-                                            <span className="font-heading text-4xl font-bold tracking-tighter">{tier.price}</span>
+                                            <span className="font-heading text-3xl sm:text-4xl font-bold tracking-tighter">{tier.price}</span>
                                             <span className="font-body text-xs opacity-60 ml-1">{tier.period}</span>
                                         </div>
 
@@ -758,7 +758,7 @@ export default function RegisterPage() {
                             <Sparkles className="w-4 h-4" />
                             Get Started
                         </span>
-                        <h2 className="font-heading text-5xl sm:text-6xl lg:text-7xl text-white font-bold leading-[0.95] tracking-[-0.03em] mb-8">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-bold leading-[0.95] tracking-[-0.03em] mb-8">
                             Ready to Join the TCL Family?
                         </h2>
                         <p className="font-body text-white/50 text-xl max-w-2xl mx-auto leading-relaxed mb-12">

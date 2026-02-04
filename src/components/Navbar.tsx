@@ -174,7 +174,7 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-primary font-bold text-lg hover:text-secondary hover:bg-primary/5 py-4 px-4 rounded-lg transition-colors min-h-[48px] flex items-center"
+                                className="text-primary font-bold text-lg hover:text-secondary hover:bg-primary/5 py-4 px-4 rounded-lg transition-colors min-h-[48px] flex items-center focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
@@ -183,24 +183,23 @@ export default function Navbar() {
                         <div className="border-t pt-4 mt-2 space-y-1">
                             <Link
                                 href="/privacy"
-                                className="block text-sm text-gray-600 py-3 px-4 hover:bg-gray-50 rounded-lg min-h-[48px] flex items-center"
+                                className="block text-sm text-gray-600 py-3 px-4 hover:bg-gray-50 rounded-lg min-h-[48px] flex items-center focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Privacy Policy
                             </Link>
                             <Link
                                 href="/terms"
-                                className="block text-sm text-gray-600 py-3 px-4 hover:bg-gray-50 rounded-lg min-h-[48px] flex items-center"
+                                className="block text-sm text-gray-600 py-3 px-4 hover:bg-gray-50 rounded-lg min-h-[48px] flex items-center focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Terms of Service
                             </Link>
                         </div>
-                        {/* Mobile CTA Button */}
                         <div className="pt-4">
                             <Link
                                 href="/register"
-                                className="block w-full bg-secondary text-primary text-center py-4 font-bold rounded-lg hover:bg-amber-400 transition-colors min-h-[48px]"
+                                className="block w-full bg-secondary text-primary text-center py-4 font-bold rounded-lg hover:bg-amber-400 transition-colors min-h-[48px] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                                 onClick={() => setIsOpen(false)}
                             >
                                 JOIN NOW
