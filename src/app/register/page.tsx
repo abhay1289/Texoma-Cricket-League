@@ -360,7 +360,7 @@ export default function RegisterPage() {
                                 <button
                                     key={i}
                                     onClick={() => setActiveTab(i)}
-                                    className={`px-8 py-6 font-heading font-bold text-sm uppercase tracking-widest whitespace-nowrap transition-all relative
+                                    className={`px-8 py-6 font-heading font-bold text-sm uppercase tracking-widest whitespace-nowrap transition-all relative cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2
                                         ${activeTab === i ? 'text-primary' : 'text-primary/40 hover:text-primary/70'}
                                     `}
                                 >
@@ -657,7 +657,7 @@ export default function RegisterPage() {
 
                                     {/* Card Footer Button */}
                                     <div className="p-8 lg:p-10 pt-0">
-                                        <button className={`w-full py-4 rounded-xl font-heading font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300
+                                        <button className={`w-full py-4 rounded-xl font-heading font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2
                                             ${tier.name.includes('Founding')
                                                 ? 'bg-gradient-to-r from-secondary to-[#bf9530] text-white hover:shadow-[0_0_20px_rgba(201,151,63,0.4)]'
                                                 : 'bg-primary text-white hover:bg-primary/90 hover:shadow-lg'

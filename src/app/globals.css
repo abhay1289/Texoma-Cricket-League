@@ -327,6 +327,11 @@ th {
   transform: translateY(-2px);
 }
 
+.scroll-to-top:focus-visible {
+  outline: 2px solid #C9973F;
+  outline-offset: 2px;
+}
+
 @media (max-width: 640px) {
   .scroll-to-top {
     bottom: 1.5rem;

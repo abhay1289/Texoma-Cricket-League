@@ -70,7 +70,7 @@ export default function Navbar() {
                     {/* Mobile Menu Toggle (Right on Mobile) */}
                     <div className="flex lg:hidden items-center">
                         <button
-                            className="p-3 text-primary min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+                            className="p-3 text-primary min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
                             onClick={() => setIsOpen(!isOpen)}
                             aria-expanded={isOpen}
                             aria-controls="mobile-menu"
