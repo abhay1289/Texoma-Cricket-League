@@ -26,13 +26,13 @@ const TournamentCard: React.FC<{ t: Tournament }> = ({ t }) => (
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
 
             <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex flex-col gap-1.5 sm:gap-2">
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-secondary text-text-dark font-subheading font-bold text-[8px] sm:text-[9px] uppercase rounded shadow-md">
+                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-secondary text-text-dark font-subheading font-bold text-xs sm:text-xs uppercase rounded shadow-md">
                     {t.sport}
                 </span>
             </div>
 
             <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
-                <span className={`px-3 sm:px-4 py-1 sm:py-1.5 text-[9px] sm:text-[10px] font-bold rounded-full uppercase tracking-widest backdrop-blur-md border border-white/20 shadow-md ${t.status === 'open' ? 'bg-green-600 text-white' :
+                <span className={`px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-xs font-bold rounded-full uppercase tracking-widest backdrop-blur-md border border-white/20 shadow-md ${t.status === 'open' ? 'bg-green-600 text-white' :
                     t.status === 'closing_soon' ? 'bg-amber-500 text-white animate-pulse' :
                         'bg-red-600 text-white'
                     }`}>
@@ -48,7 +48,7 @@ const TournamentCard: React.FC<{ t: Tournament }> = ({ t }) => (
                 <div className="flex items-center gap-2 sm:gap-3"><Calendar size={14} className="sm:w-4 sm:h-4 text-secondary" /> {t.date}</div>
                 <div className="flex items-center gap-2 sm:gap-3"><Users size={14} className="sm:w-4 sm:h-4 text-secondary" /> {t.ageGroup}</div>
             </div>
-            <button className={`mt-auto flex items-center justify-center gap-2 sm:gap-3 w-full py-3 sm:py-4 font-heading font-bold text-[9px] sm:text-[10px] tracking-widest rounded-full transition-all duration-500 shadow-md uppercase active:scale-[0.98] ${t.status === 'completed' ? 'bg-gray-100 text-gray-400 cursor-not-allowed' :
+            <button className={`mt-auto flex items-center justify-center gap-2 sm:gap-3 w-full py-3 sm:py-4 font-heading font-bold text-xs sm:text-xs tracking-widest rounded-full transition-all duration-500 shadow-md uppercase active:scale-[0.98] ${t.status === 'completed' ? 'bg-gray-100 text-gray-400 cursor-not-allowed' :
                 'bg-primary text-white hover:bg-accent'
                 }`}>
                 {t.status === 'completed' ? 'CLOSED' : 'SECURE YOUR SPOT'}

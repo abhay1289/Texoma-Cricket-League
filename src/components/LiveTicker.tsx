@@ -8,11 +8,11 @@ const LiveTicker: React.FC = () => (
             {Array(10).fill(null).map((_, i) => (
                 <div key={i} className="inline-flex items-center mx-12 gap-8">
                     <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                    <span className="font-heading text-[12px] tracking-[0.2em] uppercase font-bold text-white">
+                    <span className="font-heading text-xs tracking-[0.2em] uppercase font-bold text-white">
                         LIVE: TEXOMA TIGERS 184/4 (18.2) v NORTH OAK RAIDERS
                     </span>
                     <span className="text-secondary font-bold">•</span>
-                    <span className="font-heading text-[12px] tracking-[0.2em] uppercase text-white/90">
+                    <span className="font-heading text-xs tracking-[0.2em] uppercase text-white/90">
                         SPRING CHAMPIONSHIP REGISTRATION: 12 SPOTS REMAINING
                     </span>
                 </div>

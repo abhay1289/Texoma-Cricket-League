@@ -25,11 +25,11 @@ const PricingCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, ind
             </div>
         )}
         <div className="mb-6 sm:mb-8">
-            <span className="font-heading text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-secondary font-semibold uppercase mb-2 sm:mb-3 block">Level {tier.id}</span>
+            <span className="font-heading text-xs sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-secondary font-semibold uppercase mb-2 sm:mb-3 block">Level {tier.id}</span>
             <h3 className="font-heading text-xl sm:text-2xl md:text-3xl text-primary mb-3 sm:mb-4 tracking-tight">{tier.name}</h3>
             <div className="flex items-baseline gap-1.5 sm:gap-2">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-primary">{tier.price}</span>
-                <span className="text-text-dark/50 font-heading text-[9px] sm:text-[10px] tracking-widest uppercase">{tier.period}</span>
+                <span className="text-text-dark/50 font-heading text-xs sm:text-xs tracking-widest uppercase">{tier.period}</span>
             </div>
         </div>
         <div className="h-px w-full bg-primary/5 mb-6 sm:mb-8" />
@@ -41,7 +41,7 @@ const PricingCard: React.FC<{ tier: PricingTier; index: number }> = ({ tier, ind
                 </li>
             ))}
         </ul>
-        <button className={`w-full py-3 sm:py-4 font-heading font-semibold text-[10px] tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 uppercase rounded-lg active:scale-[0.98] ${tier.isPremium ? 'bg-primary text-white hover:bg-secondary' : 'bg-bg-light text-primary border border-primary/10 hover:bg-primary hover:text-white'
+        <button className={`w-full py-3 sm:py-4 font-heading font-semibold text-xs tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 uppercase rounded-lg active:scale-[0.98] ${tier.isPremium ? 'bg-primary text-white hover:bg-secondary' : 'bg-bg-light text-primary border border-primary/10 hover:bg-primary hover:text-white'
             }`}>
             {tier.isPremium ? 'Get Started' : 'Choose Plan'}
         </button>
@@ -55,7 +55,7 @@ const Membership: React.FC = () => {
                 <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-primary/5 bg-white/60">
                         <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-secondary" />
-                        <span className="font-heading tracking-[0.2em] sm:tracking-[0.3em] text-primary text-[9px] sm:text-[10px] font-semibold uppercase">Membership</span>
+                        <span className="font-heading tracking-[0.2em] sm:tracking-[0.3em] text-primary text-xs sm:text-xs font-semibold uppercase">Membership</span>
                     </motion.div>
                     <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-4 sm:mb-6 leading-tight tracking-tight">Registration <span className="text-secondary font-medium">Options</span></h2>
                     <p className="text-text-dark/70 text-sm sm:text-lg max-w-xl mx-auto">Choose your registration type and join our youth cricket tournaments today.</p>

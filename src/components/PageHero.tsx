@@ -51,7 +51,7 @@ export default function PageHero({
                     className={`max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}
                 >
                     <nav aria-label="Breadcrumb" className={`flex items-center gap-2 mb-4 md:mb-6 ${align === 'center' ? 'justify-center' : 'justify-center lg:justify-start'}`}>
-                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full text-text-light font-subheading text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase">
+                        <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full text-text-light font-subheading text-xs tracking-widest uppercase">
                             {breadcrumbs.map((item, index) => (
                                 <React.Fragment key={index}>
                                     {index > 0 && <ChevronRight size={10} className="opacity-60 sm:w-3 sm:h-3" />}

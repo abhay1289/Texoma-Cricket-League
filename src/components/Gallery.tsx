@@ -20,7 +20,7 @@ const GalleryItem: React.FC<{ src: string; className: string; delay: number; tit
             className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-6 sm:p-10">
-            <span className="font-subheading text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] text-secondary uppercase mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Season Highlights</span>
+            <span className="font-subheading text-xs sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-secondary uppercase mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Season Highlights</span>
             <h4 className="font-heading text-lg sm:text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{title}</h4>
         </div>
     </motion.div>

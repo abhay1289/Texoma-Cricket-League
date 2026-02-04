@@ -42,7 +42,7 @@ const ContactDetails = () => (
 const FormInput = ({ label, type }: { label: string; type: string }) => (
     <div className="relative group">
         <input type={type} className="w-full bg-transparent border-b border-primary/20 py-4 outline-none focus:border-secondary transition-colors font-body text-base peer text-primary" placeholder=" " />
-        <label className="absolute left-0 top-4 text-text-dark/50 font-heading text-[10px] tracking-widest uppercase font-semibold transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-5">
+        <label className="absolute left-0 top-4 text-text-dark/50 font-heading text-xs tracking-widest uppercase font-semibold transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:-top-5 peer-focus:text-xs peer-focus:text-secondary peer-[:not(:placeholder-shown)]:-top-5">
             {label}
         </label>
     </div>
@@ -62,11 +62,11 @@ const ContactForm = () => (
                     <option>Corporate Partnership</option>
                     <option>Media</option>
                 </select>
-                <label className="absolute left-0 -top-5 text-secondary font-heading text-[10px] tracking-widest uppercase font-bold">Subject</label>
+                <label className="absolute left-0 -top-5 text-secondary font-heading text-xs tracking-widest uppercase font-bold">Subject</label>
             </div>
             <div className="relative group">
                 <textarea rows={3} className="w-full bg-transparent border-b border-primary/20 py-3 outline-none focus:border-secondary transition-colors font-body text-sm resize-none" placeholder=" "></textarea>
-                <label className="absolute left-0 top-3 text-text-dark/40 font-heading text-[10px] tracking-widest uppercase font-bold transition-all">Message</label>
+                <label className="absolute left-0 top-3 text-text-dark/40 font-heading text-xs tracking-widest uppercase font-bold transition-all">Message</label>
             </div>
             <button className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-heading font-bold text-sm tracking-wider rounded-lg shadow-md hover:bg-secondary hover:text-primary transition-all group duration-300">
                 Send Message <Send size={16} className="group-hover:translate-x-1 transition-transform duration-300" />

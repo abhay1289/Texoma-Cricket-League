@@ -36,7 +36,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
             </div>
             <div>
                 <h4 className="font-heading text-lg sm:text-2xl text-primary">{testimonial.name}</h4>
-                <p className="font-heading text-[10px] sm:text-[11px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-secondary font-bold">{testimonial.role}</p>
+                <p className="font-heading text-xs sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-secondary font-bold">{testimonial.role}</p>
             </div>
         </div>
     </motion.div>

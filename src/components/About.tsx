@@ -127,7 +127,7 @@ const About: React.FC = () => {
             <section className="py-[var(--section-py)] md:py-[var(--section-py-lg)] bg-bg-cream">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8">
                     <div className="text-center mb-12">
-                        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-[11px] block mb-3">Our Values</span>
+                        <span className="font-heading text-secondary font-semibold uppercase tracking-[0.2em] text-xs block mb-3">Our Values</span>
                         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary leading-tight">
                             What Drives <span className="text-secondary italic font-light">Texoma Cricket</span>
                         </h2>
