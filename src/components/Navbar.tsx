@@ -49,8 +49,8 @@ export default function Navbar() {
             {/* Container to limit width and maximize responsiveness */}
             <div className="max-w-[1920px] mx-auto relative px-4 sm:px-6 lg:px-8">
 
-                {/* LOGO - Responsive sizing: 64px mobile, 100px tablet, 160px desktop */}
-                <div className="absolute top-0 left-0 h-[64px] sm:h-[80px] md:h-[130px] lg:h-[160px] flex items-center justify-center w-[64px] sm:w-[80px] md:w-[140px] lg:w-[180px] z-20 bg-white">
+                {/* LOGO - Responsive sizing: 80px mobile, 100px tablet, 160px desktop */}
+                <div className="absolute top-0 left-4 sm:left-6 lg:left-0 h-[80px] sm:h-[100px] md:h-[130px] lg:h-[160px] flex items-center justify-center w-[80px] sm:w-[100px] md:w-[140px] lg:w-[180px] z-20 bg-white">
                     <Link href="/" className="block relative w-full h-full">
                         <div className="relative w-full h-full transition-transform hover:scale-105">
                             <Image
@@ -65,18 +65,18 @@ export default function Navbar() {
                 </div>
 
                 {/* Header Row - Balanced height across breakpoints */}
-                <div className="flex justify-end items-center h-[64px] sm:h-[80px] md:h-20 lg:h-24 text-sm font-bold text-primary relative">
+                <div className="flex justify-end items-center h-[80px] sm:h-[100px] md:h-20 lg:h-24 text-sm font-bold text-primary relative pr-0 sm:pr-0">
 
                     {/* Mobile Menu Toggle (Right on Mobile) */}
                     <div className="flex lg:hidden items-center">
                         <button
-                            className="p-2.5 sm:p-3 text-primary min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+                            className="p-3 text-primary min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
                             onClick={() => setIsOpen(!isOpen)}
                             aria-expanded={isOpen}
                             aria-controls="mobile-menu"
                             aria-label={isOpen ? "Close menu" : "Open menu"}
                         >
-                            {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+                            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                         </button>
                     </div>
 
@@ -155,7 +155,7 @@ export default function Navbar() {
                 {/* Mobile Menu Backdrop */}
                 {isOpen && (
                     <div
-                        className="lg:hidden fixed inset-0 bg-black/50 z-40 top-[64px] sm:top-[80px] md:top-[130px]"
+                        className="lg:hidden fixed inset-0 bg-black/50 z-40 top-[80px] sm:top-[100px] md:top-[130px]"
                         onClick={() => setIsOpen(false)}
                         aria-hidden="true"
                     />
@@ -164,7 +164,7 @@ export default function Navbar() {
                 {/* Mobile Menu Dropdown */}
                 <nav
                     id="mobile-menu"
-                    className={`lg:hidden fixed top-[64px] sm:top-[80px] md:top-[130px] left-0 w-full bg-white shadow-xl z-50 transition-all duration-300 ease-in-out ${isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible pointer-events-none'
+                    className={`lg:hidden fixed top-[80px] sm:top-[100px] md:top-[130px] left-0 w-full bg-white shadow-xl z-50 transition-all duration-300 ease-in-out ${isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible pointer-events-none'
                         }`}
                     aria-label="Mobile navigation"
                     aria-hidden={!isOpen}

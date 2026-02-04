@@ -7,13 +7,7 @@ import { DIVISIONS } from '@/lib/constants';
 import { Sport } from '@/lib/types';
 
 const SportCard: React.FC<{ sport: Sport; index: number }> = ({ sport, index }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-        viewport={{ once: true }}
-        className="group relative flex flex-col"
-    >
+    <div className="group relative flex flex-col">
         <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-lg shadow-lg bg-primary transition-all duration-500 group-hover:shadow-xl">
             <Image
                 src={sport.image}
