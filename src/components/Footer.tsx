@@ -137,6 +137,17 @@ const Footer: React.FC = () => {
                 {/* BOTTOM BAR: Copyright */}
                 <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 uppercase tracking-widest">
                     <p>© {new Date().getFullYear()} Texoma Cricket League. All Rights Reserved.</p>
+                    <p className="normal-case tracking-normal">
+                        Designed by{' '}
+                        <a
+                            href="https://engazedigital.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-secondary hover:text-white transition-colors"
+                        >
+                            Engaze Digital
+                        </a>
+                    </p>
                     <div className="flex gap-6">
                         <Link href="/terms" className="hover:text-secondary transition-colors">Terms</Link>
                         <Link href="/privacy" className="hover:text-secondary transition-colors">Privacy</Link>
