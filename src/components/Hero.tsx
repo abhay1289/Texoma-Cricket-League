@@ -3,16 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { ArrowRight, Mail } from 'lucide-react';
 
 const HeroContent = () => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 px-4 sm:px-0"
-    >
+    <div className="relative z-10 px-4 sm:px-0">
         <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
             <div className="w-6 sm:w-10 h-px bg-secondary/60" />
             <span className="font-subheading tracking-widest text-secondary text-xs sm:text-sm font-semibold uppercase">Big Dreams! Young Bats</span>
@@ -28,29 +22,29 @@ const HeroContent = () => (
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto">
                 <Link
                     href="/register"
-                    className="w-full sm:w-auto px-10 py-4 bg-secondary hover:bg-amber-400 text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all border-2 border-transparent"
+                    className="w-full sm:w-auto px-10 py-4 bg-secondary hover:bg-amber-400 text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all border-2 border-transparent hover:scale-105 active:scale-95"
                 >
                     <span className="skew-x-12 flex items-center gap-2">
                         Register Now <ArrowRight size={18} strokeWidth={3} />
                     </span>
                 </Link>
-            </motion.div>
+            </div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+            <div className="w-full sm:w-auto">
                 <Link
                     href="/contact"
-                    className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-lg transition-all"
+                    className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-lg transition-all hover:scale-105 active:scale-95"
                 >
                     <span className="skew-x-12 flex items-center gap-2">
                         Contact Us <Mail size={18} strokeWidth={3} />
                     </span>
                 </Link>
-            </motion.div>
+            </div>
         </div>
-    </motion.div>
+    </div>
 );
 
 const HeroIndicators = () => (
