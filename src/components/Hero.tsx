@@ -25,7 +25,7 @@ const HeroContent = () => (
             <div className="w-full sm:w-auto">
                 <Link
                     href="/register"
-                    className="w-full sm:w-auto px-10 py-4 bg-secondary hover:bg-amber-400 text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all border-2 border-transparent hover:scale-105 active:scale-95"
+                    className="w-full sm:w-auto px-10 py-4 bg-secondary hover:bg-amber-400 text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all border-2 border-transparent hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
                     <span className="skew-x-12 flex items-center gap-2">
                         Register Now <ArrowRight size={18} strokeWidth={3} />
@@ -36,7 +36,7 @@ const HeroContent = () => (
             <div className="w-full sm:w-auto">
                 <Link
                     href="/contact"
-                    className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-lg transition-all hover:scale-105 active:scale-95"
+                    className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-heading font-black text-sm sm:text-base tracking-widest rounded-none -skew-x-12 flex items-center justify-center gap-2 uppercase shadow-lg transition-all hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                 >
                     <span className="skew-x-12 flex items-center gap-2">
                         Contact Us <Mail size={18} strokeWidth={3} />
