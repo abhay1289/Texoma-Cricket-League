@@ -71,15 +71,8 @@ const Hero: React.FC = () => {
                     className="object-cover"
                 />
 
-                {/* Refined Enterprise Overlays - Cleaner, less "muddy" */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-90" />
-
-                {/* Subtle Texture/Noise Pattern for Depth (Simulated with radial gradient) */}
-                <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent" />
-
-                {/* Diagonal Geometry - Refined */}
-                <div className="absolute top-0 right-0 h-full w-1/2 bg-gradient-to-l from-secondary/5 to-transparent transform skew-x-12 translate-x-32 mix-blend-overlay"></div>
+                {/* Simple Dark Overlay for Text Contrast */}
+                <div className="absolute inset-0 bg-primary/50" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 pt-20">

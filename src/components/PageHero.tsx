@@ -41,12 +41,8 @@ export default function PageHero({
                     aria-hidden="true"
                 />
 
-                {/* Enterprise Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-90" />
-
-                {/* Texture */}
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent mix-blend-overlay" />
+                {/* Simple Dark Overlay for Text Contrast */}
+                <div className="absolute inset-0 bg-primary/50" />
             </div>
 
             <div className={`container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:pt-20 ${align === 'center' ? 'text-center lg:text-center justify-center' : 'text-center lg:text-left'}`}>
