@@ -36,7 +36,7 @@ const SportCard: React.FC<{ sport: Sport; index: number }> = ({ sport, index }) 
                 </div>
             </div>
         </div>
-    </motion.div>
+    </div>
 );
 
 const SportsOffered: React.FC = () => {
@@ -48,10 +48,10 @@ const SportsOffered: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-10 sm:mb-12 gap-6 pb-8 border-b border-primary/10">
                     <div className="max-w-xl">
-                        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex items-center gap-3 mb-4">
+                        <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-1 bg-secondary" />
                             <span className="font-heading tracking-[0.2em] text-secondary text-xs font-bold uppercase">Our Programs</span>
-                        </motion.div>
+                        </div>
                         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-primary leading-tight tracking-tight">
                             Cricket <span className="text-secondary">Excellence</span>
                         </h2>
